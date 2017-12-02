@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>填写处理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <!--共同样式-->
+    <link rel="stylesheet" href="../../theme/css/common.css">
+
+    <link rel="stylesheet" href="../../theme/css/exlse.css">
+</head>
+<body>
+<div class="repair-result repair overflow-y">
+    <!--头部-->
+    <div class="return-column">
+        <div class="return-column-heart">
+            <a class="header-return" href="javascript:"  onclick="history.go(-1)"><i class="header-return-icon"></i></a>
+            <div class="header-title">填写处理</div>
+        </div>
+    </div>
+    <div class="hr-88"></div>
+    <form id="newForm" action="">
+        <div id="remark" class="the-reason" placeholder = "请填写详细处理原因..."  contenteditable="true"></div>
+        <ul class="upload">
+            <!--<li><img src="../../images/anounce/typhoon.png" alt=""><i class="delete-icon"></i><input type="hidden" name="file"></li>-->
+            <!--<li id="shoot" class="shoot"><input accept="image/*" onchange="uploadPicture(this)"  type="file"></li>-->
+            <li id="shoot" class="shoot imgUploadWX"></li>
+        </ul>
+    </form>
+    <div onclick="carry()" class="carry">完成</div>
+</div>
+
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/zepto.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/touch.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/fx.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/wx/jweixin-1.2.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/wxImage.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/repair_result.js"></script>
+</body>
+</html>

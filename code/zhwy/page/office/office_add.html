@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>办公室管理</title>
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../css/news/news_add.css">
+</head>
+<body>
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>办公室管理</span> > <span class="blueChange">新增办公室</span>
+</header>
+<div class="container-fluid">
+    <div class="row">    </div>
+
+    <form class="form">
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">所属区域: <font color="red">*</font></div>
+            <div class="col-md-6 data-con">
+                <div class="input-group" onclick="addrToggleAdd();">
+                    <input id="" class="form-control" size="8" type="text" readonly placeholder="所属区域">
+                    <span class="input-group-addon"><i class="fa fa-caret-down"></i></span>
+                </div>
+            </div>
+            <div class="col-md-offset-2 col-md-8">
+                <div style="display: none;" class="select-addr-con-add">
+                    <p class="btn-con text-right">
+                        <span onclick="addrToggleAdd();" type="button" class="span btn_ok">确定</span>
+                        <span onclick="addrToggleAdd();" type="button" class="span ">取消</span>
+                    </p>
+                    <div class="select-con">
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">中国中国中国中国</option>
+                            <option value="">中国</option>
+                            <option value="">中国</option>
+                            <option value="">中国</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳深圳深圳深圳</option>
+                            <option value="">深圳</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">楼盘名称:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input id="" class="form-control" size="8" type="text" placeholder="楼盘名称">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">地段:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input id="" class="form-control" size="8" type="text" placeholder="地段">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">所在楼层:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input id="" class="form-control" size="8" type="text" placeholder="所在楼层">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">办公室名称:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input id="" class="form-control" size="8" type="text" placeholder="办公室名称">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">面积:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input id="" class="form-control" size="8" type="text" placeholder="面积/平米">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">租金:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input id="" class="form-control" size="8" type="text" placeholder="租金">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">类型:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <select id="" class="form-control">
+                    <option value="1">写字楼</option>
+                    <option value="2">xxxx</option>
+                    <option value="3">xx</option>
+                </select>
+            </div>
+        </div>
+
+
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">标题:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="">
+            </div>
+        </div>
+        <div class="row form-group text-con">
+            <div class="col-md-2 text-right form-title">描述:<font color="red">*</font></div>
+            <div class="col-md-6">
+                    <textarea id="" name="content" style="width:100%;height:200px;"></textarea>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">封面图片:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <label class="btn btn-default" for="file">选择图片</label>
+                <input id="file" class="file" type="file" onchange="checkImgType(this,$('.imgCanvas_con'),false);" style="display: none;">
+                <span class="file-text" style="color: #9ea6b4;">支持.jpg, .jpeg, .bmp, .gif, .png类型文件，5M以内</span>
+            </div>
+            <div class="col-md-offset-2 col-md-6 text-left">
+                <label class="file_name"></label>
+                <div class="imgCanvas_con">
+                    <canvas id="imgCanvas" width="0" height="0"></canvas>
+                    <span class="imgCanvas_remove" onclick="imgCanvas_remove(this)"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group text-left">
+            <div class="col-md-offset-2 col-md-6">
+                <button class="btn btn_blue" type="button" onclick="newsAdd()">确定</button>
+                <button class="btn btn_gray" type="button" onclick="goPage('page/news/news_list.html');">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/office/office_add.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+
+/*BI页面*/
+
+/*图标部分样式*/
+.axis path,
+.axis line{
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+.line,.x_line{
+    fill: none;
+    stroke: rgb(0, 0, 0);
+    shape-rendering: crispEdges;
+}
+.bar {
+    fill: green;
+}
+.bar:hover {
+    fill: #ccc ;
+}
+.x.axis path {
+    /*display: none;*/
+}
+path {
+    stroke: #fff;
+    fill-rule: evenodd;
+}
+table{
+    width:98%;
+    height:100%;
+    margin: 0 auto;
+    border: 1px solid #e2e2e2;
+}
+table th,table td{
+    text-align: center;
+}
+
+/*	文本框样式	*/
+.content-text{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.content-text.active{
+    background-color: #fff;
+    position: relative;
+    z-index: 10;
+}
+.content-text>div{
+    width: 100%;
+    height: 100%;
+    word-wrap: break-word;
+    text-align: left;
+}
+.content-text>div i{
+    font-style:italic;
+}
+/*	按钮	*/
+.content-button{
+    width: 100%;
+    height: 100%;
+}
+.content-button button{
+    width: 100%;
+    height: 100%;
+}
+.image-class
+,.image-class img{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.hint,.tooltip{
+    border: 1px solid #ddd;
+    background-color: #fff;
+    min-width:100px;
+    text-align: center;
+    border-radius: 5px;
+    padding:10px;
+    color:#666;
+    position: absolute;
+    display: none;
+    z-index: 1000;
+}
+ /*2017-10-25 饼图*/
+.tooltipChart{
+    position: absolute;
+    width: 120px;
+    height: auto;
+    font-family: simsun;
+    font-size: 14px;
+    text-align: center;
+    color: white;
+    border: 2px solid black;
+    background-color: black;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+.tooltipChart:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 20%;
+    margin-left: -8px;
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid black;
+    border-right: 12px solid transparent;
+}
+
+/*2017-10-26 折线图*/
+.title{font-family:Arial,微软雅黑;font-size:18px;text-anchor:middle;}
+.subTitle{font-family:Arial,宋体;font-size:12px;text-anchor:middle;fill:#666}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+    fill:#999;
+}
+
+.inner_line path,
+.inner_line line {
+    fill: none;
+    stroke:#E7E7E7;
+    shape-rendering: crispEdges;
+}
+
+.legend{font-size: 12px; font-family:Arial, Helvetica, sans-serif}
+
+
+#container {
+    width: 800px;
+    margin: 0px auto;
+}
+
+.bar {
+    fill: steelblue;
+}
+
+/*  2017-11-2 甘特图 -- 开始*/
+.bar-failed {
+    fill: #CC0000;
+}
+
+.bar-running {
+    fill: #669900;
+}
+
+.bar-succeeded {
+    fill: #33b5e5;
+}
+
+.bar-killed {
+    fill: #ffbb33;
+}
+
+#forkme_banner {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 10;
+    padding: 10px 50px 10px 10px;
+    color: #fff;
+    background:
+            url('http://dk8996.github.io/Gantt-Chart/images/blacktocat.png')
+            #0090ff no-repeat 95% 50%;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    text-decoration: none;
+}
+/*  甘特图 -- 结束*/
+
+/* 仪表图 -- 开始 */
+.label{
+    font-size:22.5px;
+    fill:#ffffff;
+    text-anchor:middle;
+    alignment-baseline:middle;
+}
+.face{
+    stroke:#c8c8c8;
+    stroke-width:2;
+}
+.minorTicks{
+    stroke-width:2;
+    stroke:white;
+}
+.majorTicks{
+    stroke:white;
+    stroke-width:3;
+}
+/* 仪表图 -- 结束 */

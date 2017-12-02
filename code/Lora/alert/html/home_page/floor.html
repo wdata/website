@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>楼层图</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../plugin/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" href="../../plugin/swiper/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="../../plugin/jqPaginator/paging.css">
+    <link rel="stylesheet" type="text/css" href="../../css/list.css">
+    <link rel="stylesheet" type="text/css" href="../../css/index/index.css">
+    <style>
+        body{padding: 20px;background:#fff;}
+        .main-content{margin: 0;}
+    </style>
+</head>
+<body>
+<div class="floor clearfix">
+    <div class="swiper pull-left">
+        <div class="swiper_head"><img src="../../images/ding.png" alt=""></div>
+        <div class="swiper-container floor_swiper">
+            <div class="swiper-wrapper">
+            </div>
+        </div>
+        <div class="swiper_foot"><img src="../../images/di.png" alt=""></div>
+    </div>
+    <div class="tab pull-left">
+        <table class="table _left" style="border: 1px solid #e2e2e2;height:80%;">
+            <tbody>
+            <tr>
+                <td>设备状态：<span id="lineStatus"></span></td>
+                <td>报警描述：<span id="warningDesc"></span></td>
+            </tr>
+            <tr>
+                <td>报警时间：<span id="warningTime"></span></td>
+                <td>报警处理状态：<span id="currentStatus"></span></td>
+            </tr>
+            <tr>
+                <td>节点ID：<span id="serialNumber"></span></td>
+                <td>节点名称：<span id="deviceName"></span></td>
+            </tr>
+            <tr>
+                <td>网关ID：<span id="gatewayEui"></span></td>
+                <td>网关名称：<span id="gatewayName"></span></td>
+            </tr>
+            <tr>
+                <td colspan="2">设备注册时间：<span id="createTime"></span></td>
+            </tr>
+            <tr>
+                <td colspan="2">位置：<span id="address"></span></td>
+            </tr>
+            <tr>
+                <td>经度：<span id="longitude"></span></td>
+                <td>纬度：<span id="latitude"></span></td>
+            </tr>
+            <tr>
+                <td>所属设备组：<span id="groupName"></span></td>
+                <td>所属企业：<span id="companyName"></span></td>
+            </tr>
+            <tr>
+                <td>总楼层数：<span id="floorMax"></span></td>
+                <td>所在楼层数：<span id="floor"></span></td>
+            </tr>
+            <tr>
+                <td>安全管理员：<span id="manager"></span></td>
+                <td>安全巡检员：<span id="patrol"></span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="main-content">
+    <div class="fl history">
+        <div class="item alarm hover">本楼栋节点报警记录</div>
+        <div class="item maintenance ">本楼栋节点维保记录</div>
+    </div>
+    <div class="con-table waring_list">
+        <table class="table table-hover" id="waring_list">
+            <thead>
+            <tr>
+                <th><input type="checkbox" onclick="checkAll('waring_list',this)"><i></i></th>
+                <th>序号</th>
+                <th>报警描述</th>
+                <th>报警设备名称</th>
+                <th>报警设备编号</th>
+                <th>报警类型</th>
+                <th>报警位置</th>
+                <th>首次报警时间</th>
+                <th>最后报警时间</th>
+                <th>处理状态</th>
+                <th>安全管理员</th>
+                <th>安全巡检员</th>
+                <th>所在设备组</th>
+                <th>所属企业</th>
+                <th>确认报警类型</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="page1" class="pageing mt20 undis pages">
+            <ul class="pagin" id="pagination_war"></ul><span class="total hide">(共<span class="num">0</span>页)</span>
+        </div>
+    </div>
+    <div class="con-table alarm_table undis">
+        <table class="table table-hover" id="alarm_table">
+            <thead>
+            <tr>
+                <th><input type="checkbox" name="" onclick="checkAll('alarm_table',this)"><i></i></th>
+                <th>序号</th>
+                <th>节点名称</th>
+                <th>节点编号</th>
+                <th>网关编号</th>
+                <th>设备组</th>
+                <th>在线状态</th>
+                <th>维保描述</th>
+                <th>首次报警时间</th>
+                <th>处理说明</th>
+                <th>所在位置</th>
+                <th>安全管理员</th>
+                <th>安全巡检员</th>
+                <th>所属企业</th>
+                <th>处理状态</th>
+            </tr>
+            </thead>
+            <tbody class="list">
+            </tbody>
+        </table>
+        <div id="page2" class="pageing mt20 undis">
+            <ul class="pagin" id="pagination"></ul><span class="total">(共<span>0</span>页)</span>
+        </div>
+    </div>
+</div>
+<!-- 查看详细弹窗 -->
+<div class="modal fade" id="nade_modal">
+    <div class="modal-dialog modal-lg" style="width: 50%;margin: 0 auto;">
+        <div class="modal-content" style="top: 75px;">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">&times;</button>
+                <h4>节点列表</h4>
+            </div>
+            <div class="modal-body">
+                <ul class="floor_list">
+                    <li>
+                        <div class="status"><img src="../../images/normal.png"></div>
+                        <div class="node_mes">
+                            <div class="node_name"><span class="nodeName">节点名称：<i>分身乏术</i></span><span class="item">设备状态：<i>正常</i></span></div>
+                            <div class="node_num">节点编号：<i>fsfsafsaffafasdfsadfas</i></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="status"><img src="../../images/normal.png"></div>
+                        <div class="node_mes">
+                            <div class="node_name"><span class="nodeName">节点名称：<i>分身乏术</i></span><span class="item">设备状态：<i>正常</i></span></div>
+                            <div class="node_num">节点编号：<i>fsfsafsaffafasdfsadfas</i></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="status"><img src="../../images/normal.png"></div>
+                        <div class="node_mes">
+                            <div class="node_name"><span class="nodeName">节点名称：<i>分身乏术</i></span><span class="item">设备状态：<i>正常</i></span></div>
+                            <div class="node_num">节点编号：<i>fsfsafsaffafasdfsadfas</i></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="opering-mask">
+    <div class="main">
+        <div class="tit">提示信息<span onclick="closeMask()">&times;</span></div>
+        <div class="con">正在处理中，处理结束后该弹窗消失！</div>
+    </div>
+</div>
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../plugin/swiper/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/warning_guan/common.js"></script>
+<script type="text/javascript" src="../../js/home_page/floor.js"></script>
+</body>
+</html>

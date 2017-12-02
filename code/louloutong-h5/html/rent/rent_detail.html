@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出租详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/plugin/swiper/css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <!--图片放大css-->
+    <link rel="stylesheet" href="../../theme/plugin/photoSwipe-master/dist/photoswipe.css">
+    <link rel="stylesheet" href="../../theme/plugin/photoSwipe-master/dist/default-skin/default-skin.css">
+
+    <link rel="stylesheet" href="../../theme/css/common.css">
+    <link rel="stylesheet" href="../../theme/css/normal.css">
+    <link rel="stylesheet" href="../../theme/css/page.css">
+</head>
+<body>
+<div class="layout bgfe">
+    <div class="return-column">
+        <div class="return-column-heart">
+            <a class="header-return" onclick="history.go(-1)" href="javascript:;"><i class="header-return-icon"></i><span>返回</span></a>
+            <div class="header-title">出租详情</div>
+            <a class="header-operating share" href="javascript:"><i></i></a>
+        </div>
+    </div>
+    <div class="main hide">
+        <div class="hr-88"></div>
+        <div class="swiper-container orent-swiper">
+            <div class="swiper-wrapper my-gallery">
+                <!-- <div class="swiper-slide"><a href=""><img src="../../images/upload/pic@2x.png" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="../../images/upload/pic1@2x.png" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="../../images/upload/pic2@2x.png" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="../../images/upload/pic3@2x.png" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="../../images/upload/pic@2x.png" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="../../images/upload/pic1@2x.png" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="../../images/upload/pic2@2x.png" alt=""></a></div>
+                <div class="swiper-slide"><a href=""><img src="../../images/upload/pic3@2x.png" alt=""></a></div> -->
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="rentd-box01">
+            <div class="detail-tit p24">
+                <span></span>
+                <div class="time"></div>
+            </div>
+        </div>
+        <div class="p24">
+            <div class="rentd-box02">
+                <div class="item fl item01">
+                    <div>售价</div>
+                    <span id="detail_price"></span>
+                </div>
+                <div class="item fl">
+                    <div>面积</div>
+                    <span id="detail_acreage"><sup>2</sup></span>
+                </div>
+                <div class="item fl">
+                    <div>浏览</div>
+                    <span id="detail_views"></span>
+                </div>
+            </div>
+        </div>
+        <div class="p24">
+            <div class="rentd-box03">
+                <ul>
+                    <li>
+                        <span>类型：</span><div class="detail_tips01 dis"></div>
+                    </li>
+                    <li>
+                        <span>楼盘：</span><div class="detail_tips02 dis"></div>
+                    </li>
+                    <li>
+                        <span>朝向：</span><div class="detail_tips03 dis"></div>
+                    </li>
+                    <li>
+                        <span>交通：</span><div class="detail_tips04 dis"></div>
+                    </li>
+                    <li>
+                        <span>配套设施：</span><div class="detail_tips05 dis"></div>
+                    </li>
+                    <li>
+                        <span>地段：</span><div class="detail_tips06 dis"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- <div style="" id="container" class="map"></div>  -->
+        <div class="rentd-box04">
+            <div class="p24">
+                <div class="tit">
+                    房源描述
+                    <div class="icon-w fr">
+                        <i class="icon icon-in"></i>
+                    </div>
+                </div>
+                <div class="con">
+                </div>
+            </div>
+            <div class="hr-100"></div><div class="hr-48"></div>
+        </div>
+        <!-- 租房详情 -->
+        <!-- 求租详情 不显示电话 -->
+        <div class="rent-bot">
+            <div class="t-l fl">
+                <div class="inner">
+                    <span id="name"></span><br/><span id="phone"></span>
+                </div>
+            </div>
+            <div class="t-r fl">
+                <button class="bgblue btn">在线沟通</button>
+                <a href="tel:13922897782" class="btn">电话联系</a>
+            </div>
+        </div>
+        <!-- 下架了 -->54
+        <div class="rent-bot rent-bot-xj undis">
+            <button class="offline-btn">下架了</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/zepto.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/touch.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/swiper/js/swiper-3.3.1.min.js"></script>
+<!--<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=BoGL1F4fqCjRp8aGG4STnveLOrY0Zhsv&s=1"></script>-->
+<!--图片放大JS-->
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/photoSwipe-master/dist/photoswipe.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/photoSwipe-master/dist/photoswipe-ui-default.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/page.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/rent_detail.js"></script>
+<!--图片放大 初始化-->
+<script type="text/javascript" charset="utf-8" src="../../theme/js/photoSwipe.js"></script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智慧物业后台管理系统</title>
+    <link rel="stylesheet" href="plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="plugin/layer/skin/default/layer.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header class="index-header">
+    <!--<div class="pull-right">
+        <div>
+            欢迎您：admin
+        </div>
+        <div>
+            角色：admin
+        </div>
+        <div class="login_out">
+            <a href="login.html"><i class="fa fa-sign-out"></i>退出</a>
+        </div>
+    </div>-->
+
+</header>
+<ul class=" left-nav" id="menu">
+    <li class="first-ul">
+        <a href="javascript:goPage('home.html');" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <span class="nav-label">首页</span>
+        </a>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">通知管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/inform/inform_list.html');">通知列表</a>
+            </li>
+        </ul>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">公告管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/affiche/affiche_list.html');">公告列表</a>
+            </li>
+        </ul>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">新闻动态管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/news/news_list.html');">新闻动态列表</a>
+            </li>
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/news/news_audit_list.html');">新闻动态审核列表</a>
+            </li>
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/news/news_report_list.html');">新闻动态举报列表</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">报修管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/repairs/repairs_list.html');">报修列表</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">出租/求租管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/lease/reservation_list.html');">预约看办公室列表</a>
+            </li>
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/lease/lease_list.html');">正在出租/求租</a>
+            </li>
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/lease/unlease_list.html');">已下架出租/求租</a>
+            </li>
+        </ul>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">办公室管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/office/office_list.html');">办公室列表</a>
+            </li>
+        </ul>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">活动管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/activity/activity_list.html');">活动列表</a>
+            </li>
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/activity/activity_audit_list.html');">活动审核列表</a>
+            </li>
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/activity/activity_report_list.html');">活动举报列表</a>
+            </li>
+        </ul>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">园区企业管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/company/company_list.html');">企业列表</a>
+            </li>
+        </ul>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">楼栋管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/building/building_list.html');">楼栋列表</a>
+            </li>
+        </ul>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">物业人员分配管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/estateWorker/estateWorker_list.html');">物业人员分配列表</a>
+            </li>
+        </ul>
+    </li>
+    <li class="first-ul">
+        <a href="javascript:;" class="nav-parent-a nav-toggle" onclick="navToggle(this)">
+            <i class="triangle"></i><span class="nav-label">系统配置管理</span>
+        </a>
+        <ul class="nav nav-second-level" aria-expanded="false" style="display: none;">
+            <li class="sec-ul">
+                <a href="javascript:;" onclick="goPage('page/system/log_list.html');">日志管理</a>
+            </li>
+        </ul>
+    </li>
+
+
+
+
+
+
+
+</ul>
+
+<div class="container index-con">
+    <iframe id="iframe" src="home.html"></iframe>
+</div>
+
+<script src="plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="plugin/layer/layer.js"></script>
+<script src="plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

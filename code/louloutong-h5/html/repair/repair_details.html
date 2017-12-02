@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报修详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/plugin/dropload-gh-pages/dist/dropload.css">
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <!--图片放大css-->
+    <link rel="stylesheet" href="../../theme/plugin/photoSwipe-master/dist/photoswipe.css">
+    <link rel="stylesheet" href="../../theme/plugin/photoSwipe-master/dist/default-skin/default-skin.css">
+    <!--共同样式-->
+    <link rel="stylesheet" href="../../theme/css/common.css">
+
+    <link rel="stylesheet" href="../../theme/css/exlse.css">
+</head>
+<body>
+<div class="repair-details repair overflow-y active">
+    <!--头部-->
+    <div class="return-column">
+        <div class="return-column-heart">
+            <a class="header-return" href="repair_list.html" ><i class="header-return-icon"></i></a>
+            <div class="header-title">报修详情</div>
+        </div>
+    </div>
+    <div class="hr-88"></div>
+    <!--头部状态栏-->
+    <div class="process">
+        <!--.active 可显示维修人员头像-->
+        <p class="line"></p>
+        <div class="status">
+            <span>待受理</span>
+            <span>已受理</span>
+            <span>待验收</span>
+            <span>已确认</span>
+        </div>
+        <div class="dots">
+            <div class="transparent garden"><div class="in garden"><div class="inside garden"></div></div></div>
+            <div class="transparent garden"><div class="in garden"><div class="inside garden"></div></div></div>
+            <div class="transparent garden"><div class="in garden"><div class="inside garden"></div></div></div>
+            <div class="transparent garden"><div class="in garden"><div class="inside garden"></div></div></div>
+        </div>
+        <div class="repair-man">
+            <!--只有一个维修员，没有移交过-->
+            <!--<div class="odd-number frame three">-->
+                <!--<a class="service" href="javascript:">-->
+                    <!--<img class="avatar" src="../../images/anounce/Oval.png" alt="">-->
+                    <!--<div class="concise"><p class="career">维修员</p><p>李师师</p></div>-->
+                <!--</a>-->
+            <!--</div>-->
+            <!--有2个以上维修员，有移交过-->
+            <!--<div class="most frame one">-->
+                <!--<a class="service over"  href="javascript:"><img class="avatar" src="../../images/anounce/Oval.png" alt=""></a>-->
+                <!--<a class="service" href="javascript:">-->
+                    <!--<img class="avatar" src="../../images/anounce/Oval.png" alt="">-->
+                    <!--<div class="concise"><p class="career">维修员</p><p>李师师</p></div>-->
+                <!--</a>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="hr-24"></div>
+    <!--报修申报详情-->
+    <div id="pending" class="pending hide">
+        <header>
+            <div id="type" class="title"><i></i>办公室报修</div>
+            <div id="set" class="set">
+                <!--<a href="repair_revoked.html" class="repair-operating cancel red">撤销</a>-->
+                <!--<a href="repair_sent.html" class="repair-operating single blue">派单</a>-->
+                <!--<a hrrepair_transfer.htmlhtml" class="repair-operating transfer red">移交</a>-->
+                <!--<a href="repair_result.html" class="repair-operating dealWith blue">填写处理</a>-->
+                <!--<a href="repair_sent.html" class="repair-operating reappear blue">重新派单</a>-->
+                <!--<a href="javascript:" class="repair-operating confirm yellow">确认验收</a>-->
+            </div>
+        </header>
+        <div class="people">
+            <p class="column">报修人</p>
+            <a id="people" href="javascript:">
+                <img class="avatar" src="../../images/anounce/Oval.png" alt="avatar">
+                <div class="information">
+                    <div class="name">高原</div>
+                    <time>2017-8-12 12:50</time>
+                </div>
+            </a>
+        </div>
+        <ul class="detailed list-ul">
+            <li><p class="column">订单状态</p><div id="status"><div class="repair-status green">待受理（未派单）</div><i class="mine-icon"></i></div></li>
+            <li class="pbc"><p class="column">报修类型</p><div id="aspect" class="word">门窗维修</div></li>
+            <li><p class="column">报修内容</p><div id="content" class="word">昨天台风把吊顶吹落了下来，请尽快处理!昨天台风把吊顶吹落了下来，请尽快处理!</div></li>
+            <li id="image" class="image my-gallery">
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+            </li>
+            <li class="address"><i class="address-icon"></i><span id="property" class="word">深圳市南山区科苑北路东方科技大厦D栋504 深圳市南山区科苑北路东方科技大厦D栋504</span></li>
+            <li class="pbc"><p class="column">预约上门时间</p><time id="reservation">2017-08-14 13:00</time></li>
+            <li class="pbc"><p class="column">期待完成时间</p><time id="carryOut">2017-08-18 13:00</time></li>
+        </ul>
+    </div>
+    <!--处理结果-->
+    <div class="result hide">
+        <ul class="detailed list-ul">
+            <li><p class="column">处理内容</p><div id="dealCon" class="word">更换了新的吊灯！更换了新的吊灯！更换了新的吊灯！更换了新的吊灯！</div></li>
+            <li><p class="column">处理时间</p><time id="rRDate">2017-08-16 13:00</time></li>
+            <li id="images" class="image my-gallery">
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+            </li>
+        </ul>
+    </div>
+    <!--评论-->
+    <div class="con-main hide">
+        <div class="head">
+            <div id="CLbutton" class="button hide box-center">
+                <div onclick="htmlAjax.releaseLike(this)" class="like-btn box-center"><i class="like-icon"></i>点赞</div>
+                <e></e>
+                <div id="comment" class="box-center"><i class="comment-icon"></i>评论</div>
+            </div>
+            <div class="prompt"><i class="hide-icon"></i></div>
+        </div>
+        <div class="like">
+            <div class="shell"><i class="like-icon"></i></div>
+            <div id="likeList" class="like-list">
+                <a href="javascript:"><img class="small-avatar" src="../../images/anounce/Oval.png" alt=""></a>
+                <a href="javascript:"><img class="small-avatar" src="../../images/anounce/Oval.png" alt=""></a>
+                <a href="javascript:"><img class="small-avatar" src="../../images/anounce/Oval.png" alt=""></a>
+                <a href="javascript:"><img class="small-avatar" src="../../images/anounce/Oval.png" alt=""></a>
+            </div>
+        </div>
+        <div class="comment">
+            <div class="shell"><i class="common-icon"></i></div>
+            <div id="list">
+                <ul id="listCom">
+                    <!--<li>-->
+                    <!--<a href="javascript:"><img class="small-avatar" src="../../images/anounce/Oval.png" alt=""></a>-->
+                    <!--<div class="inform">-->
+                    <!--<p class="name">张海</p>-->
+                    <!--<time>2017-8-18 16:40</time>-->
+                    <!--<div class="content">修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！修的好棒棒！！！</div>-->
+                    <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--确认验收-->
+    <div class="hr-96 hide"></div>
+    <div id="confirm" class="confirm hide">确认验收</div>
+    <!--评论输入框-->
+    <div class="comment-box hide">
+        <input id="comCon" type="text" placeholder="评论"><i class="symbol-icon"></i><div onclick="htmlAjax.releaseCom()" class="send">发送</div>
+    </div>
+    </div>
+</div>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/zepto.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/touch.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/dropload-gh-pages/dist/dropload.min.js"></script>
+<!--图片放大JS-->
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/photoSwipe-master/dist/photoswipe.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/photoSwipe-master/dist/photoswipe-ui-default.min.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<!--图片放大 初始化-->
+<script type="text/javascript" charset="utf-8" src="../../theme/js/photoSwipe.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/repair_details.js"></script>
+</body>
+</html>

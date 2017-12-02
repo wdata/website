@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布出租</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/plugin/swiper/css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <link rel="stylesheet" href="../../theme/css/common.css">
+    <link rel="stylesheet" href="../../theme/css/normal.css">
+    <link rel="stylesheet" href="../../theme/css/page.css">
+</head>
+<body>
+<div class="layout bgfe">
+    <div class="p-layout tran500">
+        <div class="main-wrap fl">
+            <div class="return-column bg000">
+                <div class="return-column-heart">
+                    <a class="header-return" href="javascript:;" onclick="history.go(-1);"><i class="header-return-icon"></i></a>
+                </div>
+            </div>
+            <div class="issue mt0">
+                <div class="photo mt0">
+                    <div class="icon-wrap abs">
+                        <i class="icon icon-camera abs"></i>
+                    </div>
+                    <img src="../../images/upload/pic2@2x.png" alt="" class="full">
+                    <div class="mask"></div>
+                </div>
+            </div>
+            <div class="rent-input-con p24">
+                <ul>
+                    <li>
+                        <div class="t-l fl"><span>区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;域</span></div>
+                        <div class="t-r fl" onclick="tranShow(1)">
+                            南山区科技园
+                            <i class="icon icon-in fr"></i>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="t-l fl"><span>面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积</span></div>
+                        <div class="t-r fl t0r">
+                            <input type="text">
+                            <div class="unit">
+                                <span class="c999">平米</span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="t-l fl"><span>租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金</span></div>
+                        <div class="t-r fl"  onclick="tranShow(3)">
+                            <input type="text" readonly>
+                            <div class="unit">
+                                <span class="c333">元/m<sup>2</sup>/天</span>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="t-l fl"><span>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span></div>
+                        <div class="t-r fl">
+                            写字楼
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="t-l fl"><span>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题</span></div>
+                        <div class="t-r fl">
+                            <input type="text" placeholder="8-28字" minLength="8" maxlength="28">
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="t-l fl"><span>描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述</span></div>
+                        <div class="t-r fl" onclick="tranShow(2)">
+                            <input type="text" placeHolder="10字以上" readonly>
+                            <i class="icon icon-in fr"></i>
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="t-l fl"><span>联&nbsp;&nbsp;系&nbsp;&nbsp;人</span></div>
+                        <div class="t-r fl">
+                            <input type="text" placeholder="8-28字" minLength="8" maxlength="28">
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="t-l fl"><span>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号</span></div>
+                        <div class="t-r fl">
+                            <input type="text" placeHolder="10字以上">
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="t-l fl"><span>朝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向</span></div>
+                        <div class="t-r fl">
+                            <input type="text" placeholder="8-28字" minLength="8" maxlength="28">
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="t-l fl"><span>交&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通</span></div>
+                        <div class="t-r fl">
+                            <input type="text" placeHolder="10字以上">
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="t-l fl"><span>配套设施</span></div>
+                        <div class="t-r fl">
+                            <input type="text" placeHolder="10字以上">
+                        </div>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+                <input type="button" value="发布" class="submit-btn">
+                <div class="hr-100"></div>
+            </div>       
+        </div>
+        <div class="tran-wrap fl">
+            <div class="tran-inner undis">
+                <div class="switch overflow-y" style="transform: translate(0px, 0px);">
+                <div class="return-column">
+                    <div class="return-column-heart">
+                        <a class="header-return" href="javascript:" onclick="returnTran()"><i class="header-return-icon"></i><span>返回</span></a>
+                        <div class="header-title">切换楼栋单元</div>
+                        <a id="determine" class="header-operating hide" href="javascript:">确定</a>
+                    </div>
+                </div>
+                <div class="hr-88"></div>
+                <!--顶部导航-->
+                <div class="nav-layer">
+                    <ul class="nav">
+                        <li>科技园</li><li>软件产业基地</li><li>科技园</li><li>软件产业基地</li><li id="prompt" class="active">请选择</li>
+                    </ul>
+                </div>
+                <div class="hr-88"></div>
+                <!--尾部列表显示-->
+                <ul class="address">
+                    <li class=""><i></i>全部</li>
+                    <li class=""><i></i>科技园</li>
+                    <li class="active"><i></i>软件产业基地</li>
+                </ul>
+                </div> 
+            </div>
+            <div class="tran-inner bgececf1 undis">
+                <header>
+                    <a class="return" href="javascipt:;" onclick="returnTran()">
+                        <img src="../../images/icon/back.png" alt=""><span></span>
+                    </a>
+                    描述
+                </header>
+                <div class="desc-con p24">
+                   <textarea placeholder="10字以上"></textarea>
+                </div>
+            </div>
+            <div class="tran-inner">
+                <header>
+                    <a class="return" href="javascipt:;" onclick="returnTran()">
+                        <img src="../../images/icon/back.png" alt=""><span></span>
+                    </a>
+                    单位
+                </header>
+                <div class="unit-con p24">
+                    <ul>
+                        <li>元/m<sup>2</sup>/天</li>
+                        <li>元/</li>
+                        <li>元/m<sup>2</sup>/月</li>
+                    </ul>
+                </div>   
+            </div>
+        </div>
+        
+    </div>
+    
+</div>
+
+
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/zepto.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/swiper/js/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/page.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/recei_reasult.js"></script>
+
+</body>
+</html>

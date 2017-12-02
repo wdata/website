@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通知管理</title>
+<link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+<link rel="stylesheet" href="../../css/inform/inform_add.css">
+</head>
+<body>
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>通知管理</span> > <span class="blueChange">修改通知</span>
+</header>
+<div class="container-fluid">
+    <div class="row">    </div>
+
+    <form class="form">
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">所属区域: <font color="red">*</font></div>
+            <div class="col-md-6 data-con">
+                <div class="input-group" onclick="addrToggle();">
+                    <input id="" class="form-control" size="8" type="text" readonly>
+                    <span class="input-group-addon"><i class="fa fa-caret-down"></i></span>
+                </div>
+            </div>
+            <div class="col-md-offset-2 col-md-8">
+                <div style="display: none;" class="select-addr-con-add">
+                    <p class="btn-con text-right">
+                        <span onclick="addrToggleAdd();" type="button" class="span btn_ok">确定</span>
+                        <span onclick="addrToggleAdd();" type="button" class="span ">取消</span>
+                    </p>
+                    <div class="select-con">
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">中国中国中国中国</option>
+                            <option value="">中国</option>
+                            <option value="">中国</option>
+                            <option value="">中国</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳深圳深圳深圳</option>
+                            <option value="">深圳</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">通知类型:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <label><input type="radio" name="informType" value="1" checked>普通通知</label>
+                <i style="display: inline-block;width: 20px;"></i>
+                <label><input type="radio" name="informType" value="2">缴费通知</label>
+            </div>
+        </div>
+        <div class="row form-group orgBtnCon">
+            <div class="col-md-2 text-right form-title">接收对象:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <button type="button" class="btn btn-default"  data-toggle="modal" data-target="#org">选择接收对象</button>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">通知标题:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="">
+            </div>
+        </div>
+        <div class="row form-group  xslData hidden">
+            <div class="col-md-2 text-right form-title">导入表格:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <label class="xlf btn btn-default" for="xlf">批量导入</label>
+                <input class="" type="file" name="xlfile" id="xlf"
+                       accept="application/vnd.ms-excel,.xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+                <label for="xlf" class="xlf_name">请选择.xls格式文件</label>
+            </div>
+            <!--<div class="col-md-offset-2 col-md-6">
+                <pre id="htmlout"></pre>
+            </div>-->
+        </div>
+
+        <div class="row form-group text-con">
+            <div class="col-md-2 text-right form-title">通知正文:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <textarea class="form-control" cols="50" rows="10"></textarea>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">附件:</div>
+            <div class="col-md-6">
+                <label class="xlf btn btn-default" for="file">上传附件</label>
+                <input id="file" class="file hidden" type="file" onchange="checkType(this);">
+                <span class="file-text" style="color: #9ea6b4;">支持.doc,.docx,.pdf,.xls,.xlsx,.ppt,.pptx,.zip,.rar类型文件，20M以内</span>
+            </div>
+            <div class="col-md-offset-2 col-md-6 text-left">
+                <label for="file" class="file_name"></label>
+            </div>
+
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">发布者:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" readonly disabled>
+            </div>
+        </div>
+        <div class="row form-group" style="position: relative">
+            <div class="col-md-2 text-right form-title">指定发送时间:</div>
+            <div class="col-md-6 data-con">
+                <div class="input-group" onclick="stateTimeInit()">
+                    <input id="dateStart" class="form-control" size="8" type="text" readonly placeholder="不填写，默认立即发送">
+                    <span class="input-group-addon" style="padding: 6px;"><i class="fa fa-calendar fa-fw"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group" style="position: relative">
+            <div class="col-md-2 text-right form-title">通知有效期至:<font color="red">*</font></div>
+            <div class="col-md-6 data-con">
+                <div class="input-group" onclick="endTimeInit()">
+                    <input id="dateEnd" class="form-control" size="8" type="text" readonly>
+                    <span class="input-group-addon" style="padding: 6px;"><i class="fa fa-calendar fa-fw"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group text-left">
+            <div class="col-md-offset-2 col-md-6">
+                <button class="btn btn_blue" type="button" onclick="testEditor()">确定</button>
+                <button class="btn btn_gray" type="button" onclick="goPage('page/inform/inform_list.html');">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../plugin/kindeditor-4.1.11-zh-CN/kindeditor/kindeditor-all.js"></script>
+<script src="../../plugin/kindeditor/lang/zh-CN.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/inform/inform_edit.js"></script>
+</body>
+</html>

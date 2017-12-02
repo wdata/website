@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>APP升级管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap-cerulean.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/jqPaginator/paging.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/list.css">
+    <link rel="stylesheet" type="text/css" href="../../css/duty_Or_inspection/duty_Or_inspection.css">
+</head>
+<body>
+<div class="search-tab-box">
+    <div  class="list clearfix" id="searchForm">
+        <table class="max100 fl ">
+            <tbody>
+            <tr>
+                <td>
+                    <label class="label4">APP升级方式：</label>
+                    <select name="upgrade_type" class="status_select form-control">
+                        <option value="">全部</option>
+                        <option value="choose">确认升级</option>
+                        <option value="mandatory">强制升级</option>
+                    </select>
+                </td>
+                <td class="date_con">
+                    <label class="label4">上传时间：</label>
+						<span class="form_datetime_input">
+							<input name="startTime" id="datetimeStart" class="form-control" size="16" type="text" readonly>
+						</span>
+                    <span>-</span>
+						<span class="form_datetime_input">
+							<input name="endTime" id="datetimeEnd" class="form-control" size="16" type="text" readonly>
+						</span>
+                </td>
+                <td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="search()"></td>
+            </tr>
+            </tbody>
+        </table>
+        <div class="oper undis fr">
+            <button class="btn btn-primary" id="add" href="html/system/app_upgrade/upgrade_add.html" onclick="openTab(this)" data-tit="添加新版本">添加新版本</button>
+        </div>
+    </div>
+</div>
+<div class="hr-10"></div>
+<div class="main-content">
+    <div class="con-table">
+        <table class="table table-hover" id="main_table">
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>包名称</th>
+                <th>版本号</th>
+                <th>文件大小</th>
+                <th>升级模式</th>
+                <th>下载地址</th>
+                <th>上传时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="listTable">
+            </tbody>
+        </table>
+        <div class="pageing mt20 undis">
+            <ul class="pagin" id="pagination"></ul><span class="total">(共<span>0</span>页)</span>
+        </div>
+    </div>
+</div>
+<div class="opering-mask">
+    <div class="main">
+        <div class="tit">提示信息<span>&times;</span></div>
+        <div class="con"></div>
+    </div>
+</div>
+<script type="text/javascript" src="../../plugin/jQuery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/system/app_upgrade.js"></script>
+</body>
+</html>

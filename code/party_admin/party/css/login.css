@@ -1,0 +1,104 @@
+body{
+    background: url(../../theme/images/sign_in.jpg);
+}
+.L_sign_in{
+    width: 500px;
+    height: 530px;
+    background-color: #fff;
+    margin: 10% auto;
+    position: relative;
+}
+.slogan{
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    line-height: 30px;
+    text-indent: 24px;
+    color: #999;
+    font-weight: bold;
+}
+.L_sign_in img{
+    position: absolute;
+    left: 40%;
+    top: 20px;
+}
+.slogan1{
+    font-size: 16px;
+    color: #808080;
+    text-align: center;
+    position: relative;
+    top: 70px;
+}
+.slogan2{
+    font-size: 16px;
+    color: #17afa2;
+    text-align: center;
+    position: relative;
+    top: 60px;
+}
+.L_verification_number{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 20px;
+    left: 300px;
+    border: 1px solid #C7C7C7;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.L_yong_name{
+    margin-top: 50px;
+}
+.L_sign_in div input{
+    border:none;
+    outline:none;
+    background-color: #17afa2;
+    color: #fff;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-left: 100px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.name_user{
+    text-align:50%;
+}
+/*.L_verification_number{
+	width: 100px;
+	height: 46px;
+	position: absolute;
+	top: 40px;
+	left: 300px;
+	border: 1px solid #000;
+	font-size: 18px;
+	line-height: 46px;
+	text-align: center;
+	background-color: red;
+}*/
+.L_sign_in button{
+    width: 300px;
+    height: 50px;
+    background-color: #17afa2;
+    color: #fff;
+    border: none;
+    outline:none;
+    font-size: 18px;
+    color: #fff;
+    margin-left: 100px;
+    margin-top: 50px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>值班管理列表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap-cerulean.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/jqPaginator/paging.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<link rel="stylesheet" type="text/css" href="../../css/duty_Or_inspection/duty_Or_inspection.css">
+	<style>
+		.con-table{min-width: 1664px;}
+	</style>
+</head>
+<body>
+	<div class="search-tab-box">
+		<div class="list clearfix" id="searchForm">
+			<table class="max100 fl ">
+				<tbody>
+				<tr>
+					<td><input type="text" name="userName" class="form-control"  placeholder="请输入名字" onkeyup="searchKey(event);"></td>
+					<td>
+						<label class="label4">所属公司：</label>
+						<select id="company" name="companyId"  class="status_select form-control">
+							<option value="">全部</option>
+						</select>
+					</td>
+					<td>
+						<label class="label4">时间：</label>
+                        <div class="form_datetime_input">
+                            <input id="datetimeStart" class="form-control" readonly size="16" type="text" value="">
+                        </div>
+					</td>
+					<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="search()"></td>
+				</tr>
+				</tbody>
+			</table>
+			<div class="oper fr hide">
+				<!--<a class="btn btn-primary" href="duty/duty_add.html">添加值班人员</a>-->
+				<button class="btn btn-primary" id="add" href="html/duty/duty/duty_add.html" onclick="openTab(this)" data-tit="添加值班人员">添加值班人员</button>
+                <button class="btn btn-red" onclick="dutyDelete()" data-tit="批量删除">批量删除</button>
+			</div>
+		</div>
+	</div>
+	<div class="main-content">
+		<!--<div class="con-oper">-->
+			<!--<form >-->
+				<!--<span class="delete">删除</span>-->
+				<!--<span class="import">导入</span>-->
+				<!--<span class="export">导出</span>-->
+				<!--<span class="open"  onclick="batch(true)" >同意</span>-->
+				<!--<span class="closed"  onclick="batch(false)">不同意</span>-->
+			<!--</form>-->
+		<!--</div>-->
+		<div class="con-table">
+			<table class="table table-hover" id="main_table">
+				<thead>
+				<tr>
+					<th><input type="checkbox" name="" onclick="checkAll('main_table',this)"><i></i></th>
+					<th>序号</th>
+					<th>姓名</th>
+					<th class="theadStatus">操作</th>
+				</tr>
+				</thead>
+				<tbody class="listTable">
+				</tbody>
+			</table>
+			<div class="pageing mt20 undis">
+				<ul class="pagin" id="pagination"></ul><span class="total">(共<span>0</span>页)</span>
+			</div>
+		</div>
+	</div>
+	<div class="opering-mask">
+		<div class="main">
+			<div class="tit">提示信息<span>&times;</span></div>
+			<div class="con"></div>
+		</div>
+	</div>
+		<!-- 值班管理列表结束 -->
+<script type="text/javascript" src="../../plugin/jQuery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/duty/duty.js"></script>
+</body>
+</html>

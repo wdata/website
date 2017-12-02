@@ -1,0 +1,88 @@
+/*请假列表*/
+.coazhuo{
+    display: flex;
+    justify-content: space-around;
+}
+.coazhuo a{
+    margin: 0 10px;
+}
+.hr-10{
+    height: 10px;
+}
+
+.opering-mask{position: fixed;height: 100%;width: 100%;z-index: 9999;top: 0;background-color: rgba(0,0,0,0.3);display: none}
+.opering-mask .main{height: 100px;width: 300px;position: absolute;top: 20%;left: 0;right: 0;margin:auto;background-color: #fff;z-index: 201;border-radius: 4px;}
+.opering-mask .main .tit{height: 40px;line-height: 40px;border-bottom: 1px solid #ddd;text-align: left;padding-left: 20px;position: relative;}
+.opering-mask .main .tit span{position: absolute;width: 30px;right: 0;text-align: center;cursor: pointer;}
+.opering-mask .main .tit span:hover{background: #ecc;font-size: 22px;}
+.opering-mask .main .con{padding: 10px;line-height: 30px;}
+
+/*值班列表-状态颜色*/
+.duty-red{
+    color: #fc0505;
+}
+.duty-gray{
+    color:#8a9199;
+}
+.duty-green{
+    color:#2bc5fe;
+}
+/*值班列表-当天状态颜色*/
+.the-green{
+    background-color:#2bc5fe;
+    color:#fff !important;
+}
+.the-green b{
+    color:#fff;
+}
+/*值班列表-星期状态颜色*/
+.colorWeek{
+    display: block;
+    color: #999;
+}
+/*日常巡检详情图片*/
+#detailsImg{
+    width:406px;
+    /*height:406px;*/
+    border:0px dashed #666;
+    box-sizing:border-box;
+}
+#detailsImg header{
+    margin-bottom:10px;
+}
+#detailsImg .img{
+    display:flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+#detailsImg .img img{
+    width:172px;
+    height:150px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:20px;
+}
+#detailsImg .img img:nth-child(2n){
+    margin-left:20px;
+}
+
+/*遮罩层*/
+.mask-layer{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.25);
+}
+
+/*app功能管理列表 小图标*/
+.imgLogo{
+    max-width:65px;
+    max-height:65px;
+    display:block;
+    margin:0 auto;
+}
+
+.listTable td a:hover{cursor: pointer;text-decoration: none;}
+.calendar input{}

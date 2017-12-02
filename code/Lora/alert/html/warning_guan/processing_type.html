@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>报警列表</title>
+	<meta content="webkit" name="renderer" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap-cerulean.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/jqPaginator/paging.css">
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+</head>
+<body>
+
+	<!--搜索内容-->
+	<div class="search-tab-box">
+		<div class="list clearfix search_list">
+			<table class="max100 fl ">
+				<tbody>
+				<tr>
+					<td><input type="text" id="searchKey" class="form-control gap" placeholder = "请输入关键词" onkeyup="searchKey(event);"></td>
+					<td><label class="label4">设备组：</label></td>
+					<td>
+						<select class="status_select form-control" id="groupId">
+						</select>
+					</td>
+					<td><label class="label4">报警类型：</label></td>
+					<td>
+						<select class="status_select form-control" id="warningType">
+						</select>
+					</td>
+					<td><label class="label4">报警描述：</label></td>
+					<td>
+						<select class="status_select form-control" id="solutionType">
+						</select>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+			<table class="max100 fl">
+				<tbody>
+					<tr>
+						<td><label class="label4">报警时间：</label></td>
+						<td>
+							<div class="date form_datetime start-time form_datetime_input">
+								<input  id="startTime" class="form-control" size="16" type="text" value="" name="begin" readonly>
+								<!--<span class="add-on"><i class="icon-th"></i></span>-->
+								<!--<i class="fa fa-tasks"></i>-->
+							</div>
+						</td>
+						<td class="time-line">-</td>
+						<td>
+							<div class="date form_datetime end-time form_datetime_input">
+								<input id="endTime" class="form-control" size="16" type="text" name="end" value="" readonly>
+								<!--<span class="add-on"><i class="icon-th"></i></span>-->
+								<!--<i class="fa fa-tasks"></i>-->
+							</div>
+						</td>
+						<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="search(1)"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!--列表内容-->
+	<div class="main-content">
+		<div class="con-oper">
+			<!-- <span class="delete">删除</span> -->
+			<a class="export" onclick="export_excel(this,1)">导出Excel</a>
+		</div>
+		<div class="con-table">
+			<table class="table table-hover" id="waring_list">
+				<thead>
+					<tr>
+					<th><input type="checkbox" name="" onclick="checkAll('waring_list',this)"><i></i></th>
+					<th>序号</th>
+					<th>报警描述</th>
+					<th>报警设备名称</th>
+					<th>报警设备编号</th>
+					<th>报警位置</th>
+					<th>首次报警时间</th>
+					<th>最后报警时间</th>
+					<th>处理状态</th>
+					<th>负责人</th>
+					<th>所属企业</th>
+					<th>报警类型</th>
+					<th>确认报警类型</th>
+					
+				</tr>
+				</thead>
+				<tbody>
+				 </tbody>
+				<!--<tfoot>-->
+				<!--<tr>-->
+					<!--<td colspan="10" style="text-align: left;">-->
+						<!--<ul class="pageing" id="pagination"></ul><span class="total"></span>-->
+					<!--</td>-->
+				<!--</tr>-->
+				<!--</tfoot>-->
+			</table>
+			<div class="pageing mt20 undis pages">
+				<ul class="pagin" id="pagination"></ul><span class="total hide">(共<span class="num">0</span>页)</span>
+			</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../../plugin/jQuery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/warning_guan/common.js"></script>
+<script type="text/javascript" src="../../js/warning_guan/processing_type.js"></script>
+</body>
+</html>

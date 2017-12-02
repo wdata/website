@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>平台设置</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<style>
+		/*平台设置*/
+		body{background-color: #fff;}
+		.form-group .logo{display:inline-block;padding:0 10px;cursor: pointer;margin:0;height: 34px;line-height: 34px;text-align: center;background:#2bc5fe;color:#fff!important;border-radius: 3px}
+		.form-group .file-img{display: none;}
+		.form-group .terrace-logo{height: 80px;width: 80px;border-radius: 3px;background: #eee;padding: 0}
+		.form-group .hint{padding-left:10px;color: #a2a9b9;height: 34px;line-height: 34px;}
+		.form-group .login-bg{border-radius: 3px;background: #eee;padding: 0;width:370px;height:208px;}
+		.main-content{padding: 0;}
+		.add-content{padding: 0;min-height: auto;}
+		.div_top{margin: 0;padding-top: 15px;}
+		.add-content label {text-align: left;}
+		.row{margin: 0 0 15px;}
+		.add-content .btn-wrap .btn{margin: 0 20px;}
+
+
+	</style>
+</head>
+<body>
+<div class="main-content">
+	<div class="add-content">
+		<form action="" class="form" id="main_form">
+			<div class="div_top">
+				<div class="div_item">
+					<div class="form-group row">
+						<label class="col-xs-10 control-label">消防平台主标题：<span class="cred">*</span></label>
+						<div class="col-xs-7"><input type="text" maxlength="16" class="form-control checkUserName" name="gatewayName" id="main-title" required></div>
+						<div class="col-xs-4 hint">限0/16个字</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-xs-10 control-label">消防平台副标题：<span class="cred">*</span></label>
+						<div class="col-xs-7"><input type="text" maxlength="18" class="form-control checkUserName" name="gatewayEui" id="subhead"></div>
+						<div class="col-xs-4 hint">限0/18个字</div>
+					</div>
+					<div class="form-group row">
+						<label class="col-xs-10 control-label">平台logo：<span class="cred">*</span></label>
+						<div class="col-xs-10">
+							<label class="logo" for="file">点击上传平台logo</label><span class="hint">限1M以内,建议上传1:1比例图片</span>
+							<input class="file-img" type="file" onchange="imgSizeCheck(this,'#project-logo',1000,'附件不能大于1M！');noChange('logo',this);" name="file" id="file">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-3">
+							<img class="terrace-logo" id="project-logo" src="">
+						</div>
+					</div>
+				</div>
+				<div class="div_item">
+					<div class="form-group row">
+						<label class="col-xs-10 control-label">登录页面背景图：<span class="cred">*</span></label>
+						<div class="col-xs-10">
+							<label class="logo" for="sideUrl">点击上传登录页背景图</label><span class="hint">限5M以内,建议上传1:1比例图片</span>
+							<input class="file-img" type="file" onchange="imgSizeCheck(this,'#project-bg',5000,'附件不能大于5M');noChange('login',this);" name="sideUrl" id="sideUrl">
+						</div>
+					</div>
+					<div class="form-group row">
+						<div class="col-xs-12">
+							<img class="login-bg" id="project-bg" src="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group btn-wrap row">
+				<div class="col-xs-offset-3 col-xs-5">
+					<input type="button" value="确定" class="btn btn-primary" onclick="save()">
+					<input class="btn btn-red" onclick="parent.layer.closeAll();" value="取消">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>	
+<div class="opering-mask">
+<div class="main">
+	<div class="tit">提示信息<span onclick="closeMask()">&times;</span></div>
+	<div class="con">正在处理中，处理结束后该弹窗消失！</div>
+</div>
+</div>
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/messages_cn.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/distpicker.data.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/distpicker.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<!--<script type="text/javascript" src="../../js/device/deviceCommon.js"></script>-->
+<script type="text/javascript" src="../../js/system/systemSetting.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加台账模板</title>
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/jquery-ztree/css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/page.css">
+    <link rel="stylesheet" type="text/css" href="../../css/label/label.css">
+</head>
+<body>
+<div class="page">
+    <div class="main-content">
+        <div class="add-content" style="margin:0 15px;">
+            <form  class="form-horizontal" id="newForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">模板名称：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input type="text" id="name" class="form-control"  maxlength="32" name="name" required>
+                        <span>（32个字以内）</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">模板路径：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input type="text" id="path"  class="form-control path"  maxlength="32" name="path" required>
+                        <!--<span>必须是英文字母、数字和下划线</span>-->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label sign-label">模板描述：</label>
+                    <div class="col-md-3">
+                        <textarea class="form-control"  id="remark" name="remark" maxlength="128"></textarea>
+                        <span>（128个字以内）</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label mt20">模板封面：<span class="cred">*</span></label>
+                    <div class="col-md-4 up-file">
+                        <div class="img-wrap"><img id = "iconImg" src="" alt="" class="abs"></div>
+                        <div class="file-wrap">
+                            <input type="file" id = "iconFile" name="iconFile"  onchange = "imgSizeCheck(this)" required >
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label mt20" >模板上传：<span class="cred">*</span></label>
+                    <div class="col-md-4 up-file">
+                        <div class="img-wrap"><img src="" alt="" class="abs"></div>
+                        <div class="file-wrap" >
+                            <input type="file" id = "tempFile" name="tempFile" accept="aplication/zip" onchange = "zipSizeCheck(this)"  required>
+                        </div>
+                        <div>文件名：<span class="tempFileName"></span></div>
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label class="col-md-2 control-label">所属公司：</label>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<select id="firmId" class="form-control"  name="firmId">-->
+                            <!--&lt;!&ndash;<option value="100">小道科技</option>&ndash;&gt;-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label">所属栏目：</label>
+                    <div class="col-md-3">
+                        <select id="type" class="form-control"  name="type">
+                            <option value="1">党组带头</option>
+                            <option value="2">领导表率</option>
+                            <option value="3">支部堡垒</option>
+                            <option value="4">党员先锋</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">&nbsp;</label>
+                    <div class="col-md-3">
+                        <input type="button" value="确定" class="btn btn-primary" onclick="determine()">
+                        <input type="button" value="取消" class="btn btn-close-dialog-tab" style="color:#fff">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="opering-mask">
+        <div class="main">
+            <div class="tit">提示信息</div>
+            <div class="con"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../theme/plugin/jQuery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jqPaginator/jqPaginator.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-validate/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-validate/js/messages_cn.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-form/jquery.form.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/common.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/VaExtend.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/contabs.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/label/account/account_add.js"></script>
+</body>
+</html>

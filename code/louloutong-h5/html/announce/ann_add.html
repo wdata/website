@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布公告</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <link rel="stylesheet" href="../../theme/css/common.css">
+    <link rel="stylesheet" href="../../theme/css/normal.css">
+    <link rel="stylesheet" href="../../theme/css/page.css">
+</head>
+<body class="p-body">
+    <div class="p-layout tran500">
+       <form id="newForm" class="publish-box fl">
+            <div class="return-column">
+                <div class="return-column-heart">
+                    <a class="header-return" href="javascript:;" onclick="history.go(-1);"><i class="header-return-icon"></i><span>返回</span></a>
+                    <div class="header-title">发布公告</div>
+                    <a onclick="release()" class="header-operating" href="javascript:">完成</a>
+                </div>
+            </div>
+            <div class="hr-88"></div>
+            <div class="publish-add-box">
+                <div class="tt">
+                    <input id="title" type="text" maxlength="28" minlength="4" placeHolder="添加标题（必填）">
+                    <div class="row"  onclick="receiveShow()">
+                        <div class="fl overhide" id="recei_comp">全部企业</div>
+                        <div class="icon-wrap fr" >
+                            选择接收人
+                            <i class='icon icon-in'></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="main">
+                    <input type="hidden" id="target">
+                    <div class="article-content" id="editor_box" contenteditable="true" placeholder="添加正文"></div>
+                </div>
+            </div>
+            <div class="add-bot">
+                <!-- <div class="aite inlist" onclick="receiveShow()">
+                    <img src="../../images/icon/aite.png" alt="">
+                    <div>接收人</div>
+                </div> -->
+                <div class="pic inlist imgUploadWX">
+                    <img src="../../images/icon/photo.png" alt="">
+                    <div>图片</div>
+                    <!--<input class="input-file" id="imageUpload" type="file" onchange="uploadPicture(this)" accept="image/*">-->
+                </div>
+            </div>
+        </form>
+        <div class="receive-box fl">
+            <header>
+                <a class="return" href="javascript:" onclick="rePublish()">
+                    <img src="../../images/icon/back.png" alt=""><span>返回</span>
+                </a>
+                选择接收人
+            </header>
+            <div class="search">
+                <div class="search-heart">
+                    <input type="text" id="search" onkeyup="dataFilter(this)"  placeholder="请输入接收人"><i onclick="processing($('#search').val())" class="icon"></i>
+                </div>
+            </div>
+           <div class="list-con">
+                <div class="list list-top">
+                    <div class="txt fl">全部</div> 
+                    <div class="check-box fr">
+                        <input type="checkbox" onclick="checkAll('.list-con',this)" />
+                        <label for=""></label>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--<div class="list">-->
+                    <!--<div class="tx fl"><img src="../../images/icon/photo.png" alt="" class="full"></div>-->
+                    <!--<div class="tit fl">小道公司</div>-->
+                    <!--<div class="check-box fr">-->
+                        <!--<input type="checkbox" />-->
+                        <!--<label for=""></label>-->
+                    <!--</div>-->
+                    <!--<div class="clear"></div>-->
+                <!--</div>-->
+                <!--<div class="list">-->
+                    <!--<div class="tx fl"><img src="../../images/icon/photo.png" alt="" class="full"></div>-->
+                    <!--<div class="tit fl">小道公司</div>-->
+                    <!--<div class="check-box fr">-->
+                        <!--<input type="checkbox" />-->
+                        <!--<label for=""></label>-->
+                    <!--</div>-->
+                    <!--<div class="clear"></div>-->
+                <!--</div>-->
+                <!--<div class="list">-->
+                    <!--<div class="tx fl"><img src="../../images/icon/photo.png" alt="" class="full"></div>-->
+                    <!--<div class="tit fl">小道公司</div>-->
+                    <!--<div class="check-box fr">-->
+                        <!--<input type="checkbox" />-->
+                        <!--<label for=""></label>-->
+                    <!--</div>-->
+                    <!--<div class="clear"></div>-->
+                <!--</div>-->
+                <!--<div class="list">-->
+                    <!--<div class="tx fl"><img src="../../images/icon/photo.png" alt="" class="full"></div>-->
+                    <!--<div class="tit fl">小道公司</div>-->
+                    <!--<div class="check-box fr">-->
+                        <!--<input type="checkbox" />-->
+                        <!--<label for=""></label>-->
+                    <!--</div>-->
+                    <!--<div class="clear"></div>-->
+                <!--</div>-->
+            </div> 
+        </div> 
+    </div>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/editor/editor.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/wx/jweixin-1.2.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/page.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/wxImage.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/ann_add.js"></script>
+</body>
+</html>

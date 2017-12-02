@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../plugin/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/jqPaginator/paging.css">
+    <link rel="stylesheet" href="../../plugin/swiper/swiper-3.3.1.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/list.css">
+    <link rel="stylesheet" type="text/css" href="../../css/index/index.css">
+    <style>
+        body{background:#fff;padding: 10px;}
+        #node_list tbody td a{cursor: pointer;}
+    </style>
+</head>
+<body>
+<div class="map_page">
+    <div class="map">
+        <div id="allmap"></div>
+        <button class="node_list">节点列表</button>
+        <table id="node_list" class="table tab hide">
+            <thead>
+            <tr>
+                <th>节点名称</th>
+                <th>所属公司</th>
+                <th>节点状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+
+            <tr>
+                <td colspan="4">
+                    <div class="pageing mt20 undis pages">
+                        <ul style="margin-left:0;" class="pagin" id="pagination"></ul><span class="total">(共<span class="num">0</span>页)</span>
+                    </div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=BoGL1F4fqCjRp8aGG4STnveLOrY0Zhsv&s=1"></script>
+<script type="text/javascript" src="../../plugin/map/TextIconOverlay_min.js"></script>
+<script type="text/javascript" src="../../plugin/map/MarkerClusterer_min.js"></script>
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../plugin/swiper/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.goeasy.io/goeasy.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/warning_guan/common.js"></script>
+<script type="text/javascript" src="../../js/home_page/map.js"></script>
+
+</body>
+</html>

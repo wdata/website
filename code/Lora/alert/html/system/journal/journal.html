@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>日志管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+    <!-- <link rel="stylesheet" type="text/css" href="../../../css/daily_inspect/daily_inspect.css"> -->
+    <link rel="stylesheet" type="text/css" href="../../../css/reset.css">
+    <script type="text/javascript" src="../../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../../plugin/jqPaginator/paging.css">
+    <link rel="stylesheet" href="../../../plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../css/list.css">
+
+    <style>
+		a{text-decoration:none!important;}
+    </style>
+</head>
+<body>
+<div class="search-tab-box">
+	<div class="list clearfix">
+        <table class="max100 fl mb10">
+        	<tbody>
+        		<tr>
+        			<td><input type="text" maxlength="25" class="form-control L_company_name22" placeholder="用户账号" onkeyup="searchKey(event);"></td>
+        			<td><input type="text" maxlength="25" class="form-control L_company_name33" placeholder="操作方法" onkeyup="searchKey(event);"></td>
+        			<td><input type="text" maxlength="25" class="form-control L_company_name44" placeholder="所在菜单" onkeyup="searchKey(event);"></td>
+					<td class="date_con">
+						<label class="label4">创建时间：</label>
+						<span class="form_datetime_input">
+							<input id="datetimeStart" class="form-control" size="16" type="text" value="" name="startTime" readonly>
+						</span>
+						<span>-</span>
+						<span class="form_datetime_input">
+							<input id="datetimeEnd" class="form-control" size="16" type="text" value="" name="endTime" readonly>
+						</span>
+					</td>
+					<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="searchList()"></td>
+        		</tr>
+        	</tbody>
+        </table>
+        <!--<table class="max100 fl mb10">
+        	<tbody>
+        		<tr>
+        			<td><label>创建时间：</label></td>
+        			<td>
+        				<div class="date form_datetime start-time form_datetime_input">
+					    	<input id="datetimeStart" class="form-control" size="16" type="text" value="" name="startTime" readonly>
+                   			<span class="add-on"><i class="icon-th"></i></span>
+                    		<i class="fa fa-tasks"></i>
+						</div>
+        			</td>
+        			<td class="time-line">-</td>
+        			<td>
+        				<div class="date form_datetime end-time form_datetime_input">
+					    	<input id="datetimeEnd" class="form-control" size="16" type="text" value="" name="endTime" readonly>
+                    		<span class="add-on"><i class="icon-th"></i></span>
+                    		<i class="fa fa-tasks"></i>
+						</div>
+        			</td>
+        			<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="searchList()"></td>
+        		</tr>
+        	</tbody>
+        </table>-->
+	</div>
+</div>
+<div class="main-content">
+	<div class="con-table mt20">
+		<table class="table table-hover " id="log_table">
+			<thead>
+				<tr>
+					<th>序号</th>
+					<th>用户账号</th>
+					<th>用户名</th>
+					<th>用户IP</th>
+					<th>创建时间</th>
+					<th>所在菜单</th>
+					<th>操作方法</th>
+				</tr>	
+			</thead>
+			<tbody class="list">
+					
+			</tbody>
+		</table>
+		<div class="pageing mt20 undis">
+            <ul class="pagin" id="pagination"></ul><span class="total">(共<span>0</span>页)</span>
+        </div>
+	</div>
+</div>
+<script type="text/javascript" src = "../../../plugin/jqPaginator/jqPaginator.js"></script>
+<!-- <script type="text/javascript" src ="../../../js/plugin/bootstrap/bootstrap.min.js"></script> -->
+<script type="text/javascript" src = "../../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src = "../../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src = "../../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src = "../../../js/common.js"></script>
+<script type="text/javascript" src = "../../../js/device/deviceCommon.js"></script>
+<script type="text/javascript" src = "../../../js/journal/journal.js"></script>
+</body>
+</html>

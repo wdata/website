@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+    <link rel="stylesheet" href="css/address.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <header class="header-title">
+        <i></i><b>您的位置:</b><span class="blueChange">首页</span>
+    </header>
+    <div class="container-fluid">
+        <div>
+            <form class="form-inline">
+                <div class="form-group">
+                    <span class="form-name blueChange">系统统计:</span>
+                    <div class="input-group" onclick="address.addrToggle(this);">
+                        <input id="addR" class="form-control" size="8" type="text" readonly placeholder="选择园区">
+                        <span class="input-group-addon"><i class="fa fa-caret-down"></i></span>
+                    </div>
+                </div>
+                <div id="address" class="address hide">
+                    <header class="header">
+                        <div class="head">
+                            <div class="all active">全部</div>
+                            <div class="details"></div>
+                        </div>
+                        <div class="operating">
+                            <span class="addYes" id="addYes" onclick="address.yes()">确定</span>
+                            <span class="addCancel" id="addCancel" onclick="address.addrToggleAdd()">取消</span>
+                        </div>
+                    </header>
+                    <ul id="add-list" class="add-list"></ul>
+                </div>
+
+                <div class="form-group"><button type="button" class="btn btn-primary" id="search">搜索</button></div>
+            </form>
+        </div>
+        <div class="clearfix">
+            <div class="main_con">
+                <div class="repairs_con clearfix text-center">
+                    <div class="orange  pull-left">
+                        <i class="orange_bg"></i>
+                        <span class="repairs_num">5</span>
+                        <p class="repairs_text">待受理</p>
+                        <a type="button" class="btn btn-orange">派单</a>
+                    </div>
+
+                    <div class="bezier pull-left"></div>
+
+                    <div class="blue pull-left">
+                        <i class="blue_bg"></i>
+                        <span class="repairs_num">5</span>
+                        <p class="repairs_text">待受理</p>
+                        <a type="button" class="btn btn-blue">派单</a>
+                    </div>
+
+                    <div class="bezier pull-left"></div>
+
+                    <div class="green pull-left">
+                        <i class="green_bg"></i>
+                        <span class="repairs_num">5</span>
+                        <p class="repairs_text">待受理</p>
+                        <a type="button" class="btn btn-green">派单</a>
+                    </div>
+                </div>
+
+                <div class="message_con clearfix">
+                    <div class="lease_bg pull-left">
+                        <span class="ajax_btn pull-right">刷新</span>
+                        <p class="message_num">25</p>
+                        <p class="message_text">正在出租信息</p>
+                    </div>
+                    <div class="reservation_bg pull-left">
+                        <span class="ajax_btn pull-right">分配接待</span>
+                        <p class="message_num">25</p>
+                        <p class="message_text">最新预约看办公室</p>
+                    </div>
+                    <div class="unPal_bg pull-right">
+                        <span class="ajax_btn pull-right">催阅</span>
+                        <p class="message_num">25</p>
+                        <p class="message_text">未读缴费通知</p>
+                    </div>
+                </div>
+
+                <div class="diagram_1">
+                    <div class="diagram_tabs clearfix">
+                        <div class="tabs_title diagram_office pull-left blueChange">预约看办公室情况</div>
+                        <div class="tabs_title diagram_divide pull-right">平台分成情况</div>
+                    </div>
+                    <div class="diagram_tabs_con">
+                        <div class="tabs_item office_diagram active" style="width: 1030px;height:435px;">
+
+                        </div>
+                        <div class="tabs_item divide_diagram" style="width: 1030px;height:435px;">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="minor_con">
+                <div class="msg">
+                    <div class="msg_tabs clearfix">
+                        <div class="tabs_title blueChange">通知</div>
+                        <div class="tabs_title">公告</div>
+                        <div class="tabs_title">动态</div>
+                        <div class="tabs_title">活动</div>
+                    </div>
+                    <div class="msg_tabs_con clearfix">
+                        <div class="tabs_item active">
+                            <ul>
+                                <li class="li">
+                                    <p class="li_title">台风预警通知</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                                <li class="li">
+                                    <p class="li_title">台风预警通知</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                                <li class="li">
+                                    <p class="li_title">台风预警通知</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                            </ul>
+                            <div class="a_con">
+                                <a class="btn btn-link" href="">更多 +</a>
+                            </div>
+                        </div>
+
+                        <div class="tabs_item">
+                            <ul>
+                                <li class="li">
+                                    <p class="li_title">台风预警公告</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                                <li class="li">
+                                    <p class="li_title">台风预警公告</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                                <li class="li">
+                                    <p class="li_title">台风预警公告</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                            </ul>
+                            <div class="a_con">
+                                <a class="btn btn-link" href="">更多 +</a>
+                            </div>
+                        </div>
+                        <div class="tabs_item">
+                            <ul>
+                                <li class="li">
+                                    <p class="li_title">台风预警动态</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                                <li class="li">
+                                    <p class="li_title">台风预警动态</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                                <li class="li">
+                                    <p class="li_title">台风预警动态</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                            </ul>
+                            <div class="a_con">
+                                <a class="btn btn-link" href="">更多 +</a>
+                            </div>
+                        </div>
+                        <div class="tabs_item">
+                            <ul>
+                                <li class="li">
+                                    <p class="li_title">台风预警活动</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                                <li class="li">
+                                    <p class="li_title">台风预警活动</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                                <li class="li">
+                                    <p class="li_title">台风预警活动</p><p class="li_type">企业动态</p><span class="li_time">08-02</span>
+                                </li>
+                            </ul>
+                            <div class="a_con">
+                                <a class="btn btn-link" href="">更多 +</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rent_situation">
+                    <div class="rent_title text-center blueChange">办公室出租情况</div>
+                    <div class="rent" style="width: 558px;height:435px;"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="baidu_map">
+            <div class="map_title"><div class="blueChange">园区分布图</div></div>
+            <div id="baiduMap" style="width: 100%;height: 696px;">
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+    <script src="plugin/jquery/jquery-3.1.1.min.js"></script>
+    <script src="plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+    <!--<script src="plugin/My97DatePicker/WdatePicker.js"></script>-->
+    <!--<script src="plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+    <script src="plugin/echarts/echarts.min.js"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=qUfrUF9VG691T5eEBEr7jCDgAQKciAbr&s=1"></script>
+    <script src="js/common.js"></script>
+    <script src="js/address.js"></script>
+    <script src="js/home.js"></script>
+</body>

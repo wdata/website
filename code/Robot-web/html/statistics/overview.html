@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>经营概况</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/zTree/css/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../css/page.css">
+    <link rel="stylesheet" type="text/css" href="../../css/overview.css">
+</head>
+<body>
+    <div class="overview">
+        <header class="header-title">
+           <i class="fa fa-hand-o-right"></i><b>您的位置:</b> <span>数据统计</span> &gt; <span class="blueChange">经营概况</span>
+        </header>
+        <section class="main">
+            <h4 class="title">经营概况</h4>
+            <div data-onOff="agentsPop" class="agent open">
+                <input id = "selectAge" type="text"><span><i class="icon"></i></span>
+            </div>
+            <div class="realTime">
+                <ul>
+                    <li>
+                        <p class="selledDeviceCount">888</p>
+                        <p>已售设备数</p>
+                    </li>
+                    <li>
+                        <p class="newLinkUserCount">888</p>
+                        <p>新增关联用户数</p>
+                    </li>
+                    <li>
+                        <p class="onlineDeviceCount">888</p>
+                        <p>在线设备数</p>
+                    </li>
+                    <li>
+                        <p class="onlineLinkUserCount">888</p>
+                        <p>在线关联用户数</p>
+                    </li>
+                    <li>
+                        <p class="operatingProfit">888</p>
+                        <p>营业利润</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dataOverview">
+                <header class="nav-one">
+                    <h4>数据总览</h4>
+                    <ul>
+                        <li value="1" class="active overview">昨日</li>
+                        <li value="2" class="overview">本周</li>
+                        <li value="3" class="overview">本月</li>
+                        <li value="4" class="overview">本季度</li>
+                        <li value="5" class="overview">今年</li>
+                    </ul>
+                </header>
+                <section>
+                    <ul class="col-lg-12">
+                        <li>
+                            <header class="title">设备销售数</header>
+                            <div class="detailed sales">
+                                <div class="grandTotal">
+                                    <p class="title">累计</p>
+                                    <p class="quantity totalCount">**</p>
+                                </div>
+                                <div class="thisCycle">
+                                    <p class="title">本周期数量</p>
+                                    <p class="quantity newCount">**</p>
+                                </div>
+                                <div class="compared">
+                                    <p class="title">与上周对比</p>
+                                    <p class="quantity changeRatio"><span>**</span><i class="icon"></i></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="title">关联用户数</header>
+                            <div class="detailed associated">
+                                <div class="grandTotal">
+                                    <p class="title">累计</p>
+                                    <p class="quantity totalCount">**</p>
+                                </div>
+                                <div class="thisCycle">
+                                    <p class="title">本周期数量</p>
+                                    <p class="quantity newCount">**</p>
+                                </div>
+                                <div class="compared">
+                                    <p class="title">与上周对比</p>
+                                    <p class="quantity changeRatio"><span>**</span><i class="icon"></i></p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="title">营业利润</header>
+                            <div class="detailed">
+                                <div class="grandTotal profit">
+                                    <p class="title">累计</p>
+                                    <p class="quantity totalCount">**</p>
+                                </div>
+                                <div class="thisCycle">
+                                    <p class="title">本周期数量</p>
+                                    <p class="quantity newCount">**</p>
+                                </div>
+                                <div class="compared">
+                                    <p class="title">与上周对比</p>
+                                    <p class="quantity changeRatio"><span>**</span><i class="icon"></i></p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="chart">
+                <header class="nav-one">
+                    <h4>主要数据分布图</h4>
+                    <div class="time">
+                        <select class="form-control timeSelect" name="" id="">
+                            <option value="1">最近1天</option>
+                            <option value="7">最近7天</option>
+                            <option value="30">最近30天</option>
+                            <option value="customize">自定义时间</option>
+                        </select>
+                        <div class="customTime">
+                            <input id="startTime" disabled class="form-control chartTime" type="text"><span>～</span><input id="endTime" disabled class="form-control chartTime" type="text">
+                        </div>
+                    </div>
+                </header>
+                <section>
+                    <ul class="chart-nav ">
+                        <li class="active chartClick">已售设备数量分布</li>
+                        <li class="chartClick">活跃设备数量分布</li>
+                        <li class="chartClick">关联用户数量分布</li>
+                        <li class="chartClick">活跃关联用户数量分布</li>
+                        <li class="chartClick">关联用户位置分布</li>
+                    </ul>
+                    <div id="graph"></div>
+                </section>
+            </div>
+        </section>
+    </div>
+    <div class="modal box-shadow fade in showDetail_modal new-label " id="agentsPop">
+        <div class="modal-dialog" style="width: 800px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close down" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    <h4 class="modal-title">选择代理商</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label"></label>
+                            <div class="col-md-5">
+                                <ul id="treeDemo" class="ztree"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">&nbsp;</label>
+                            <div class="col-md-4">
+                                <input type="button" value="确定" class="btn btn-primary determine">
+                                <input type="button" value="取消" class="btn btn-close-dialog-tab down" style="color:#fff">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="../../plugin/jQuery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../plugin/echarts/dist/echarts.min.js"></script>
+    <script type="text/javascript" src="../../common/baiduAK.js"></script>
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=9clyiSsRnNAEXPqyoOoxk7eytFIUd9ww"></script>-->
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/geocoder/v2/?callback=renderReverse&location=39.934,116.329|39.93,116.42|39.90,116.38&output=json&batch=true&pois=1&ak=9clyiSsRnNAEXPqyoOoxk7eytFIUd9ww"></script>-->
+    <script type="text/javascript" src="../../plugin/echarts/dist/extension/bmap.min.js"></script>
+    <script type="text/javascript" src="../../plugin/echarts/dist/china.js"></script>
+    <script type="text/javascript" src="../../plugin/echarts/dist/echarts-gl.min.js"></script>
+    <script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="../../plugin/layer-v3.1.0/layer/layer.js"></script>
+    <script type="text/javascript" src="../../plugin/zTree/jquery.ztree.all.min.js"></script>
+    <script type="text/javascript" src="../../common/common.js"></script>
+    <script type="text/javascript" src="js/overview.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报修详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <!--图片放大css-->
+    <link rel="stylesheet" href="../../theme/plugin/photoSwipe-master/dist/photoswipe.css">
+    <link rel="stylesheet" href="../../theme/plugin/photoSwipe-master/dist/default-skin/default-skin.css">
+    <!--共同样式-->
+    <link rel="stylesheet" href="../../theme/css/common.css">
+
+    <link rel="stylesheet" href="../../theme/css/exlse.css">
+</head>
+<body>
+<div class="repair-revoked-has repair-details repair overflow-y">
+    <!--头部-->
+    <div class="return-column">
+        <div class="return-column-heart">
+            <a class="header-return" href="repair_list.html"><i class="header-return-icon"></i></a>
+            <div class="header-title">报修详情</div>
+        </div>
+    </div>
+    <div class="hr-88"></div>
+    <!--头部状态栏-->
+    <div class="process">
+        <p class="line"></p>
+        <div class="status">
+            <span>待受理</span>
+            <span class="active">已撤销</span>
+        </div>
+        <div class="dots">
+            <div class="transparent active garden"><div class="in garden"><div class="inside garden"></div></div></div>
+            <div class="transparent active garden"><div class="in garden"><div class="inside garden"></div></div></div>
+        </div>
+    </div>
+    <div class="hr-24"></div>
+    <div id="pending" class="pending hide">
+        <header>
+            <div id="type" class="title"><i></i>办公室报修</div>
+        </header>
+        <div class="people">
+            <p class="column">报修人</p>
+            <a id="people" href="javascript:">
+                <img class="avatar" src="../../images/anounce/Oval.png" alt="avatar">
+                <div class="information">
+                    <div class="name">高原</div>
+                    <time>2017-8-12 12:50</time>
+                </div>
+            </a>
+        </div>
+        <ul class="detailed list-ul">
+            <li><p class="column">订单状态</p><div id="status"><div class="repair-status gray">已撤销</div></li>
+            <li class="pbc"><p class="column">报修类型</p><div id="aspect" class="word">门窗维修</div></li>
+            <li><p class="column">报修内容</p><div id="content" class="word">昨天台风把吊顶吹落了下来，请尽快处理!昨天台风把吊顶吹落了下来，请尽快处理!</div></li>
+            <li id="image" class="image my-gallery">
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+                <!--<img src="../../images/anounce/typhoon.png" alt="">-->
+            </li>
+            <li class="address"><i class="address-icon"></i><span id="property" class="word">深圳市南山区科苑北路东方科技大厦D栋504 深圳市南山区科苑北路东方科技大厦D栋504</span></li>
+            <li class="pbc"><p class="column">预约上门时间</p><time id="reservation">2017-08-14 13:00</time></li>
+            <li class="pbc"><p class="column">期待完成时间</p><time id="carryOut">2017-08-18 13:00</time></li>
+        </ul>
+    </div>
+    <div class="revoked hide"><p class="column">撤销原因</p><div id="revoked" class="word">自己处理完毕。自己处理完毕。自己处理完毕。</div></div>
+</div>
+
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/zepto.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/touch.js"></script>
+<!--图片放大JS-->
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/photoSwipe-master/dist/photoswipe.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/photoSwipe-master/dist/photoswipe-ui-default.min.js"></script>
+<!--图片放大 初始化-->
+<script type="text/javascript" charset="utf-8" src="../../theme/js/photoSwipe.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/repair_revoked_has.js"></script>
+</body>
+</html>

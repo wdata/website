@@ -1,0 +1,306 @@
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+  padding: 0;
+}
+.form-name {
+  font-size: 18px;
+  font-weight: bold;
+  /*background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(@changUp), to(@changDown));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+}
+#addr {
+  width: 220px;
+}
+.main_con {
+  float: left;
+  width: 1030px;
+}
+.main_con .repairs_con {
+  width: 100%;
+  height: 260px;
+  padding-left: 120px;
+  background-color: #fff;
+}
+.main_con .repairs_con div {
+  position: relative;
+  height: 100%;
+  padding-top: 152px;
+}
+.main_con .repairs_con div .btn {
+  width: 70px;
+  height: 24px;
+  line-height: 24px;
+  padding: 0;
+}
+.main_con .repairs_con div .repairs_num {
+  position: absolute;
+  z-index: 1;
+  font-size: 20px;
+  color: #fff;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.main_con .repairs_con div .repairs_text {
+  color: #3d5275;
+  font-size: 14px;
+}
+.main_con .repairs_con .bezier {
+  width: 240px;
+}
+.main_con .repairs_con .orange {
+  width: 80px;
+}
+.main_con .repairs_con .orange .orange_bg {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("../img/index/shandong_huang01.png") no-repeat 0 50%;
+  background-size: 100%;
+}
+.main_con .repairs_con .orange .btn-orange {
+  color: #fef4e9;
+  border: solid 1px #da7c0c;
+  background: #f78d1d;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fc9a5f), to(#f78927));
+}
+.main_con .repairs_con .blue {
+  width: 80px;
+}
+.main_con .repairs_con .blue .blue_bg {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("../img/index/shandong_lan01.png") no-repeat 0 50%;
+  background-size: 100%;
+}
+.main_con .repairs_con .blue .btn-blue {
+  color: #fef4e9;
+  border: solid 1px #68b9fb;
+  background: #038dff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#68b9fb), to(#038dff));
+}
+.main_con .repairs_con .green {
+  width: 80px;
+}
+.main_con .repairs_con .green .green_bg {
+  position: absolute;
+  top: 54px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url("../img/index/shandong_lv01.png") no-repeat 0 50%;
+  background-size: 100%;
+}
+.main_con .repairs_con .green .btn-green {
+  color: #fef4e9;
+  border: solid 1px #5ce5ad;
+  background: #3ace91;
+  background: -webkit-gradient(linear, left top, left bottom, from(#5ce5ad), to(#3ace91));
+}
+.main_con .message_con {
+  width: 100%;
+  height: 156px;
+  margin: 24px 0;
+}
+.main_con .message_con div {
+  width: 328px;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+}
+.main_con .message_con div .ajax_btn {
+  line-height: 28px;
+  width: 74px;
+  margin: 10px 10px 0 0;
+  font-size: 14px;
+  border: 1px solid #fff;
+  border-radius: 14px;
+  cursor: pointer;
+}
+.main_con .message_con div .message_num {
+  padding-top: 48px;
+  font-size: 50px;
+  line-height: 50px;
+}
+.main_con .message_con div .message_text {
+  font-size: 14px;
+}
+.main_con .message_con .lease_bg {
+  margin-right: 23px;
+  background: url("../img/index/lvse.png") no-repeat 0 0;
+  background-size: 100%;
+}
+.main_con .message_con .reservation_bg {
+  background: url("../img/index/huangse.png") no-repeat 0 0;
+  background-size: 100%;
+}
+.main_con .message_con .unPal_bg {
+  background: url("../img/index/lanse.png") no-repeat 0 0;
+  background-size: 100%;
+}
+.main_con .diagram_1 {
+  width: 100%;
+  height: 500px;
+  background-color: #fff;
+}
+.main_con .diagram_1 .diagram_tabs {
+  height: 64px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 64px;
+  border-bottom: 1px solid #e6e9f1;
+}
+.main_con .diagram_1 .diagram_tabs .diagram_office {
+  cursor: pointer;
+  margin-left: 60px;
+}
+.main_con .diagram_1 .diagram_tabs .diagram_divide {
+  cursor: pointer;
+  margin-right: 60px;
+}
+.main_con .diagram_1 .diagram_tabs_con {
+  width: 100%;
+  height: 435px;
+}
+.main_con .diagram_1 .diagram_tabs_con .tabs_item {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.main_con .diagram_1 .diagram_tabs_con .tabs_item.active {
+  display: block;
+}
+.minor_con {
+  float: right;
+  width: 558px;
+  margin-left: 24px;
+}
+.minor_con .msg {
+  height: 440px;
+  margin: 0 0 24px 0;
+  background-color: #fff;
+}
+.minor_con .msg .msg_tabs .tabs_title {
+  float: left;
+  height: 64px;
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 51px;
+  border-bottom: 1px solid #e6e9f1;
+  cursor: pointer;
+}
+.minor_con .msg .tabs_item {
+  width: 100%;
+  display: none;
+}
+.minor_con .msg .tabs_item ul {
+  padding: 0 24px;
+  margin: 0;
+}
+.minor_con .msg .tabs_item ul .li {
+  position: relative;
+  height: 74px;
+  border-bottom: 1px solid #e6e9f1;
+}
+.minor_con .msg .tabs_item ul .li .li_title {
+  font-size: 16px;
+  color: #3d5275;
+  margin: 16px 0 12px 0;
+}
+.minor_con .msg .tabs_item ul .li .li_type {
+  font-size: 14px;
+  color: #6980a6;
+  margin: 0;
+}
+.minor_con .msg .tabs_item ul .li .li_time {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  font-size: 14px;
+  color: #6980a6;
+}
+.minor_con .msg .tabs_item .a_con {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+}
+.minor_con .msg .tabs_item .a_con a {
+  font-size: 18px;
+}
+.minor_con .msg .tabs_item.active {
+  display: block;
+}
+.minor_con .rent_situation {
+  width: 100%;
+  height: 500px;
+  background-color: #fff;
+}
+.minor_con .rent_situation .rent_title {
+  font-size: 18px;
+  line-height: 64px;
+  border-bottom: 1px solid #e6e9f1;
+}
+.baidu_map {
+  width: 1612px;
+  height: 760px;
+  margin-top: 24px;
+}
+.baidu_map .map_title {
+  line-height: 64px;
+  text-align: center;
+  font-size: 18px;
+  background-color: #e5eefc;
+}

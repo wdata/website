@@ -1,0 +1,35 @@
+.form {
+  padding-top: 15px;
+}
+.form .row {
+  margin-bottom: 15px;
+}
+.form label {
+  font-weight: 500;
+}
+.xslData .xlf {
+  margin: 0;
+}
+.xslData #xlf {
+  display: none;
+}
+.xslData pre {
+  width: 100%;
+  max-height: 300px;
+  overflow: auto;
+  background: #fff;
+  border: none;
+  margin: 0;
+  padding: 6px 0 0 0;
+}
+.xslData pre table {
+  text-align: center;
+  border-collapse: collapse;
+}
+.xslData pre table td {
+  border: 1px solid #ddd;
+  padding: 1px 6px;
+}
+.form-title {
+  color: #3d5275;
+}

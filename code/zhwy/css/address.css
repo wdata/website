@@ -1,0 +1,106 @@
+@charset "UTF-8";
+.address {
+  width: 860px;
+  height: 454px;
+  box-shadow: -1px -1px 10px #b3b3b3;
+  position: absolute;
+  z-index: 1000;
+  background-color: #fff;
+  top: 60px;
+  left: 6%;
+}
+.address .header {
+  width: 100%;
+  height: 60px;
+  overflow: hidden;
+  display: flex;
+  line-height: 60px;
+  text-align: center;
+}
+.address .header .operating {
+  width: 180px;
+  display: flex;
+  font-size: 20px;
+  color: #999;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.address .header .operating span {
+  width: 90px;
+  height: 100%;
+  border: 1px solid #e6e9f1;
+  display: inline-block;
+  cursor: pointer;
+}
+.address .header .operating .addYes {
+  color: #038dff;
+  border-right: 0;
+}
+.address .header .head {
+  height: 60px;
+  flex: 1;
+  display: flex;
+  font-size: 16px;
+  color: #3d5275;
+  border-bottom: 1px solid #e6e9f1;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.address .header .head .icon {
+  width: 13px;
+  height: 9px;
+  display: inline-block;
+  margin-left: 8px;
+}
+.address .header .head .details {
+  display: flex;
+}
+.address .header .head .all,
+.address .header .head .choose {
+  min-width: 120px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.address .header .head .detailsB {
+  min-width: 120px;
+  padding: 0 30px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.address .header .head .all.active,
+.address .header .head .detailsB.active,
+.address .header .head .choose.active {
+  border-right-color: #e6e9f1;
+  border-left-color: #e6e9f1;
+  margin-bottom: -1px;
+  color: #038dff;
+  background-color: #fff;
+  transition-duration: .1s;
+}
+.address .header .head .detailsB.active .icon,
+.address .header .head .choose.active .icon {
+  transform: rotateX(180deg) translatey(-8px);
+}
+.address .add-list {
+  max-height: 394px;
+  font-size: 16px;
+  color: #3d5275;
+  text-align: center;
+  padding: 0 0 10px 0;
+  margin-top: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.address .add-list li {
+  width: 130px;
+  height: 55px;
+  line-height: 55px;
+  margin-top: 15px;
+  margin-right: 36px;
+  cursor: pointer;
+}
+.address .add-list li.active {
+  color: #038dff;
+}

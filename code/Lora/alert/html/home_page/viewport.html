@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../plugin/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/list.css">
+    <link rel="stylesheet" type="text/css" href="../../css/index/right_index.css">
+    <style>
+        body{background:#fff;padding: 10px;}
+
+    </style>
+</head>
+<body>
+<div class="content ">
+    <div class="total">报警设备数：<span id="warningCount">0</span></div>
+    <div class="alarm_type">
+        <div class="svg_con" data-tit="报警处理列表" href="html/warning_guan/wait_surface.html" onclick="waringDesc(this)" id="fire_alarm">
+            <svg class="svg" width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" stroke="rgba(43,197,254,0.3)" stroke-width="4" fill="none"></circle>
+                <path id="ring1" stroke="rgba(43,197,254,1)" stroke-width="4" fill="none" transform="translate(50,50)" d="M 0 0 v -48 A 48 48 0 0 1 41.57 23.99 z"></path>
+                <circle cx="50" cy="50" r="46" stroke-width="0" fill="#fff"></circle>
+            </svg>
+            <p class="num">0</p>
+            <p class="name">火灾报警</p>
+        </div>
+
+        <div class="svg_con" data-tit="报警处理列表" href="html/warning_guan/wait_surface.html" onclick="waringDesc(this)" id="no_connect">
+            <svg class="svg" width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" stroke="rgba(43,197,254,0.3)" stroke-width="4" fill="none"></circle>
+                <path id="ring2" stroke="rgba(43,197,254,1)" stroke-width="4" fill="none" transform="translate(50,50)" d="M 0 0 v -48 A 48 48 0 0 1 41.57 23.99 z"></path>
+                <circle cx="50" cy="50" r="46" stroke-width="0" fill="#fff"></circle>
+            </svg>
+            <p class="num">0</p>
+            <p class="name">未登录</p>
+        </div>
+
+        <div class="svg_con" data-tit="报警处理列表" href="html/warning_guan/wait_surface.html" onclick="waringDesc(this)" id="under_voltage">
+            <svg class="svg" width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" stroke="rgba(43,197,254,0.3)" stroke-width="4" fill="none"></circle>
+                <path id="ring3" stroke="rgba(43,197,254,1)" stroke-width="4" fill="none" transform="translate(50,50)" d="M 0 0 v -48 A 48 48 0 0 1 41.57 23.99 z"></path>
+                <circle cx="50" cy="50" r="46" stroke-width="0" fill="#fff"></circle>
+            </svg>
+            <p class="num">0</p>
+            <p class="name">电池欠压</p>
+        </div>
+    </div>
+    <!--<div class="svg_con">
+        <svg class="svg" width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="48" stroke="rgba(43,197,254,0.3)" stroke-width="4" fill="none"></circle>
+            <path id="ring" stroke="rgba(43,197,254,1)" stroke-width="4" fill="none"></path>
+            <circle cx="50" cy="50" r="46" stroke="#BDEEFD" stroke-width="0" fill="#fff"></circle>
+        </svg>
+        <p class="num">5</p>
+        <p class="name">火灾报警</p>
+    </div>-->
+    <div class="total">总节点数：<span id="deviceCount">0</span></div>
+
+    <div class="node_num ">
+        <!--<div class="item">在线节点数：<span id="deviceOnLineCount">0</span></div>
+        <div class="item">离线节点数：<span class="deviceOffLineCount">0</span></div>-->
+
+        <div class="svg_con">
+            <svg class="svg" width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" stroke="rgba(43,197,254,0.3)" stroke-width="4" fill="none"></circle>
+                <path id="path4" stroke="rgba(43,197,254,1)" stroke-width="4" fill="none"></path>
+                <circle cx="50" cy="50" r="46" stroke-width="0" fill="#fff"></circle>
+            </svg>
+            <p class="num" id="deviceOnLineCount"></p>
+            <p class="name">在线节点数</p>
+        </div>
+        <div class="svg_con">
+            <svg class="svg" width="100" height="100" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="48" stroke="rgba(43,197,254,0.3)" stroke-width="4" fill="none"></circle>
+                <path id="path5" stroke="rgba(43,197,254,1)" stroke-width="4" fill="none"></path>
+                <circle cx="50" cy="50" r="46" stroke-width="0" fill="#fff"></circle>
+            </svg>
+            <p class="num" id="deviceOffLineCount"></p>
+            <p class="name">离线节点数</p>
+        </div>
+    </div>
+
+</div>
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="https://cdn.goeasy.io/goeasy.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/warning_guan/common.js"></script>
+<script type="text/javascript" src="../../js/home_page/viewport.js"></script>
+</body>
+</html>

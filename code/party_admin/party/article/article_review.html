@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>待审核文章资源管理列表</title>
+    <link rel="stylesheet" type="text/css" href="../../theme/css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/jquery-ztree/css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/css/page.css">
+    <link rel="stylesheet" href="../css/label/label.css">
+</head>
+<body>
+<div class="search-tab-box">
+    <form action="" class="form input-sm">
+        <table>
+            <tbody>
+            <tr>
+                <td><label for="account" class="label4">关键词：</label></td>
+                <td><input type="text" id="account" class="form-control" name="account"></td>
+                <td><label class="label4">创建时间：</label></td>
+                <td>
+                    <div class="date form_datetime start-time form_datetime_input">
+                        <input id="datetimeStart" class="form-control" size="16" type="text" value="" readonly>
+                        <span class="add-on"><i class="icon-th"></i></span>
+                        <i class="fa fa-tasks"></i>
+                    </div>
+                </td>
+                <td class="time-line">-</td>
+                <td>
+                    <div class="date form_datetime end-time form_datetime_input">
+                        <input id="datetimeEnd" class="form-control" size="16" type="text" value="" readonly>
+                        <span class="add-on"><i class="icon-th"></i></span>
+                        <i class="fa fa-tasks"></i>
+                    </div>
+                </td>
+                <td><label>资讯栏目：</label></td>
+                <td>
+                    <select id="status_select" class="form-control">
+                        <option value="">全部</option>
+                        <option value="1">本局党建动态</option>
+                        <option value="2">党建每日读</option>
+                    </select>
+                </td>
+                <!--<td><label class="label4">单位：</label></td>-->
+                <!--<td>-->
+                    <!--<select id="company_select" class="form-control">-->
+                        <!--<option value="">全部</option>-->
+                    <!--</select>-->
+                <!--</td>-->
+                <td><input type="button" onclick="search(this)" class="btn btn-primary" value="搜索"></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div class="hr-10"></div>
+<div class="main-content">
+    <div class="con-oper">
+        <!-- <a href="user_control/user_add.html" class="btn btn-primary" onclick="addUser()">添加新用户</a> -->
+        <!--<button class="btn bg-success" onclick="onOFFAll(1)">启用</button>-->
+        <button class="btn bg-info" onclick="yesAll()">通过</button>
+        <button class="btn bg-info" onclick="noAll()">不通过</button>
+        <button class="btn bg-danger"  onclick="deteleAll()">删除</button>
+        <!--<a class="btn bg-warning text-muted" href="article/article_add.html" >添加</a>-->
+    </div>
+    <div class="con-table">
+        <table class="table table-hover" id="lebel_tab">
+            <thead>
+            <tr>
+                <th><input type="checkbox" onclick="checkAll('lebel_tab',this)"></th>
+                <th>序号</th>
+                <th>文章标题</th>
+                <th>所属栏目</th>
+                <th>发布人</th>
+                <th>创建时间</th>
+                <th>所属单位</th>
+                <th>操作状态</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="list">
+            <!--<tr>-->
+                <!--<th><input type="checkbox" onclick="checkAll('userlist_tab',this)"></th>-->
+                <!--<th>1</th>-->
+                <!--<th>文章标题</th>-->
+                <!--<th>所属栏目</th>-->
+                <!--<th>发布人</th>-->
+                <!--<th>创建时间</th>-->
+                <!--<th>所属单位</th>-->
+                <!--<th>操作状态</th>-->
+                <!--<th>-->
+                    <!--<button class="btn btn-success">查看</button>-->
+                    <!--<button onclick="modifyChannel()" class="btn btn-warning ">修改</button>-->
+                    <!--<button class="btn bg-danger">删除</button>-->
+                <!--</th>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+        <div class="pages ml20 undis">
+            <div class="pagination" id="pagination"></div>
+            <div class="pageGo">
+                <span>跳转到</span>
+                <input type="number" min="1">
+                <input type="button" value="GO" onclick="pageTo(this)">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 不通过提示框 -->
+<div class="modal box-shadow fade showDetail_modal new-label">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="add-content" style="margin:0 15px;">
+                <form id = "newForm" class="form-horizontal" enctype="application/x-www-form-urlencoded">
+                    <div class="form-group">
+                        <label  class="col-md-3 control-label sign-label">不通过原因：<span class="cred">*</span></label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" style="height:200px;" id="reason" name="reason" required maxlength="400"></textarea>
+                            <span>（400个字以内）</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="account" class="col-md-3 control-label">&nbsp;</label>
+                        <div class="col-md-8">
+                            <input id="xiuGai" type="button" value="确定" class="btn btn-primary" onclick="picEditYes()">
+                            <input type="button" value="取消" class="btn btn-danger" style="color:#fff" onclick="picEditNo()">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../theme/plugin/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jquery-validate/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jquery-validate/js/messages_cn.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../theme/js/common/common.js"></script>
+<script type="text/javascript" src="../../theme/js/common/contabs.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/article/article_review.js"></script>
+</body>
+</html>

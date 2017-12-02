@@ -1,0 +1,55 @@
+/*内容*/
+#lebel_tab .list th{
+    text-align:center;
+    vertical-align:middle;
+    font-weight:inherit;
+}
+
+.list .img img{
+    width:40px;
+    height: 40px;
+}
+/*党费管理导入表格按钮隐藏*/
+.FileImport{
+    border: 0;
+    background: #fff;
+    width: 54px;
+    height: 34px;
+    opacity: 0;
+    position: absolute;
+    display:inline-block!important;
+    overflow:hidden;
+}
+/*组织信息管理---统计图*/
+.graph-header-top{
+    font-size:24px;
+    text-align:center;
+    font-weight:bold;
+    vertical-align:middle;
+}
+#graph .option{
+    width:100%;
+    height:50%;
+    display:flex;
+}
+#graph .option>div{
+    width:50%;
+    height:100%;
+}
+/*新闻查看页面*/
+#articleView .header{
+    text-align: center;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+#articleView .head{
+    margin-bottom:10px;
+}
+/*审核窗口不同的CSS*/
+.caozhuo a{
+    margin:0 10px;
+}
+/*组织管理-右侧编辑按钮*/
+.memberBtn{
+    margin:10px 0 0 10px;
+}

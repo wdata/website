@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>添加报警推送设置</title>
+	<meta content="webkit" name="renderer" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" href="../../css/list.css">
+</head>
+<body>
+<div class="main-content clearfix">
+	<div class="add-content">
+		<form id="newForm" class="form-horizontal">
+			<div class="div_top">
+				<div class="div_item">
+					<input type="hidden" name="userId" value="1">
+					<div class="form-group">
+						<label  class="col-md-4 control-label">发送对象范围：</label>
+						<div class="col-md-8">
+							<span><input type="radio" name="device" id="device" value="device">本设备</span>
+							<span><input type="radio" name="device" id="deviceGroup" value="deviceGroup">本设备设备组</span>
+							<span><input type="radio" name="device" id="allDeviceGroup" value="allDeviceGroup">全部设备组</span>
+						</div>
+					</div>
+					<div class="form-group" >
+						<label  class="col-md-4 control-label">发送对象：</label>
+						<div class="col-md-8" id="send_name">
+							<!--<span><input type="checkbox" id="sendApp" name="sendApp" checked >APP</span>-->
+							<!--<span><input type="checkbox" id="sendSms" name="sendSms" checked >短信</span>-->
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-md-4 control-label">推送目的地点：</label>
+						<div class="col-md-8">
+							<span><input type="checkbox" id="sendApp" name="sendApp" checked >APP</span>
+							<span><input type="checkbox" id="sendSms" name="sendSms" checked >短信</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-md-4 control-label">推送内容：</label>
+						<div class="col-md-8">
+							<span><input type="checkbox" id="sendDviceAddress" name="sendDviceAddress">设备详细地址</span>
+							<span><input type="checkbox" id="sendWarningType" name="sendWarningType">报警类型</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-md-4 control-label">报警类型：</label>
+						<div class="col-md-2">
+							<select class="form-control" id="warningType" style="width:60%;" name="warningType"></select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<div class="btn-wrap col-md-8">
+				<input type="button" class="btn btn-primary" id="save" value="保存">
+				<a href="push_object.html" class="btn btn-red" style="margin-left: 50px;">取消</a>
+			</div>
+	</form>
+	</div>
+</div>
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/warning_guan/common.js"></script>
+<script type="text/javascript" src="../../js/warning_guan/push_settings.js"></script>
+</body>
+</html>

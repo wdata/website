@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>首页</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+	<link rel="stylesheet" href="../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<link rel="stylesheet" type="text/css" href="../../css/index/right_index.css">
+</head>
+<body>
+<div class="search-tab-box">
+	<div class="list clearfix search_list">
+		<table class="max100 fl ">
+			<tbody>
+			<tr>
+				<td><label class="label4">企业：</label></td>
+				<td>
+					<select class="status_select form-control" id="firm" onchange="companyID(this)"></select>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<div class="fr" style="margin-right: 20px;">
+			<a style="cursor: pointer;" onclick="isShow(this)" id="return" class="return undis">返回</a>
+			<!--<a class="cut_map">切换视图</a>-->
+		</div>
+	</div>
+</div>
+<div style="height:100%" class="main-content page">
+	<!--<div class="title">系统统计</div>-->
+	<iframe src="map.html" onload="$('#map_frame').height($(window).height()-45);" id="map_frame" name="map_frame" style="overflow: hidden;" frameborder="0" width="75%"  scrolling="yes"></iframe>
+	<iframe class="pull-right" src="viewport.html" onload="$('#map_frame_2').height($(window).height()-45);" id="map_frame_2" name="map_frame" style="overflow: hidden;margin-left:1%;" frameborder="0" width="24%"  scrolling="yes"></iframe>
+</div>
+
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/warning_guan/common.js"></script>
+<script type="text/javascript" src="../../js/home_page/right_index.js"></script>
+<script>
+	function workspace(_this){
+		$('#bread-nav .three span',window.parent.document).text($(_this).attr('data-tit'));
+		$('#bread-nav .one span',window.parent.document).text("报警管理");
+		$('#bread-nav .three',window.parent.document).show();
+		return $("#workspace", window.parent.document).attr("src","html/warning_guan/wait_surface.html");
+	}
+	function return_page(){
+		$("#return").show();
+	}
+	$("#map_frame").height($(window).height()-10);
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+.form_datetime_input{
+    position: relative;
+    display: inline-block;
+    /*width: 200px;*/
+}
+.form_datetime_input .fa-tasks{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.flow_table table{
+    border-left:1px solid #eee;
+    border-right:1px solid #eee;
+}
+.btn-primary{
+    background-color: #22b6e8;
+    border-color: #22b6e8;
+}
+.main-content{
+    margin-top: 30px;
+}
+
+.pageGo {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 21px;
+}
+.pageGo input[type=number] {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin: 0 2px;
+    border: 1px solid #ddd;
+    color: #333;
+    border-radius: 4px;
+}
+.pageGo input[type=button] {
+    height: 30px;
+    width: 40px;
+    background-color: #337ab7;
+    color: #fff;
+    border: 0px none;
+    border-radius: 3px;
+}
+/*去除type=number]默认样式*/
+input[type=number] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

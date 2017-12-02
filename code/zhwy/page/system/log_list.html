@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>系统配置管理</title>
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+</head>
+<body>
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>系统配置管理</span> > <span class="blueChange">操作日志</span>
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group">
+                <span>用户账号:</span>
+                <input class="form-control key" type="text" placeholder="用户账号">
+            </div>
+            <div class="form-group">
+                <span>操作内容:</span>
+                <input class="form-control key" type="text" placeholder="操作内容">
+            </div>
+            <div class="form-group">
+                <span>所在菜单:</span>
+                <select id="" class="form-control">
+                    <option value="0">全部</option>
+                    <option value="1">111</option>
+                    <option value="2">2</option>
+                    <option value="2">3</option>
+                </select>
+            </div>
+            <div class="form-group list-inner" style="margin-right: 0;">
+                <span class="pr0">创建时间：</span>
+                <div class="input-group" onclick="stateTimeInit()">
+                    <input id="dateStart" class="form-control date_control" size="8" type="text" readonly>
+                    <!--<span class="add-on"><i class="icon-th"></i></span>-->
+                    <span class="input-group-addon" style="padding: 6px;"><i class="fa fa-calendar fa-fw"></i></span>
+                </div>
+            </div>
+            <div class="form-group" style="margin-left: 0;">
+                <span>-</span>
+                <div class="input-group form_datetime date form_datetime_input" onclick="endTimeInit()">
+                    <input id="dateEnd" class="form-control date_control" size="8" type="text" readonly>
+                    <span class="input-group-addon" style="padding: 6px;"><i class="fa fa-calendar fa-fw"></i></span>
+                </div>
+            </div>
+            <div class="form-group"><button type="button" class="btn btn_search" id="search">搜索</button></div>
+        </form>
+    </div>
+
+    <section class="row" style="margin-top: 15px;">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-condensed" id="list">
+                <thead>
+                <tr>
+                    <th class="text-center">序号</th>
+                    <th class="text-center">用户ID</th>
+                    <th class="text-center">用户账号</th>
+                    <th class="text-center">创建时间</th>
+                    <th class="text-center">所在菜单</th>
+                    <th class="text-center">操作内容</th>
+                </tr>
+                </thead>
+                <tbody class="tbody">
+                <tr class="text-center">
+                    <td>1</td>
+                    <td>weteyeryey</td>
+                    <td>体育活动</td>
+                    <td>2017.08.01 11:33</td>
+                    <td>菜单1</td>
+                    <td>新增</td>
+                    <td>
+                        <button type="button" class="btn btn-info btn-xs" onclick="goPage('page//.html');">查看</button>
+                        <button type="button" class="btn btn_red btn-xs"><i class="fa fa-trash-o fa-fw"></i>删除</button>
+                    </td>
+                </tr>
+
+
+                </tbody>
+                <tfoot>
+                <tr class="text-center hidden">
+                    <td colspan="9">未查到结果</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+    <footer class="row">
+        <div class="page-con hidden">
+            <ul class="pagination" id="pagination"></ul>
+            <div class="page-go">
+                <span>跳转到</span>
+                <input class="form-control" type="number" min="1">
+                <input class="btn btn-primary btn-sm" type="button" value="GO" onclick="/*pageTo(this)*/">
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../js/common.js"></script>
+<script src="../../js/system/log_list.js"></script>
+</body>
+</html>

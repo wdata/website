@@ -1,0 +1,10 @@
+.accountAdd_form {
+  padding-top: 30px;
+}
+.accountAdd_form .form-group {
+  text-align: right;
+}
+.accountAdd_form .form-group .form-control {
+  display: inline-block;
+  width: 75%;
+}

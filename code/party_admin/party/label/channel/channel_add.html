@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加频道</title>
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/jquery-ztree/css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/page.css">
+    <link rel="stylesheet" type="text/css" href="../../css/label/label.css">
+</head>
+<body>
+<div class="page">
+    <div class="main-content">
+        <div class="add-content" style="margin:0 15px;">
+            <form  class="form-horizontal" id="newForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">频道位置：</label>
+                    <div class="col-md-3">
+                        <select id="position" class="form-control"  name="position">
+                            <option value="1">首页</option>
+                            <option value="2">频道页</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">频道名称：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input type="text" id="name" class="form-control"  maxlength="32" name="name" required>
+                        <span>（32个字以内）</span>
+                    </div>
+                </div>
+                <div class="form-group modify_hide">
+                    <label for="name" class="col-md-2 control-label">排序值：<span class="cred">*</span></label>
+                    <div class="col-md-3"><input type="number" id="sort" maxlength="4" class="form-control" name="sort" required></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label mt20">图片：<span class="cred">*</span></label>
+                    <div class="col-md-4 up-file">
+                        <div class="img-wrap"><img src="" alt="" class="abs"></div>
+                        <div class="file-wrap">
+                            <input type="file" id = "file" name="file"  onchange="imgSizeCheck(this)" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group modify_hide">
+                    <label for="name" class="col-md-2 control-label">URL地址：<span class="cred">*</span></label>
+                    <div class="col-md-3"><input type="text" id="urlDiZhi" class="form-control path" name="url" required></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label sign-label">频道描述：</label>
+                    <div class="col-md-3">
+                        <textarea class="form-control" id="remark" name="remark" maxlength="128"></textarea>
+                        <span>（128个字以内）</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">是否开启：<span class="cred">*</span></label>
+                    <div class="col-md-3 check-group">
+                        <input type="radio"  name="status" id="close" value="0"><label for="close">禁用</label>
+                        <input type="radio" checked name="status" id="open" value="1"><label for="open">启用</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">&nbsp;</label>
+                    <div class="col-md-3">
+                        <input type="button" value="确定" class="btn btn-primary" onclick="determine()">
+                        <input type="button" value="取消" class="btn btn-close-dialog-tab" style="color:#fff">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="opering-mask">
+        <div class="main">
+            <div class="tit">提示信息</div>
+            <div class="con"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../theme/plugin/jQuery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jqPaginator/jqPaginator.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-validate/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-validate/js/messages_cn.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-form/jquery.form.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/common.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/VaExtend.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/contabs.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/label/channel/channel_add.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>首页</title>
+	<meta content="webkit" name="renderer" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" href="plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" href="plugin/layer/skin/default/layer.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+
+</head>
+<body style="background-color: #EBEBEB;overflow:hidden;">
+<div class="page">
+	<!--左边的导航栏-->
+	<nav>
+		<div class="logo" id="system">
+			<img class="logo_img" src="" alt=""><!--images/logo_top.png-->
+			<p class="title">智安城</p>
+			<p class="text">消防网格化管理平台</p>
+		</div>
+		<ul id="accordion" class="accordion">
+		</ul>
+	</nav>
+	<!-- 头部开始 -->
+	<div class="content">
+		<div class="bg"></div>
+		<header>
+			<div class="tilte pull-left">
+				<i></i>欢迎您：<span class="name_person">admin</span>
+				<span style="margin-left:15px; display: none;">角色：<span id='login_role'></span></span>
+			</div>
+			<div class="btn_group pull-right">
+				<a class="warn" style="cursor:pointer"><i></i>提醒 <span class="icon">0</span></a>
+				<a class="person" style="cursor:pointer"><i></i>个人信息</a>
+				<a class="change" style="cursor:pointer"><i></i>修改密码</a>
+				<a class="setting" id="systemSetting" style="cursor:pointer;display: none;"><i></i>平台设置</a>
+				<a class="logout" style="cursor:pointer"><i></i>退出</a>
+			</div>
+		</header>
+		<!--<div id="roll" class="banner">
+				<div class="title">
+					<i></i>
+					<div id="icon" class="icon"></div>
+				</div>
+				<div class="text">
+					<a></a>
+				</div>
+		</div>-->
+		<div class="history">
+			当前位置：
+			<div id="bread-nav">
+				<div class="fl one">
+					<span>首页</span>
+				</div>
+				<div class="fl two" style="display:none">
+					&nbsp;&gt;&nbsp;<span></span>
+				</div>
+				<div class="fl three" style="display:none">
+					&nbsp;&gt;&nbsp;<span></span>
+				</div>
+			</div>
+		</div>
+		<audio id="voice" class="hide" src=""></audio>
+		<!--<audio id="fire" class="hide" src="music/fire.wav" controls="controls"></audio>
+		<audio id="fault" class="hide audio" src="music/fault.wav"  controls="controls"></audio>-->
+		<div id="i_con" style="position: relative;width: 100%;height: 88%;">
+			<iframe src="html/home_page/right_index.html" id="workspace" class="L_system_statistics" name="workspace"
+					style="overflow: auto;display:block;height:100%;width:100%;" frameborder="0" scrolling="yes">
+			</iframe>
+		</div>
+		<div class="modal" id="modal_sysSet">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">平台设置</h4>
+						<button class="close">&times;</button>
+					</div>
+					<div class="modal-body">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script src="plugin/bootstrap/bootstrap.min.js"></script>
+<script src="plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script src="plugin/layer/layer.js"></script>
+<script src="js/common.js"></script>
+<script type="text/javascript" src="https://cdn.goeasy.io/goeasy.js"></script>
+<script type="text/javascript" src = "js/index.js"></script>
+<!--<script type="text/javascript" src = "js/plugin/socket/socket.io.js"></script>-->
+<!--<script type="text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>-->
+<!--<script type="text/javascript" src = "js/plugin/socket/moment.min.js"></script>-->
+<script>
+	$("#workspace").height($(window).height()-100);
+	$("#accordion").height($(window).height()-147);
+</script>
+</body>
+</html>

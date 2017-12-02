@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+<style>
+	html,body{height: 100%;}
+	*{margin: 0;padding: 0;}
+	
+</style>
+</head>
+<body>
+<div class="map-wrapper">
+	<div class="search-input">
+		<input type="text" id="where"/>
+		<input id="but" type="button" placeholder="搜地点"/>
+	</div>
+	<div style="" id="container" class="map"></div>	
+</div>
+
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=BoGL1F4fqCjRp8aGG4STnveLOrY0Zhsv&s=1"></script>
+<script type="text/javascript">
+	 //如果经纬度没有给个默认值
+	var longitude;
+    var latitude;
+
+    var map = new BMap.Map("container");
+        map.setDefaultCursor("crosshair");
+        map.enableScrollWheelZoom();
+    console.info(sessionStorage.getItem('map_lng'))
+
+    function getLocation(){
+	    if(navigator.geolocation){
+	       navigator.geolocation.getCurrentPosition(showPosition);
+	    }else{
+	       alert("您的浏览器不支持地理定位");
+	    }
+	}
+	 
+	function showPosition(position){
+	    lat=position.coords.latitude;
+	    lon=position.coords.longitude;
+	    var point = new BMap.Point(lon, lat);    // 创建点坐标
+	    map.centerAndZoom(point,13);                     // 
+	    var gc = new BMap.Geocoder();    
+	    gc.getLocation(point, function(rs){
+	       var addComp = rs.addressComponents;
+	       //alert(addComp.province + ", " + addComp.city + ", " + addComp.district + ", " + addComp.street);
+	    });
+	}
+	
+
+	if(sessionStorage.getItem('map_lng')!='null'){
+		longitude=sessionStorage.getItem('map_lng');
+		latitude=sessionStorage.getItem('map_lat');
+		console.info(longitude+" "+latitude)
+		var point = new BMap.Point(longitude,latitude);
+	        map.centerAndZoom(point, 13);
+		var marker = new BMap.Marker(point);        
+		map.addOverlay(marker);  
+	}else{
+		var point = new BMap.Point(114.061709,22.54742);
+	        map.centerAndZoom(point, 13);
+		var marker = new BMap.Marker(point);        
+		/*var geolocation = new BMap.Geolocation();  
+		geolocation.getCurrentPosition(function(r){   
+		    if(this.getStatus() == BMAP_STATUS_SUCCESS){  
+		        var mk = new BMap.Marker(r.point);   
+		        map.panTo(r.point);
+		        console.info(mk)
+		    }
+		},{enableHighAccuracy: true})*/
+		/*getLocation()*/
+		
+	}
+
+	/*function iploac(result) {
+		var cityName = result.name;
+	}
+	var myCity = new BMap.LocalCity();
+	console.info(myCity)
+	myCity.get(iploac);
+*/
+
+    var ac = new BMap.Autocomplete(    //建立一个自动完成的对象
+            {"input" : "where"
+             ,"location" : map
+    });
+
+    ac.addEventListener("onhighlight", function(e) {  //鼠标放在下拉列表上的事件
+        var str = "";
+        var _value = e.fromitem.value;
+        var value = "";
+        if (e.fromitem.index > -1) {
+            value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        }
+        str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+        value = "";
+        if (e.toitem.index > -1) {
+            _value = e.toitem.value;
+            value = _value.province +  _value.city +  _value.district +  _value.street +  _value.business;
+        }
+        str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+        //G("searchResultPanel").innerHTML = str;
+       
+        var local = new BMap.LocalSearch(map, {
+            renderOptions: {
+                map: map
+            }
+        });
+        local.search(value);
+    });
+
+  	
+  	$('#but').click(function(){
+        var local = new BMap.LocalSearch(map, {
+		    renderOptions: {
+	        	map: map
+	      	}
+	    });
+	    local.search($('#where').val());
+	})
+
+    
+  	map.addEventListener("click",function(e) {
+	    lng = e.point.lng;
+	    lat = e.point.lat;
+	    $('#lng',window.parent.document).val(lng);
+	    $('#lat',window.parent.document).val(lat);
+		map.clearOverlays();
+		var stamp=(new Date()).getTime();
+		var points='p'+stamp;
+		var marks='m'+stamp;
+  		points = new BMap.Point(lng,lat);
+  		marks = new BMap.Marker(points);
+  		map.addOverlay(marks);
+  		marks.enableDragging();
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动管理</title>
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+</head>
+<body style="background-color: #fff;">
+<!--<header class="header-title">
+    <i></i><b>您的位置:</b> <span>活动管理</span> > <span class="blueChange">报名统计</span>
+</header>-->
+<div class="container-fluid" style="padding: 16px 24px;">
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group">
+                <input class="form-control key" type="text" placeholder="输入姓名">
+            </div>
+            <div class="form-group">
+                <input class="form-control key" type="text" placeholder="输入单位名称">
+            </div>
+            <div class="form-group"><button type="button" class="btn btn_search" id="search">搜索</button></div>
+        </form>
+    </div>
+
+    <section class="row">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-condensed" id="list">
+                <thead>
+                <tr>
+                    <th class="text-center">序号</th>
+                    <th class="text-center">参与人姓名</th>
+                    <th class="text-center">电话</th>
+                    <th class="text-center">所属公司</th>
+                    <th class="text-center">职位</th>
+                    <th class="text-center">报名时间</th>
+                </tr>
+                </thead>
+                <tbody class="tbody">
+                <tr class="text-center">
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>13000980245</td>
+                    <td>腾讯科技</td>
+                    <td>普通员工</td>
+                    <td>2017.08.02 11:51</td>
+                </tr>
+                <tr class="text-center">
+                    <td>1</td>
+                    <td>张三</td>
+                    <td>13000980245</td>
+                    <td>腾讯科技</td>
+                    <td>普通员工</td>
+                    <td>2017.08.02 11:51</td>
+                </tr>
+
+                </tbody>
+                <tfoot>
+                <tr class="text-center hidden">
+                    <td colspan="6">未查到结果</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+    <footer class="row">
+        <div class="page-con hidden">
+            <ul class="pagination" id="pagination"></ul>
+            <div class="page-go">
+                <span>跳转到</span>
+                <input class="form-control" type="number" min="1">
+                <input class="btn btn-primary btn-sm" type="button" value="GO" onclick="/*pageTo(this)*/">
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../js/common.js"></script>
+<script src="../../js/affiche/affiche_list.js"></script>
+</body>
+</html>

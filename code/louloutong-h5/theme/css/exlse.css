@@ -1,0 +1,1942 @@
+@charset "UTF-8";
+html,body{
+    width:100%;
+    height:100%;
+}
+.list{
+    background-color: #ececf1;
+    height:100%;
+    overflow-y: auto;
+}
+/*  tap导航栏  */
+.tap {
+    display: flex;
+    height: 1.1733333rem;
+    background-color:#fff;
+    position: absolute;
+    top: 1.1733333rem;
+    width: 100%;
+    z-index: 100;
+}
+.tap a {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    color:#333;
+    font-size:16px;
+    border-bottom: 1px solid transparent;
+}
+time{
+    display: block;
+    font-size:12px;
+    color: #666;
+}
+/*通知类型*/
+.types{
+    text-align: center;
+    border-radius: 3px;
+    border:1px solid #FF6868;
+    color: #FF6868;
+}
+/*中间705（24px）横杆*/
+.hr-24{
+    height: .32rem;
+    background-color: #ececf1;
+}
+.hr-100{
+    height: 1.3333333rem;
+}
+.hr-128{
+    height: 1.7066666rem;
+}
+.hr-324{
+    height: 3.21rem;
+}
+.hr-96{
+    height: 1.28rem;
+}
+/*  首页更多  */
+.more{
+    color: #999;
+    font-size: 14px;
+    width: 1.6rem;
+}
+/*  搜索隐藏  */
+/*首页选择框*/
+#select{
+    background-color: transparent;
+    border: 0;
+}
+#select option{
+    color: #038dff;
+}
+.noData{
+    display: block;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+}
+/*  ----------------------------------------------------首页模块----------------------------------------------------  */
+
+/*  头部  */
+.index{
+    overflow-y: auto;
+    height: 100%;
+    transition:all .5s ease;
+    transform:none;
+}
+.index.active{
+    transform:translate(100%,0);
+}
+.index .main{
+    overflow: hidden;
+    width:100%;
+}
+.index>header{
+    width:100%;
+    height:1.1733333rem;
+    background-image: url("../../images/index/back_head.png");
+    background-size:cover;
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    color:#fff;
+    font-size: 18px;
+    z-index:9999;
+}
+.index>header .head{
+    position:relative;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    padding:0 17% 0 .266666666rem;
+}
+.index header .check-in{
+    position:absolute;
+    top:0;
+    bottom:0;
+    right:0;
+    height:100%;
+    color:#fff;
+    font-size: 16px;
+    padding: 0 .266666666rem;
+    line-height:1.1733333rem;
+}
+.index header .head .address-icon{
+    width: .4rem;
+    height: .49333333rem;
+    display: block;
+    background-image: url("../../images/icon/address.png");
+    background-size:cover;
+    margin-bottom: .1rem;
+}
+.index header .head span{
+    display: flex;
+    justify-content:flex-end;
+    align-items: flex-end;
+    height:100%;
+    padding-bottom: .3733333rem;
+}
+.index header .head .triangle-icon{
+    width: .186666666rem;
+    height: .186666666rem;
+    display: block;
+    background-image: url("../../images/icon/triangle.png");
+    background-size:cover;
+}
+.index header .head .name{
+    margin:0 .16rem;
+    height: 100%;
+    line-height:1.1733333rem;
+}
+#determine{
+    left: 0;
+    right: inherit;
+}
+/*  广告轮播图   */
+.index .advertising{
+    width:100%;
+    height: 3.46666666rem;
+    overflow: hidden;
+}
+.index .advertising img,.advertising a{
+    display: block;
+    width:100%;
+    height: 3.46666666rem;
+}
+/*  五个功能跳转   */
+.index .features{
+    width:100%;
+    height: 2.293333333rem;
+    display: flex;
+    align-items: center;
+    border-bottom:1px solid #D4D4D4;
+}
+.index .features a{
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    flex:1;
+    flex-direction:column;
+    height:100%;
+    position: relative;
+}
+.index .features a img{
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    margin-bottom: .186666666rem;
+}
+.index .features a .red-icon{
+    width: .213333333rem;
+    height: .213333333rem;
+    display: block;
+    position: absolute;
+    top: .346666666rem;
+    right: .23rem;
+    background-color:#ff6888;
+    border-radius:50%;
+    display: none;
+}
+/*  通知轮播图   */
+.index .unread-notice{
+    width:100%;
+    height: 1.2rem;
+    display: flex;
+}
+.index .unread-notice .speaker{
+    width: 1.4666666rem;
+    height: 100%;
+}
+.index .unread-notice .speaker-icon{
+    display: block;
+    width: .626666666rem;
+    height: .586666666rem;
+    background-image: url("../../images/index/speaker.png");
+    background-size:cover;
+}
+.index .unread-notice .notice-word{
+    width: 6.9333333rem;
+}
+.index .unread-notice .notice-word a{
+    width: 100%;
+    /*height: 100%;*/
+    /*font-size: .37333333rem;*/
+    font-size: 14px;
+    color: #666;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: .53333333rem;
+    padding: .1333333rem 1px .1333333rem;
+}
+.index .unread-notice .notice-more{
+    background-color: #F5F5F5;
+    border-left:1px solid #D4D4D4;
+}
+.index .notice-more i{
+    width: .13333333rem;
+    height: .226666666rem;
+    display: block;
+    background-image: url("../../images/index/notice-nore.png");
+    background-size: cover;
+}
+/*  智慧大数据，楼内活动，楼内动态，预约看房，报修维修   */
+/*  五个功能头部公共样式    */
+.index .description{
+    height: 1.3333333rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+.index .description .classification{
+    width: 2.4rem;
+    height: .96rem;
+    line-height: .96rem;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+.index .description .classification span{
+    padding-right: .15rem;
+}
+/*  智慧大数据   */
+.index .bigData{
+    height: 8.45rem;
+    width: 100%;
+}
+.index .bigData .description{
+    border-bottom:1px solid #d3d3d3;
+    margin-bottom: .1rem;
+}
+.index .bigData .classification{
+    width: 2.6666666rem;
+    background-image: url("../../images/index/blue.png");
+}
+.index .bigData img{
+    width: 100%;
+    height: 87.38%;
+}
+/*  楼内活动   */
+.index .activity .classification{
+    background-image: url("../../images/index/red.png");
+}
+.index .activity .concise{
+    display: flex;
+    padding: 0 .26666666rem .26666666rem;
+}
+.index .activity .concise a{
+    width:100%;
+    height:100%;
+    display: block;
+}
+.index .activity .concise a:nth-child(2n){
+     margin-left: 5px;
+ }
+.index .activity .concise a img{
+    width: 4.666666rem;
+    height: 2.9333333rem;
+    display: block;
+    margin-bottom: 3.5px;
+}
+.index .activity .concise a .activity-name{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 14px;
+    color: #333;
+    line-height: .5rem;
+}
+/*  楼内动态   */
+.index .dynamic .classification{
+    background-image: url("../../images/index/yellow.png");
+}
+.index .dynamic .concise{
+    padding: 0 .26666666rem .26666666rem;
+}
+.index .dynamic .concise .cover{
+    display: flex;
+    justify-content: space-around;
+    overflow: hidden;
+    width: 100%;
+}
+.index .dynamic .concise .cover img{
+    height: 2.9333333rem;
+    flex:1;
+}
+.index .dynamic .concise .title{
+    font-size: 14px;
+    color: #333;
+    flex:1;
+    line-height: .45rem;
+}
+.index .dynamic .concise .single img{
+    margin-left: .33333rem;
+}
+.index .dynamic .concise .most .cover{
+    margin-bottom: 3.5px;
+}
+.index .dynamic .concise .most .title{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.index .dynamic .concise img:nth-child(2){
+    margin-left: 5px;
+}
+.index .dynamic .concise .three img:nth-child(2){
+    margin:0 5px;
+}
+.index .dynamic .concise .three img{
+    width: 3.0666666rem;
+}
+/*  报修维修，预约看房公共样式   */
+.index .personal{
+    display: flex;
+    height: .96rem;
+    align-items: center;
+}
+.index .personal .information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+    flex: 1;
+}
+.index .personal .name{
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 3px;
+    flex: 1;
+}
+.index .personal .name .tag{
+    width: 44px;
+    height: 18px;
+    line-height: 16px;
+    font-size: 12px;
+    border-radius: 2px;
+    text-align: center;
+    margin-left: 6px;
+    display: inline-block;
+}
+.index .personal .name .tag-gray{
+    border: 1px solid #999;
+    color: #999;
+}
+.index .personal .name .tag-green{
+    border: 1px solid #00B886;
+    color: #00B886;
+}
+.index .personal .avatar{
+    width: .96rem;
+    height: .96rem;
+    display: flex;
+    margin-right: .2666666rem;
+    border-radius: 50%;
+}
+/*  预约看房   */
+.index .showings .description{
+    border-bottom: 1px solid #d3d3d3;
+}
+.index .showings .classification{
+    background-image: url("../../images/index/pluple.png");
+}
+.index .showings .showings-list li{
+    padding: .32rem .2666666rem .3466666rem;
+    border-bottom: 1px solid #d3d3d3;
+    height: 3.5rem;
+}
+.index .showings li .overall{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.index .showings .introduction{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+}
+.index .showings article{
+    font-size: 14px;
+    color: #333;
+    line-height: 18px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.index .showings .showings-time{
+    font-size: 12px;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+.index .showings .showings-time .time-icon{
+    width: .3733333rem;
+    height: .3733333rem;
+    display: block;
+    background-image: url("../../images/icon/time.png");
+    background-size: cover;
+    margin-right: 2px;
+}
+.index .showings .cover{
+    width: 3.2rem;
+    height: 2.4rem;
+    display: block;
+    margin-left: .5rem;
+}
+/*  报修维修   */
+.index .service .description{
+    border-bottom: 1px solid #d3d3d3;
+}
+.index .service .classification{
+    background-image: url("../../images/index/green.png");
+}
+.index .service li{
+    padding: .32rem .2666666rem .3466666rem;
+    border-bottom: 1px solid #d3d3d3;
+    /*height: 2.32rem;*/
+}
+.index .service li .overall{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+.index .service .introduction{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.index .service .cover{
+    width: 2.56rem;
+    height: 1.7066666rem;
+    display: block;
+    margin-left: .5rem;
+}
+.index .service .address{
+    display: flex;
+    color: #666;
+    font-size: 14px;
+    align-items: center;
+}
+.index .service .address span{
+    flex: 1;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    max-width: 3rem;
+}
+.index .service .address .position-icon{
+    width: .2533333rem;
+    height: .4rem;
+    display: block;
+    background-image: url("../../images/icon/position.png");
+    background-size: cover;
+    margin-right: 4px;
+}
+.index .service .address .address-types{
+    width: 1.92rem;
+    height: .48rem;
+    line-height: .52rem;
+    display: block;
+    font-size: 12px;
+    color: #fff;
+    background-size: cover;
+    text-align: center;
+    margin-left: 5px;
+}
+.index .service .address .address-types.blue{
+    background-image: url("../../images/index/types-blue.png");
+}
+.index .service .address .address-types.pluple{
+    background-image: url("../../images/index/types-pluple.png");
+}
+/*  ----------------------------------------------------公告模块----------------------------------------------------  */
+/*  tap导航栏  */
+.anounce .tap a.active{
+    border-bottom:1px solid #038dff;
+    color: #038dff;
+}
+
+/*  +++++++++++++++++++++++公告列表+++++++++++++++++++  */
+.list .anounce-list{
+    width:100%;
+    padding-top:.32rem;
+}
+.list .anounce-list li{
+    background-color:#fff;
+    margin-bottom:.32rem;
+    padding:.56rem .53333333rem;
+}
+.list .anounce-list li a{
+    display:block;
+}
+.list .anounce-list li a time{
+    display: block;
+    font-size:12px;
+    color: #666;
+    margin-bottom: .24rem;
+}
+.list .anounce-list li a header{
+    font-size:18px;
+    color:#333;
+    margin-bottom: .24rem;
+}
+.list .anounce-list li a article{
+    font-size:14px;
+    color:#333;
+    line-height:.6133333rem;
+}
+.list .anounce-list li a img{
+    width:100%;
+    height:3.6533333rem;
+    margin:.32rem 0 .56rem;
+}
+.list .anounce-list li a .details{
+    color:#038dff;
+    font-size: 14px;
+}
+.list .anounce-list li .no-price article{
+    margin:.6133333rem 0 .6933333rem;
+    overflow: hidden;
+    word-wrap: break-word;
+    max-height: 6rem;
+}
+
+/*  +++++++++++++++++++++++公告详情(通知详情大部分共用)+++++++++++++++++++  */
+.details .content{
+    width: 100%;
+    padding:.48rem .5333333rem;
+    overflow: hidden;
+}
+.details .content .title{
+    font-size: 24px;
+    color: #333;
+    margin-bottom: .37333333rem;
+    word-wrap: break-word;
+}
+.details .content .personal{
+    display: flex;
+    justify-content:space-between;
+    margin-bottom: .48rem;
+}
+.details .content .personal .name{
+    font-size: 14px;
+    color: #666;
+}
+.details .content article{
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    overflow: hidden;
+    word-wrap: break-word;
+}
+.details .content article img{
+    width:100%;
+    display: block;
+    /*height:3.6533333rem;*/
+    margin:.37333333rem 0 .61rem;
+}
+
+/*  -----------------------------------------------------通知模块----------------------------------------------------  */
+
+/*  +++++++++++++++++++++++通知详情+++++++++++++++++++  */
+/*  tap导航栏  */
+.notice .tap a.active{
+    border-bottom:1px solid #038dff;
+    color: #038dff;
+}
+.list .notice-list li{
+    background-color:#fff;
+    margin-bottom: .32rem;
+}
+/*  通知列表--公司权限（隐藏已读和未读） */
+.list .notice-list li.authority{
+    margin-bottom: 0;
+    border-bottom:1px solid #e2e2e2;
+}
+.list .notice-list li.authority footer{
+    display: none!important;
+}
+.list .notice-list li>a{
+    padding: .373333333rem .32rem;
+    border-bottom: 1px solid #e2e2e2;
+    width: 100%;
+    min-height: 2.3466666rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.list .notice-list li a header{
+    display: flex;
+    line-height:.6133333rem;
+}
+.list .notice-list li a header .title{
+    flex: 1;
+    color: #333;
+    font-size: 14px;
+}
+.list .notice-list li a .release{
+    font-size: 12px;
+    color: #666;
+    /*line-height:.6133333rem;*/
+    padding-right: .3rem;
+    display: flex;
+    align-items: center;
+}
+.list .notice-list li a .release p{
+    margin-right: .35rem;
+}
+.list .notice-list li a .icon{
+    width: .2666666rem;
+    height: .4533333rem;
+    background-image: url("../../images/icon/enter.png");
+    background-size: cover;
+    display: block;
+    position: absolute;
+    right: .32rem;
+    top:50%;
+    margin-bottom: .26rem;
+}
+.list .notice-list li .types{
+    width: 58px;
+    height: 18px;
+    line-height: 16px;
+    font-size: 10px;
+}
+.list .notice-list li footer{
+    width: 100%;
+    height: .96rem;
+    display: flex;
+}
+.list .notice-list li footer a:first-child{
+    border-right: 1px solid #e2e2e2;
+}
+.list .notice-list li footer a{
+    line-height: .96rem;
+    display: block;
+    flex: 1;
+    text-align: center;
+    font-size:12px;
+    color:#038dff;
+    position: relative;
+}
+/*未读和已读人数为空时，颜色变灰*/
+.list .notice-list li footer a.active{
+    color: #999;
+}
+
+/*  +++++++++++++++++++++++通知接收列表+++++++++++++++++++  */
+.receive .tap a{
+    border-bottom: 1px solid #e2e2e2;
+    position: relative;
+}
+.receive .tap a .number{
+    margin-left: .1rem;
+    letter-spacing: .05rem;
+}
+.receive .tap a.active{
+    border-bottom:1px solid #038dff;
+    color: #038dff;
+}
+.receive .receive-list li{
+    border-bottom: 1px solid #e2e2e2;
+    padding: 8px .4266666rem .32rem;
+    color:#333;
+    font-size: 14px;
+    display: flex;
+}
+.receive .receive-list li a .avatar{
+    border-radius: 50%;
+    display: block;
+    width: 1.0666666rem;
+    height: 1.0666666rem;
+}
+.receive .receive-list li .ifat{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    margin-left: .42666666rem;
+}
+.receive .receive-list li .company{
+    color:#666;
+    font-size: 14px;
+}
+.receive .receive-list li .company span{
+    margin-left: .3rem;
+}
+
+/*  +++++++++++++++++++++++通知详情+++++++++++++++++++  */
+.notice-details .content .title{
+    margin-bottom: .6133333rem;
+    display: flex;
+}
+.notice-details .content .title p{
+    flex: 1;
+}
+.notice-details .content .title .types{
+    width: 60px;
+    height: 20px;
+    vertical-align: middle;
+    font-size:12px;
+    line-height: 18px;
+}
+
+/*  -----------------------------------------------------报修模块----------------------------------------------------  */
+/*  .repair作为报修模块下，当需要用到公共样式时，用repair作为前缀已防止重名class    */
+/*  +++++++++++++++++++++++报修列表+++++++++++++++++++  */
+.repair-list{
+    background-color: #e8e8ed;
+    overflow-x: hidden;
+    transform: none;
+}
+.repair-list .original{
+    position: relative;
+    z-index: 20;
+}
+/*  发布和筛选icon */
+.repair-list .release,.repair-list .filter{
+    display: flex;
+    align-items: center;
+    padding:0 .2rem;
+}
+.repair-list .release{
+    right: .2rem;
+}
+.repair-list .release i,.filter i{
+    width: .42666666rem;
+    height: .42666666rem;
+    display: block;
+    background-image: url("../../images/icon/release.png");
+    background-size: cover;
+}
+.repair-list .filter{
+    right: 1.066666rem;
+}
+.repair-list .filter i{
+    background-image: url("../../images/icon/filter.png");
+}
+/*  搜索按钮  */
+.repair .search-btn{
+    margin: .29333333rem .32rem 0;
+    width: 93.6%;
+    height: .7333333rem;
+    line-height: .7333333rem;
+    border: 1px solid #038dff;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    background-color: #fff;
+}
+.repair .search-btn .search-icon{
+    width: .3333333rem;
+    height: .32rem;
+    display: block;
+    background-image: url("../../images/icon/search-gray.png");
+    background-size: cover;
+    margin-right: 3.5px;
+}
+
+/*  报修列表  */
+.repair-list .list-ul{
+    padding: .3rem .32rem;
+}
+.repair-list .list-ul li{
+    background-color: #fff;
+    position: relative;
+    padding: .32rem .24rem;
+    margin-bottom: .32rem;
+}
+.repair-list .list-ul li>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+/*  列表头部  */
+.repair-list .list-ul .header{
+    display: flex;
+    position: relative;
+    margin-bottom: .4rem;
+}
+.repair .avatar{
+    width: .96rem;
+    height: .96rem;
+    display: block;
+    margin-right: .24rem;
+    border-radius: 50%;
+}
+.repair .information{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.repair .information .name{
+    color: #666;
+    font-size: 14px;
+}
+/*  列表状态  */
+.repair-list .list-ul .header .repair-status{
+    position: absolute;
+    top: .16rem;
+    right: 0;
+    font-size: 14px;
+}
+/*报修状态 -- 待验收*/
+.repair .repair-status.green{
+    color: #00b886;
+    display: flex;
+    align-items: center;
+}
+/*报修状态 -- 被移交*/
+.repair .repair-status.red{
+    color: #ff6262;
+}
+/*报修状态 -- 已撤销*/
+.repair .repair-status.gray{
+    color: #999;
+}
+/*报修状态 -- 未派单，已派单，已受理*/
+.repair .repair-status.blue{
+    color: #008fff;
+    display: flex;
+    align-items: center;
+}
+/*报修状态 -- 已确认*/
+.repair .repair-status.yellow{
+    color: #ff9b42;
+}
+/*  列表地址  */
+.repair .list-ul .address{
+    color: #333;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.repair .list-ul .address span{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.repair .list-ul .address .address-icon{
+    width: .4rem;
+    height: .4rem;
+    display: block;
+    background-image: url("../../images/icon/address-blue.png");
+    background-size: cover;
+    margin-right: 4px;
+}
+/*  列表图片  */
+.repair .list-ul .image{
+    display: flex;
+    flex-wrap: wrap;
+}
+.repair .list-ul .image img{
+    margin:0 .1333333rem .1333333rem 0;
+    width: 2.12rem;
+    height: 2.4rem;
+    display: block;
+}
+/* 使用图片放大插件时，将margin放在figure中*/
+.repair .list-ul .image figure{
+    margin:0 .1333333rem .1333333rem 0;
+}
+.repair .list-ul .image figure:nth-child(4n){
+    margin-right: 0;
+}
+.repair .list-ul .image figure img{
+    margin:0;
+}
+.repair .list-ul .image img:nth-child(4n){
+    margin-right: 0;
+}
+/*  报修类型  */
+.repair-list .list-ul .repair-types{
+    color: #999;
+    font-size: 12px;
+    line-height: .6rem;
+}
+/*  报修操作  */
+.repair-list .list-ul footer{
+    display: flex;
+    justify-content: flex-end;
+    padding: .32rem 0 0
+}
+/*  报修详情和报修列表都需要用到  */
+.repair .repair-operating{
+    width: 2rem;
+    height: .8rem;
+    line-height: .8rem;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    margin-right: .32rem;
+}
+.repair .repair-operating:last-child{
+    margin-right: 0;
+}
+/*  报修操作 -- 撤销  */
+.repair .repair-operating.red{
+    background-color: #ff6262;
+}
+/*  报修操作 -- 派单 , 重新派单，接单，填写处理  */
+.repair .repair-operating.blue{
+    background-color: #008fff;
+}
+/*  报修操作 -- 确认验收  */
+.repair .repair-operating.yellow{
+    background-color: #ff9b42;
+}
+
+/*  报修模块中，如果派单（并且是我的单）则会有给我的标签（报修列表和待受理详情）  */
+.repair .mine-icon{
+    width: 1.3066666rem;
+    height: .48rem;
+    display: inline-block;
+    background-size: cover;
+}
+.repair-details.repair .mine-icon{
+    position: absolute;
+    right: 0;
+    background-image: url("../../images/icon/mine.png");
+}
+.repair-list.repair .mine-icon{
+    margin-right: 6px;
+    background-image: url("../../images/icon/mine-right.png");
+}
+/*  报修筛选--切换楼栋单元  */
+.repair-switch{
+    transform: translate(0,-200%);
+    z-index: 301;
+    position: relative;
+    background-color: #fff;
+}
+.repair-switch.active{
+    transform: translate(0,-100%);
+}
+.repair-switch .status{
+    padding: 0 .32rem;
+}
+.repair-switch .title{
+    padding: .4rem .32rem;
+    font-size: 16px;
+    color: #333;
+}
+.repair-switch .status ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.repair-switch .status ul li{
+    width: 2.8533333rem;
+    height: .96rem;
+    line-height: .96rem;
+    text-align: center;
+    border-radius: .96rem;
+    border: 1px solid #999;
+    margin-bottom: .32rem;
+    color: #666;
+}
+.repair-switch .status ul li.active{
+    border: 0;
+    color: #fff;
+    background-color: #038dff;
+}
+.repair-switch .nav-layer{
+    position: relative;
+    top: 0;
+}
+.repair-switch .operating{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #d4d4d4;
+    height: 1.1733333rem;
+    line-height: 1.17333333rem;
+}
+.repair-switch .operating .features{
+    text-align: center;
+    color: #333;
+    font-size: 16px;
+    flex:1;
+}
+.repair-switch .operating #determine{
+    background-color: #038dff;
+    color: #fff;
+}
+/*  +++++++++++++++++++++++报修详情+++++++++++++++++++  */
+.repair-details{
+    background-color: #ececf1;
+}
+/*  顶部状态  */
+.repair-details .process{
+    width: 100%;
+    height: 1.70666666rem;
+    background-color: #038dff;
+    padding: .6rem .56rem 0 .56rem;
+    z-index: 3;
+    position: relative;
+}
+/*  当有小头像显示维修人是，高度要变化  */
+.repair-details .process.active{
+    height: 2.906666rem;
+}
+.repair-details .process.active .repair-man{
+    display: flex;
+}
+.repair-details .process .status{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #8dcdff;
+    padding-top: .3rem;
+}
+.repair-details .process .status .active{
+    color: #fff;
+}
+.repair-details .process .line{
+    border-top: 2px dashed #8dcdff;
+    margin: 0 .37333333rem 0 .333333334rem;
+}
+/*  园点  */
+.repair-details .process .dots{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 .93333333rem 0 .89333333rem;
+    position: absolute;
+    top: .44rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+.repair-details .process .garden{
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.repair-details .process .transparent{
+    width: .373333333rem;
+    height: .373333333rem;
+    background-color: #038dff;
+    z-index: 4;
+}
+.repair-details .process .in{
+    width: .24rem;
+    height: .24rem;
+    background-color: #99d2ff;
+    /*opacity: .5;*/
+    z-index: 5;
+}
+.repair-details .process .inside{
+    width: .16rem;
+    height: .16rem;
+    background-color: #fff;
+    z-index: 6;
+    display: none;
+}
+/*  闪烁状态active    */
+.repair-details .process .transparent.active  .in{
+    /*border: .04rem solid rgba(255,255,255,.2);*/
+    border: .04rem solid #33a5ff;
+    width: .32rem;
+    height: .32rem;
+}
+.repair-details .process .transparent.active .inside{
+    display: block;
+}
+/*  头部维修人 */
+.repair-details .repair-man{
+    display: none;
+    position: relative;
+}
+.repair-details .repair-man .frame{
+    background-size: cover;
+    height: 1.2266666rem;
+    overflow: hidden;
+    border-radius: 1.2133333rem;
+    padding: .17333333rem .1rem .08rem 0;
+    position: absolute;
+    top: .15rem;
+}
+.repair-details .repair-man .frame.most{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.repair-details .repair-man .frame .service.over{
+    margin-right: .2rem;
+}
+.repair-details .repair-man .frame .service{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #666;
+    height: .96rem;
+}
+.repair-details .repair-man .frame .service .avatar{
+    margin-right: .1333333rem;
+}
+.repair-details .repair-man .frame .service .career{
+    color: #999;
+    margin-bottom: 2px;
+}
+.repair-details .repair-man .odd-number{
+    background-image: url("../../images/repair/back1.png");
+    width: 2.4rem;
+}
+.repair-details .repair-man .most{
+    background-image: url("../../images/repair/back2.png");
+    width: 3.733333rem;
+}
+/*  在已受理，待确认，已确认下头像位置 */
+.repair-details .repair-man .odd-number.one{
+    right: 51%;
+}
+.repair-details .repair-man .odd-number.two{
+    right: 22%;
+}
+.repair-details .repair-man .odd-number.three{
+    right: -6%;
+}
+.repair-details .repair-man .most.one{
+    right: 44%;
+}
+.repair-details .repair-man .most.two{
+    right: 15%;
+}
+.repair-details .repair-man .most.three{
+    right: -6%;
+}
+
+/* @@@@@@@@@@ 待受理详情 @@@@@@@@@@@@@@   */
+/*  报修详情标题  */
+.repair-details .pending .column,.repair-details .result .column{
+    color: #999;
+    font-size: 14px;
+    margin-right: .18666666rem;
+}
+.repair-details .pending,.repair-details .result,.repair-details .con-main{
+    margin:0 .32rem .32rem;
+    background-color: #fff;
+    padding:0 .24rem .24rem;
+}
+.repair-details .result{
+    margin-bottom: 0;
+}
+.repair-details .pending header{
+    display: flex;
+    height: 1.2rem;
+    border-bottom: 1px solid #D4D4D4;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #333;
+}
+.repair-details .pending header .title{
+    display: flex;
+}
+.repair-details .pending header i{
+    width: 4px;
+    height: .42666666rem;
+    background-color: #038dff;
+    display: block;
+    margin-right: .1866666rem;
+}
+.repair-details .pending header .set{
+    display: flex;
+}
+/*  报修详情--报修人  */
+.repair-details .pending .people{
+    display: flex;
+    align-items: center;
+    height: 1.84rem;
+    border-bottom: 1px solid #D4D4D4;
+    padding-left: .64rem;
+}
+.repair-details .pending .people p.column{
+    margin-right: .4rem;
+}
+.repair-details .pending .people a{
+    display: flex;
+}
+/*  报修详情--报修详情列  */
+.repair-details .detailed{
+    padding: .32rem 0 0 0;
+}
+.repair-details .detailed li{
+    display: flex;
+    margin-bottom: .32rem;
+    color: #333;
+    font-size: 14px;
+    line-height: .48rem;
+    position: relative;
+}
+.repair-details .detailed li time{
+    font-size: 14px;
+    color: #333;
+}
+.repair-details .detailed li:first-child>div{
+    display: flex;
+}
+/*  防止字数过多挤压列名    */
+.repair-details .detailed li .word{
+    flex:1;
+}
+/*  重置多行省略，以显示全部    */
+.repair-details .detailed li.address .word{
+    white-space: inherit;
+}
+
+/* @@@@@@@@@@ 评论 @@@@@@@@@@@@@@   */
+.repair-details .con-main{
+    border-top: 1px solid #dfdfdf;
+}
+.repair-details .con-main i{
+    display: inline-block;
+    background-size: cover;
+    width: .3733333rem;
+    height: .32rem;
+}
+/*  显示和隐藏点赞和评论    */
+.repair-details .con-main .head{
+    display: flex;
+    justify-content: flex-end;
+    height: .8rem;
+}
+.repair-details .con-main .head .button{
+    width: 3.73rem;
+    height: .8rem;
+    line-height: .8rem;
+    color: #fff;
+    background-color: #038dff;
+}
+.repair-details .con-main .head .button>div{
+    padding: 0 .3rem;
+    flex: 1;
+}
+.repair-details .con-main .head .button .like-btn.active{
+    background-color: #0072CC;
+}
+.repair-details .con-main .head .button .like-icon{
+    background-image: url("../../images/repair/like-f.png");
+    margin-right: 4px;
+}
+.repair-details .con-main .head .button .comment-icon{
+    background-image: url("../../images/repair/comment-f.png");
+    margin-right: 4px;
+}
+.repair-details .con-main .head .prompt{
+    height: 100%;
+    width: .7333333rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.repair-details .con-main .head .prompt .hide-icon{
+    width: .64rem;
+    height: .4233333rem;
+    background-image: url("../../images/repair/comment-prompt.png");
+}
+.repair-details .con-main .head .button e{
+    width: 1px;
+    height: .4rem;
+    background-color: #0074cf;
+    display: inline-block;
+}
+/*  点赞头像    */
+.repair-details .con-main .like{
+    display: flex;
+    margin-bottom: .4666666rem;
+}
+.repair-details .con-main .shell{
+    width: .6933333rem;
+    height: .8rem;
+    display: flex;
+    align-items: center;
+}
+.repair-details .con-main .like .like-icon{
+    background-image: url("../../images/repair/like.png");
+}
+.repair-details .con-main .small-avatar{
+    width: .8rem;
+    height: .8rem;
+    display: block;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.repair-details .con-main .like .like-list a{
+    display: inline-block;
+    float: left;
+}
+/*  评论列表   */
+.repair-details .con-main .comment{
+    display: flex;
+    position: relative;
+}
+.repair-details .con-main .comment .shell{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.repair-details .con-main .comment .common-icon{
+    background-image: url("../../images/repair/comment.png");
+    margin-right: .16rem;
+}
+.repair-details .con-main .comment .small-avatar{
+    margin-right: .3333333rem;
+}
+.repair-details .con-main .comment #list{
+    width: 100%;
+}
+.repair-details .con-main .comment li{
+    display: flex;
+    padding: 0 0 .32rem .6933333rem;
+    margin-top: .32rem;
+    border-bottom: 1px solid #D4D4D4;
+}
+.repair-details .con-main .comment li:first-child{
+    margin-top: 0;
+}
+.repair-details .con-main .comment li:last-child{
+    border-bottom: 0;
+}
+.repair-details .con-main .comment li .name{
+    color: #333;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.repair-details .con-main .comment li time{
+    margin-bottom: .32rem;
+    color: #999;
+    font-size: 10px;
+}
+.repair-details .con-main .comment li .content{
+    line-height: 16px;
+    font-size: 14px;
+    color: #666;
+}
+/*  确认验收   */
+.repair-details .confirm{
+   width: 100%;
+    height: 1.28rem;
+    line-height: 1.28rem;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #038dff;
+}
+.repair-details .comment-box{
+    width: 100%;
+    height: 1.28rem;
+    display: flex;
+    align-items: center;
+    background-color: #e2e2e2;
+    border-top: 1px solid #cdcdcd;
+    border-bottom: 1px solid #cdcdcd;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: .2rem .32rem;
+}
+.repair-details .comment-box input{
+    border: 1px solid #c2c2c2;
+    border-radius: 3px;
+    height: 100%;
+    padding: .2rem;
+    flex: 1;
+    color: #666;
+}
+.repair-details .comment-box .symbol-icon{
+    display: inline-block;
+    background-size: cover;
+    width: .7733333rem;
+    height: .7733333rem;
+    background-image: url("../../images/repair/symbol.png");
+    margin: 0 .32rem;
+}
+.repair-details .comment-box .send{
+    width: 1.333333rem;
+    height: .7333333rem;
+    line-height: .7333333rem;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    background-color: #038dff;
+    border-radius: 3px;
+}
+
+    /*  +++++++++++++++++++++++物业报修+++++++++++++++++++  */
+.repair-add{
+    transition:all .5s ease;
+    transform: none;
+    /*overflow: hidden;*/
+    height: 100%;
+}
+.repair-add .main{
+    position: relative;
+    width: 100%;
+}
+.repair-add.active{
+    transform:translate(-100%,0);
+}
+/*  第一页   */
+.repair-add .first{
+    transition:all .5s ease;
+    transform: none;
+    height: 100%;
+}
+.repair-add .first.active{
+    transform:translate(-100%,0);
+}
+/*  报修类型和项目   */
+.repair-add .first .repair-head{
+    height: .8rem;
+    line-height: .8rem;
+    background-color: #f5f5f5;
+    padding-left: .32rem;
+    font-size: 13px;
+    color: #999;
+}
+.repair-add .first .repair-type ul{
+    padding: .32rem .32rem 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+.repair-add .first .repair-type li{
+    width: 2.8533333rem;
+    height: .96rem;
+    line-height: .96rem;
+    font-size: 14px;
+    color: #666;
+    border-radius: .96rem;
+    text-align: center;
+    border: 1px solid #999;
+    margin:0 .4rem .32rem 0;
+}
+.repair-add .first .repair-type li:nth-child(3n){
+    margin-right: 0;
+}
+.repair-add .first .repair-type li.active{
+    color: #fff;
+    background-color: #038dff;
+    border:0;
+}
+/*  公共区域报修  */
+.repair-add .first .repair-type.publicArea{
+    font-size: 14px;
+    color: #999;
+}
+.repair-add .publicArea .service-address{
+    width: 100%;
+    min-height: 1.44rem;
+    display: flex;
+    align-items: center;
+    padding: .32rem .32rem .32rem .4rem;
+    line-height: .5rem;
+}
+.repair-add .publicArea .service-address.service{
+    border-bottom: 1px solid #D4D4D4;
+}
+.repair-add .publicArea .service-address #pA{
+    width: 100%;
+    height: 100%;
+}
+.repair-add .publicArea .service-address #pA::placeholder{
+    color: #999;
+}
+.repair-add .publicArea .service-address.active{
+    color: #333;
+}
+.repair-add .publicArea .service-address .can-choose{
+    height: 100%;
+    display: flex;
+    flex:1;
+    justify-content: space-between;
+    align-items: center;
+}
+.repair-add .publicArea .service-address .can-choose span{
+    width: 96%;
+}
+.repair-add .publicArea .service-address .address-icon{
+    width: .48rem;
+    height: .6133333rem;
+    display: block;
+    background-size:cover;
+    background-image: url("../../images/repair/positioning-gray.png");
+    margin-right: .16rem;
+}
+.repair-add .publicArea .service-address.active .address-icon{
+    background-image: url("../../images/repair/positioning.png");
+}
+.repair-add .publicArea .service-address .jump-icon{
+    width: .21333333rem;
+    height: .4rem;
+    display: block;
+    background-image: url("../../images/icon/enter.png");
+    background-size:cover;
+}
+.repair-add .first .submit{
+    transform: none;
+    margin-bottom: .5rem;
+}
+/*  区域选择扩展  */
+.repair-add-switch{
+    height: 93.4032%;
+    position: absolute;
+    bottom: 0;
+    transform: translate(100%,0%);
+}
+.repair-add-switch.active{
+    transform: none;
+}
+/*  报修输入框   */
+.repair-add .first .content .box{
+    height: 3.3333333rem;
+    padding: .32rem;
+    font-size: 14px;
+    line-height: .48rem;
+    overflow-y: auto;
+}
+.repair-add .first .content .box:empty:before{
+    content: attr(placeholder);
+}
+.repair-add .first .content .box::before{
+    color:#999;
+    font-size: 14px;
+}
+/*  上传图片   */
+.repair .upload{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 .32rem;
+    margin-bottom: .19rem;
+}
+.repair .upload li{
+    width: 2.12rem;
+    height: 2.4rem;
+    margin: 0 .29rem .29rem 0;
+    position: relative;
+}
+.repair .upload li:nth-child(4n){
+    margin-right: 0;
+}
+.repair .upload li img{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.repair .upload li .delete-icon{
+    display: block;
+    width: .5rem;
+    height: .5rem;
+    background-image: url("../../images/repair/delete.png");
+    background-size: cover;
+    position: absolute;
+    top: 2.5px;
+    right: 2.5px;
+}
+.repair .upload li.shoot{
+    background-image: url("../../images/repair/shoot.png");
+    background-size: cover;
+}
+.repair .upload li.shoot input[type=file]{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.repair .next-step{
+    width: 93.6%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    background-color: #038dff;
+    margin: 0 auto 1rem;
+}
+/*  第二页   */
+.repair-add .second{
+    transform:translate(100%,0);
+    transition:all .5s ease;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.repair-add .second.active{
+    transform:translate(0,0);
+}
+.repair-add .second .head{
+    height: 1.01333333rem;
+    line-height: 1.01333333rem;
+    width: 100%;
+    background-color: #EBEBF1;
+    color: #999;
+    font-size: 14px;
+    padding: 0 .32rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.repair-add .second .head span{
+    color: #666;
+}
+.repair-add .second .head .repair-type{
+    margin-right: .64rem;
+}
+.repair-add .second .head .modify-icon{
+    width: .44rem;
+    height: .48rem;
+    display: block;
+    background-image: url("../../images/icon/modify.png");
+    background-size:cover;
+}
+.repair-add .second .title{
+    padding-left: .48rem;
+    height: 1.36rem;
+    width: 100%;
+    border-bottom: 1px solid #D4D4D4;
+    line-height: 1.36rem;
+    font-size: 16px;
+}
+.repair-add .second ul li{
+    border-bottom: 1px solid #D4D4D4;
+    height: 1.28rem;
+    line-height: 1.28rem;
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 0 .48rem;
+    font-size: 14px;
+    color: #333;
+}
+.repair-add .second ul li input[type=text]{
+    height: 100%;
+}
+.repair-add .second ul li .prompt{
+    color: #999;
+    width: 37.333333%;
+}
+.repair-add .second ul li .features{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.repair-add .second ul li .features p{
+    height: 100%;
+    overflow: hidden;
+    width: 95%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+.repair-add .second ul li .features .jump-icon{
+    width: .21333333rem;
+    height: .4rem;
+    display: block;
+    background-image: url("../../images/icon/enter.png");
+    background-size:cover;
+}
+.repair-add .submit{
+    position: relative;
+    /*bottom: 1rem;*/
+    left: .64rem;
+    width: 87.2%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    background-color: #038dff;
+    border-radius: 2px;
+    transform: translateY(300%);
+}
+/*  服务地址   */
+.repair.service{
+    background-color: #ebebf1;
+    transform:translate(100%,-100%);
+    transition:all .5s ease;
+}
+.repair.service.active{
+    transform:translate(0,-100%);
+}
+.repair.service li{
+    background-color: #fff;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: .32rem;
+    padding: 0 0 0 .64rem;
+}
+.repair.service li .address{
+    border-bottom: 1px solid #D4D4D4;
+    line-height: .55rem;
+    min-height: 1.28rem;
+    padding: .44rem 0;
+}
+.repair.service li .select{
+    line-height: 1.28rem;
+    height: 1.28rem;
+}
+.repair.service li .select .select-icon{
+    width: .2933333rem;
+    height: .2933333rem;
+    display: inline-block;
+    background-image: url("../../images/icon/unselected.png");
+    background-size:cover;
+    margin-right: .2133333rem;
+}
+.repair.service li.active .select .select-icon{
+    background-image: url("../../images/icon/selected.png");
+}
+
+/*  +++++++++++++++++++++++派给+++++++++++++++++++  */
+.repair-sent .sent-list .head{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    color: #038dff;
+    font-size: 14px;
+    padding:0 0 0 .64rem;
+    display: flex;
+    align-items: center;
+}
+.repair-sent .sent-list .head .shrink-icon{
+    width: .3733333rem;
+    height: .3733333rem;
+    display: inline-block;
+    background-image: url("../../images/icon/up.png");
+    background-size: cover;
+    margin-right: .64rem;
+}
+.repair-sent .sent-list .head.active .shrink-icon{
+    background-image: url("../../images/icon/down.png");
+}
+.repair-sent .sent-list .head .title{
+    flex:1;
+    border-bottom: 1px solid #e1e1e1;
+}
+.repair-sent .sent-list ul{
+    overflow: hidden;
+}
+.repair-sent .sent-list ul.active{
+    height: 0;
+    transition:all .5s ease;
+    /*transition-duration: 1s;*/
+}
+.repair-sent .sent-list li{
+    height: 1.4666666rem;
+    display: flex;
+}
+.repair-sent .sent-list li a{
+    display: flex;
+    height: 1.4666666rem;
+    align-items: center;
+    padding:0 0 0 .32rem;
+}
+.repair .sent-list li a:last-child{
+    width: 100%;
+    padding: 0;
+}
+.repair-sent .sent-list li a .avatar{
+    display: block;
+    width: .96rem;
+    height: .96rem;
+    margin-right: .32rem;
+}
+.repair-sent .sent-list li a .information{
+    position: relative;
+    border-bottom: 1px solid #e1e1e1;
+    flex: 1;
+    height: 100%;
+    padding: .25rem 0;
+}
+.repair-sent .sent-list li a .information time{
+    display: none;
+}
+.repair-sent .sent-list li a .information .picked-up{
+    color: #999;
+    position: absolute;
+    /*top: .3rem;*/
+    right: .32rem;
+}
+.repair-sent .sent-list li a .information .position{
+    font-size: 10px;
+    color: #FF9B42;
+    margin-left: .2133333rem;
+}
+.repair-sent .sent-list li a .information time{
+    font-size: 10px;
+    color: #999;
+}
+
+/*  +++++++++++++++++++++++撤销+++++++++++++++++++  */
+.repair-revoked{
+    position: relative;
+    padding: .32rem;
+}
+.repair .the-reason{
+    background-color: #f5f5f5;
+    font-size: 14px;
+    color: #333;
+    padding: .24rem;
+    height: 4rem;
+    line-height: 16px;
+    margin-bottom: .32rem;
+    overflow: auto;
+}
+.repair .the-reason:empty:before {
+    content: attr(placeholder);
+    display: block; /* For Firefox */
+    color: #999;
+}
+.repair .the-reason::placeholder{
+}
+.repair .carry{
+    position: relative;
+    /*bottom: 1.6rem;*/
+    bottom: 0;
+    left: 30.5%;
+    width: 39%;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    color: #fff;
+    background-color: #038dff;
+    text-align: center;
+    font-size: 15px;
+    display: block;
+}
+.repair-revoked .carry{
+    top: 30%;
+}
+/*  +++++++++++++++++++++++已撤销+++++++++++++++++++  */
+.repair-revoked-has.repair-details .line{
+    border-top: 2px solid #8dcdff;
+}
+.repair-revoked-has .revoked{
+    margin: 0 .32rem .32rem;
+    background-color: #fff;
+    padding: .24rem;
+    display: flex;
+    color: #999;
+    font-size: 14px;
+    line-height: .48rem;
+}
+.repair-revoked-has .revoked .column{
+    margin-right: .18666666rem;
+}
+.repair-revoked-has .revoked .word{
+    flex:1;
+    color: #333;
+}
+/*  +++++++++++++++++++++++填写处理+++++++++++++++++++  */
+.repair-result .carry{
+    top: 15%;
+}
+/*  +++++++++++++++++++++++移交+++++++++++++++++++  */
+.repair-result #newForm,.repair-transfer #newForm{
+    padding: .32rem;
+}
+.repair-result #newForm .upload,.repair-transfer #newForm .upload{
+    padding: 0;
+}
+.repair-transfer #newForm .head{
+    padding: .16rem;
+    color: #333;
+    font-size: 14px;
+}
+.repair-transfer .carry{
+    position: relative;
+    bottom: 0;
+    margin-bottom: 1.6rem;
+}

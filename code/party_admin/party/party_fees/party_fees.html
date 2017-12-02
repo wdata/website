@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>党费列表</title>
+    <link rel="stylesheet" type="text/css" href="../../theme/css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/jquery-ztree/css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/css/page.css">
+    <link rel="stylesheet" href="../css/label/label.css">
+</head>
+<body>
+<div class="search-tab-box">
+    <form class="form input-sm" id="searchForm">
+        <table>
+            <tbody>
+            <tr>
+                <td><label for="account" class="label4">姓名：</label></td>
+                <td><input type="text" id="account" name="keyword" class="form-control"></td>
+                <td><label class="label4">缴纳月份：</label></td>
+                <td>
+                    <div class="date form_datetime start-time form_datetime_input">
+                        <input id="datetimeStart" name="month" class="form-control" size="16" type="text" value="" readonly>
+                        <span class="add-on"><i class="icon-th"></i></span>
+                        <i class="fa fa-tasks"></i>
+                    </div>
+                </td>
+                <!--<td><label class="label4">公司：</label></td>-->
+                <!--<td>-->
+                    <!--<select id="firmId" name="firmId" class="form-control">-->
+                        <!--<option value="">全部</option>-->
+                        <!--&lt;!&ndash;<option value="100">小道科技有限公司</option>&ndash;&gt;-->
+                    <!--</select>-->
+                <!--</td>-->
+                <td><label>状态：</label></td>
+                <td>
+                    <select id="status_select" name="status" class="form-control">
+                        <option value="">全部</option>
+                        <option value="1">已支付</option>
+                        <option value="0">未支付</option>
+                    </select>
+                </td>
+                <td><input type="button" onclick="search(this)" class="btn btn-primary" value="搜索"></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div class="hr-10"></div>
+<div class="main-content">
+    <div class="con-oper">
+        <form class="form " id="Import"  enctype="multipart/form-data">
+            <input type="file" name="file" onchange="Import(this)" class="import-wrap FileImport">
+            <div class="btn bg-success">导入</div>
+            <a class="btn bg-info"  onclick = "templateExport(this)">导入模板下载</a>
+            <a class="btn bg-info"  onclick = "Export(this)">导出</a>
+            <input class="btn bg-danger" onclick="deteleAll()" type="button" value="删除">
+        </form>
+    </div>
+    <div class="con-table">
+        <table class="table table-hover" id="lebel_tab">
+            <thead>
+            <tr>
+                <th><input type="checkbox" onclick="checkAll('lebel_tab',this)"></th>
+                <th>序号</th>
+                <th>账号</th>
+                <th>姓名</th>
+                <th>缴纳月份</th>
+                <th>金额（元）</th>
+                <th>录入时间</th>
+                <th>缴费状态</th>
+                <th>缴费时间</th>
+                <th>支付流水</th>
+                <th>所属机构</th>
+                <th>所属公司</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody class="list">
+            <!--<tr>-->
+                <!--<th><input type="checkbox" onclick="checkAll('userlist_tab',this)"></th>-->
+                <!--<th>序号</th>-->
+                <!--<th>'+ val.username +'</th>-->
+                <!--<th>'+ val.name +'</th>-->
+                <!--<th>'+ val.month +'</th>-->
+                <!--<th>'+ val.money +'</th>-->
+                <!--<th>'+ val.createTime +'</th>-->
+                <!--<th class="payStatus" data-payStatus='1'>已支付</th>-->
+                <!--<th>'+ val.createTime +'</th>-->
+                <!--<th>'+ val.payNumber +'</th>-->
+                <!--<th>'+ val.organizationName +'</th>-->
+                <!--<th>公司ID</th>-->
+                <!--<th>-->
+                    <!--<button  onclick="deteleAccount(this)" class="btn bg-danger">删除</button>-->
+                <!--</th>-->
+            <!--</tr>-->
+            </tbody>
+        </table>
+        <div class="pages ml20 undis">
+            <div class="pagination" id="pagination"></div>
+            <div class="pageGo">
+                <span>跳转到</span>
+                <input type="number" min="1">
+                <input type="button" value="GO" onclick="pageTo(this)">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal box-shadow fade showDetail_modal pic-review-edit" id="importModal">
+    <div class="modal-dialog" style="width: 80%;">
+        <div class="modal-content">
+            <div class="add-content" style="margin:0 15px; overflow: auto;">
+                <table class="table table-hover" id="userlist_tab">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>账号</th>
+                        <th>姓名</th>
+                        <th>缴纳月份</th>
+                        <th>金额</th>
+                        <th>缴费时间</th>
+                        <th>支付流水</th>
+                    </tr>
+                    </thead>
+                    <tbody class="import_list">
+                        <!--<tr>-->
+                            <!--<td>序号</td>-->
+                            <!--<td>账号</td>-->
+                            <!--<td>姓名</td>-->
+                            <!--<td>缴纳月份</td>-->
+                            <!--<td>金额</td>-->
+                            <!--<td>缴费时间</td>-->
+                            <!--<td>支付流水</td>-->
+                            <!--<td>所属机构</td>-->
+                            <!--<td>所属公司</td>-->
+                        <!--</tr>-->
+                    </tbody>
+                </table>
+                <div class="text-center" style="    position: absolute;width: 100%;bottom: 50px;left: 0;">
+                    <input type="button" value="关闭" class="btn" style="color:#fff" onclick="importDown()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../theme/plugin/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jquery-validate/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jquery-validate/js/messages_cn.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../theme/js/common/common.js"></script>
+<script type="text/javascript" src="../../theme/js/common/contabs.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/party_fees/party_fees.js"></script>
+</body>
+</html>

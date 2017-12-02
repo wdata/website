@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑设备</title>
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/page.css">
+
+</head>
+<body>
+<div class="outermost">
+    <header class="header-title">
+        <i class="fa fa-hand-o-right"></i><b>您的位置:</b> <span>设备管理</span> &gt; <span class="blueChange">编辑设备</span>
+    </header>
+    <div class="main-content">
+        <div class="add-content">
+            <form  class="form-horizontal" id="newForm" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">设备序列号：</label>
+                    <div class="col-md-3">
+                        <input id="sequence" type="text" class="form-control" disabled required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">设备型号：</label>
+                    <div class="col-md-3">
+                        <select name="modelId" id="equipmentModel" class="form-control">
+
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">设备名称：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input id="deviceName" type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">代理商：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <select id="agentId" class="form-control">
+                            <option value="1762">科信物业公司</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">OME厂商：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <select id="oemId" class="form-control">
+                            <option value="1762">科信物业公司</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">固件版本号：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input id="version" type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">&nbsp;</label>
+                    <div class="col-md-3">
+                        <a href="fm.html"  class="btn btn-primary determine">确定</a>
+                        <a href="fm.html"  class="btn btn-close-dialog-tab" >取消</a>
+                        <!--<input type="button" value="确定" class="btn btn-primary determine" >-->
+                        <!--<input type="button" value="取消" class="btn btn-close-dialog-tab" style="color:#fff">-->
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="opering-mask">
+        <div class="main">
+            <div class="tit">提示信息</div>
+            <div class="con"></div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="../../plugin/jQuery/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../plugin/layer-v3.1.0/layer/layer.js"></script>
+<script type="text/javascript" src="../../common/common.js"></script>
+<script type="text/javascript" src="js/fm_edit.js"></script>
+</body>
+</html>

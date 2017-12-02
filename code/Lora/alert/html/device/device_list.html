@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>设备列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/jqPaginator/paging.css">
+    <link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<style>
+		#importDeviceModal .btn-wrap{margin-top: 15px;text-align: center;}
+		#importDeviceModal .btn-wrap .btn{height: 34px;width: 78px;}
+		#importDeviceModal .btn-wrap .btn.btn-primary{background: #2bc5fe;border-color: #2bc5fe;color: #fff;}
+		#importDeviceModal .btn-wrap .btn.btn-red{background: #FF6B6B;border-color: #FF6B6B;color: #fff;}
+		#importDeviceModal .btn-wrap .btn {margin: 0 33px;height: 34px;width: 78px;}
+		#detail_modal .modal-body .div_top .div_item .list-l{color:#6B738A;}
+		.search-tab-box .citySelect {margin-left: 10px;}
+	</style>
+</head>
+<body>
+<div class="search-tab-box">
+	<div class="list clearfix">
+        <table class="max100 fl ">
+        	<tbody>
+        		<tr>
+        			<!--<td><label class="label4">节点名称：</label></td>-->
+        			<td><input type="text" name="name" class="form-control"  placeholder="请输入节点名称" onkeyup="searchKey(event);"></td>
+        			<td>
+						<label class="label4">状态：</label>
+        				<select class="status_select form-control">
+							<option value="">全部</option>
+							<option value="normal">正常</option>
+							<option value="alarm">报警</option>
+							<option value="fault">故障</option>
+							<option value="offline">离线</option>
+						</select>
+        			</td>
+					<td>
+						<div class="citySelect fl">
+							<select name="" id="province" class="form-control" onchange="getCitySel();getList(this)"></select>
+							<select name="" id="city" class="form-control" onchange="getCountrySel();getList(this)" style="display:none"></select>
+							<select name="" id="country" class="form-control" onchange="getGroupSel();getList(this)" style="display:none" ></select>
+							<select name="" id="group" class="form-control" style="display:none" onchange="getList(this)"></select>
+						</div>
+					</td>
+					<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="searchList()"></td>
+        		</tr>
+        	</tbody>
+        </table>
+        <div class="oper undis fr">
+        	<!-- <a class="btn btn-primary" href="device_add.html">添加设备</a> -->
+			<button class="btn btn-yellow" onclick="$('#importDeviceModal').modal();$('#deviceFile').val('');">导入设备</button>
+        	<button class="btn btn-primary" href="html/device/device_add.html" onclick="openTab(this)" data-tit="设备添加">添加设备</button>
+            <button class="btn btn-red" onclick="batchDelete();" data-tit="批量删除">批量删除</button>
+
+        </div>
+	</div>
+</div>
+<div class="main-content">
+	<div class="con-oper">
+		<!--<div class="citySelect fl">
+			<select name="" id="province" class="form-control" onchange="getCitySel();getList(this)"></select>
+			<select name="" id="city" class="form-control" onchange="getCountrySel();getList(this)" style="display:none"></select>
+			<select name="" id="country" class="form-control" onchange="getGroupSel();getList(this)" style="display:none" ></select>
+			<select name="" id="group" class="form-control" style="display:none" onchange="getList(this)"></select>
+		</div>-->
+		<!-- <span class="import">导入</span>
+		<span class="export">导出</span> -->
+		<div class="clear"></div>
+	</div>
+	<div class="con-table">
+		<table class="table table-hover" id="main_table">
+			<thead>
+				<tr>
+					<th><input type="checkbox" onclick="checkAll('main_table',this)"><i></i></th>
+					<th>序号</th>
+					<th>节点名称</th>
+					<th>节点编号</th>
+					<th>网关编号</th>
+					<th>设备组</th>
+					<th>设备状态</th>
+					<th>设备注册时间</th>
+					<th>所在位置</th>
+					<th>安全管理员</th>
+					<th>安全巡检员</th>
+					<th>所属企业</th>
+					<th>设备详细</th>
+					<th>操作</th>
+				</tr>	
+			</thead>
+			<tbody class="list">
+				
+			</tbody>
+		</table>
+		<div class="pageing mt20 undis">
+            <ul class="pagin" id="pagination"></ul><span class="total">(共<span>0</span>页)</span>
+        </div>
+	</div>
+</div>
+
+
+<div class="modal fade" id="importDeviceModal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4>导入设备</h4>
+			</div>
+			<div class="modal-body">
+				<form action="" class="" id="deviceForm">
+					<div class="div_top">
+						<div class="div_item">
+							<div class="row form-group">
+								<label class="col-xs-3 control-label">导出模板：<span class="cred">*</span></label>
+								<div class="col-xs-9">
+									<a class="btn btn-link" href="/template/模板-设备导入.xls" download="模板-设备导入.xls">下载模板</a>
+								</div>
+							</div><div class="row form-group">
+								<label class="col-xs-3 control-label">导入设备：<span class="cred">*</span></label>
+								<div class="col-xs-9">
+									<input type="file" id="deviceFile" class="" onchange="checkFileType(this);" accept="application/vnd.ms-excel">
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-md-12 btn-wrap">
+									<input type="button" value="确定" class="btn btn-primary" onclick="uploadFile()">
+									<input class="btn btn-red" value="取消" onclick="$('#importDeviceModal').modal('hide');">
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="detail_modal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4>节点设备详细</h4>
+			</div>
+			<div class="modal-body">
+				<div class="detail-box">
+
+					<div class="div_top">
+						<div class="div_item">
+							<div class="list clearfix">
+								<div class="list-l fl">节点名称：</div>
+								<div class="list-r fl detail-01"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">节点编号：</div>
+								<div class="list-r fl detail-02"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">节点位置：</div>
+								<div class="list-r fl detail-03"></div>
+							</div>
+							<!-- <div class="list clearfix">
+                                <div class="list-l fl">节点详细地址：</div>
+                                <div class="list-r fl detail-04"></div>
+                            </div> -->
+
+							<div class="list clearfix">
+								<div class="list-l fl">所属企业：</div>
+								<div class="list-r fl detail-06"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">设备组：</div>
+								<div class="list-r fl detail-07"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">节点所属网关：</div>
+								<div class="list-r fl detail-08"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">所属安全管理员：</div>
+								<div class="list-r fl detail-09"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">所属安全巡检员：</div>
+								<div class="list-r fl detail-10"></div>
+							</div>
+						</div>
+						<div class="div_item">
+							<div class="list clearfix">
+								<div class="list-l fl">经度：</div>
+								<div class="list-r fl detail-11"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">纬度：</div>
+								<div class="list-r fl detail-12"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">总楼层数：</div>
+								<div class="list-r fl detail-13"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">所在楼层：</div>
+								<div class="list-r fl detail-14"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">所在户型X轴：</div>
+								<div class="list-r fl detail-15"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">所在户型Y轴：</div>
+								<div class="list-r fl detail-16"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">联系人：</div>
+								<div class="list-r fl detail-05"></div>
+							</div>
+							<div class="list clearfix">
+								<div class="list-l fl">联系人电话：</div>
+								<div class="list-r fl detail-18"></div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="div_bottom">
+						<div class="div_item">
+							<div class="  div_item_title">户型图片：</div>
+							<div class="detail-17 planxy-img">
+								<div class="img-w">
+									<img src="" alt="" id="house_img">
+									<div class="pointer" id="house_pointer"></div>
+								</div>
+							</div>
+						</div>
+						<div class="div_item">
+							<div class="  div_item_title">安装效果图：</div>
+							<div class="detail-19 planxy-img">
+								<div class="img-w">
+									<img src="" alt="" id="floor_img">
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+		
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../js/device/deviceCommon.js"></script>
+<script type="text/javascript" src="../../js/device/device_list.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>添加节点设备</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<style>
+		.div_bottom{margin:0 auto 20px;}
+		#last .input_con{float: right;width: 49%;}
+		#last .input_con input{width: 100%;}
+		#last .input_con i{top:0;}
+	</style>
+</head>
+<body>
+<div class="main-content clearfix">
+	<div class="add-content">
+		<form action="" class="form-horizontal" id="main_form" enctype="multipart/form-data">
+			<div class="div_top">
+				<div class="div_item">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">节点名称：<span class="cred">*</span></label>
+						<div class="col-xs-6"><input maxlength="25" type="text" class="form-control" name="deviceName" required id="deviceName"></div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">节点编号：<span class="cred">*</span></label>
+						<div class="col-xs-6">
+							<input  maxlength="25" value="ffffff100000"  onblur="verifier(this)" type="text" class="form-control serialNumber" name="serialNumber" required id="serialNumber">
+							<span class="error undis"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">节点位置：<span class="cred">*</span></label>
+						<div class="col-xs-8">
+							<div class="citySelect">
+								<select class="form-control" id="province" onchange="getCitySel()" name="provinceId" required><option value="">请选择省份</option></select>
+								<select class="form-control" id="city" onchange="getCountrySel()" name="cityId" required><option value="">请选择城市</option></select>
+								<select class="form-control" id="country" name="areaId" required><option value="">请选择地区</option></select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">节点详细地址：<span class="cred">*</span></label>
+						<div class="col-xs-6"><input maxlength="50" type="text" class="form-control" name="address" required id="address"></div>
+					</div>
+
+					<div class="form-group">
+						<label class="col-xs-4 control-label">联系人：<span class="cred">*</span></label>
+						<div class="col-xs-6"><input maxlength="25" type="text" class="form-control" name="owner" required id="owner"></div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">联系人电话：<span class="cred">*</span></label>
+						<div class="col-xs-6"><input maxlength="11" type="text" class="form-control isMobile" name="phone" required id="phone"></div>
+					</div>
+				</div>
+				<div class="div_item">
+					<div class="form-group">
+						<label class="col-xs-4 control-label">选择所属企业：<span class="cred">*</span></label>
+						<div class="col-xs-6">
+							<select name="companyId" id="company_sel" class="form-control" onchange="getDevicegSel()" required></select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-xs-4 control-label">所属组：<span class="cred">*</span></label>
+						<div class="col-xs-6">
+							<select name="groupId" id="deviceg_sel" class="form-control"  onchange="getAdminSel()" required></select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">节点所属网关：<span class="cred">*</span></label>
+						<div class="col-xs-6">
+							<select name="gatewayId" id="gateway_sel" class="form-control" required></select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">选择所属管理员：<span class="cred">*</span></label>
+						<div class="col-xs-6">
+							<select name="managerId" id="admin_sel" class="form-control"  onchange="getSaftySel()" required></select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-xs-4 control-label">选择所属安全巡检员：<span class="cred">*</span></label>
+						<div class="col-xs-6">
+							<select name="patrolId" id="safty_sel" class="form-control" required></select>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="div_bottom inline_form-control">
+				<div class="div_item">
+					<div class="map_con">
+						<iframe src="map.html" frameborder="0" id="map_iframe" name="iframe" width="100%" height="100%"></iframe>
+					</div>
+				</div>
+				<div class="div_item">
+
+					<div class="list">
+						<div class="list-l">
+							<span>经度：<span class="cred">*</span></span>
+							<input type="text" class="form-control" maxlength="10" id="lng" readonly required name="longitude">
+						</div>
+						<div class="list-l">
+							<span>纬度：<span class="cred">*</span></span>
+							<input type="text" class="form-control" maxlength="10" id="lat" readonly required name="latitude">
+						</div>
+					</div>
+
+
+					<div class="list">
+						<div class="list-l fl">
+							<span>总楼层：<span class="cred">*</span></span>
+							<input type="text" class="form-control floorNum" maxlength="3" required id="floorSum" name="floorMax">
+						</div>
+						<div class="list-l fl">
+							<span>所在楼层数：<span class="cred">*</span></span>
+							<input type="text" class="form-control floorNum" maxlength="3" required id="floorCur"  name="floor">
+						</div>
+						<!--<div class="clear">onblur="value=value.replace(/\D/g,'');"</div>-->
+					</div>
+					<div class="list planxy">
+						<div class="list-l fl">
+							<span>户型图片：<span class="cred">*</span></span>
+							<input type="file" onchange="imgSizeCheck(this)" class="file-img" required name="file" id="file">
+							<div class="img_con">
+								<img src="" alt="" id="house_img" onclick="getXAndY(event)" class="undis">
+								<i class="pointer undis" id="house_pointer"></i>
+							</div>
+						</div>
+						<div class="list-l fl">
+							<span>节点安装效果图：<span class="cred">*</span></span>
+							<input type="file" onchange="_imgSizeCheck(this)" class="file-img" required name="sideUrl" id="sideUrl">
+							<div class="img_con">
+								<img src="" id="floor_img" class="undis">
+							</div>
+						</div>
+					</div>
+					<div class="list last" id="last">
+						<div class="list-l fl">
+							<span>所在户型位置x轴：<span class="cred">*</span></span>
+							<b class="input_con"><input type="text" class="form-control" minlength="1" required id="curX" readonly="readonly" name="planX"><i>%</i></b>
+						</div>
+						<div class="list-l fl">
+							<span>所在户型位置y轴：<span class="cred">*</span></span>
+							<b class="input_con"><input type="text" class="form-control" minlength="1" required id="curY" readonly="readonly" name="planY"><i>%</i></b>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group btn-wrap">
+				<label class="col-xs-4 control-label">&nbsp;</label>
+				<div class="col-xs-4">
+					<input type="button" value="保存" class="btn btn-primary" onclick="save()">
+					<input type="button" class="btn btn-red btn-close-tab" href="html/device/device_list.html" onclick="closeTab(this)" value="取消">
+				</div>
+			</div>
+		</form>
+
+	</div>
+</div>
+
+<div class="opering-mask">
+	<div class="main">
+		<div class="tit">提示信息<span onclick="closeMask()">&times;</span></div>
+		<div class="con">正在处理中，处理结束后该弹窗消失！</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/messages_cn.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/device/deviceCommon.js"></script>
+<script type="text/javascript" src="../../js/device/device_add.js"></script>
+</body>
+</html>	

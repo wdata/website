@@ -1,0 +1,128 @@
+body{
+	width:100%;
+	height:100%;
+	position: fixed;
+	top:0;left:0;right:0;bottom: 0;
+	background: url(../../images/sign_in.jpg) no-repeat 0 0;
+}
+header{
+	height:56px;
+	background-color: #fff;
+	width:100%;
+	display: flex;
+	display: -webkit-flex;
+	padding:10px 0 10px 15%;
+}
+header .img{
+	margin-right: 10px;
+}
+header .content .title{
+	font-size: 18px;
+	color:#17afa2;
+}
+header .content .item{
+	font-size: 10px;
+	color:#666;
+}
+header .img>img{
+	width:27px;
+	height: 27px;
+}
+.sign_in{
+	width:100%;
+	height:100%;
+	position: fixed;
+	top:56px;
+	left:0;
+	z-index: -1;
+}
+.L_sign_in{
+	width: 470px;
+	border-radius: 3px;
+	position: absolute;
+	top:16%;
+	right:10%;
+	background-color: rgba(255,255,255,0.88);
+}
+.L_sign_in .title_img{
+	display: block;
+	margin: 30px auto 0;
+	width: 106px;
+	height: 106px;
+}
+.slogan1{
+	margin: 10px 0 15px 0;
+	font-size: 28px;
+	color: #17afa2;
+	text-align: center;
+
+}
+.L_verification_number{
+	width: 120px;
+	height: 46px;
+	margin: 24px 0 0 10px;
+	font-size: 18px;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+	color: #17afa2;font-size: 16px;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+	color: #17afa2;	font-size: 16px;
+}
+
+input:-ms-input-placeholder{
+	color: #17afa2;	font-size: 16px;
+}
+
+input::-webkit-input-placeholder{
+	color: #17afa2;	font-size: 16px;
+}
+.L_verification_number img{width:100%;	border: 1px solid #17afa2;border-radius: 4px;
+}
+.L_yong_name,.L_yong_prd{
+	text-align: center;
+}
+.L_sign_in div input{
+	border:1px solid #17afa2;
+	outline:none;
+	color:#333;
+	width: 360px;
+	height: 46px;
+	text-align: center;
+	font-size: 16px;
+	margin-top: 24px;
+	border-radius: 4px;
+}
+.L_yan_zheng{
+	width:360px;
+	margin:0 auto;
+	position: relative;
+	display: flex;
+	display: -webkit-flex;
+	text-align: center;
+}
+.name_user{
+	/*text-align:50%;*/
+}
+.L_sign_in a.sign_on{
+	display: block;
+	margin: 30px auto 30px;
+	width: 360px;
+	height: 46px;
+	line-height: 46px;
+	background-color: #17afa2;
+	color: #fff;
+	border-radius: 4px;
+	outline:none;
+	font-size: 16px;
+	text-align: center;
+}
+.L_sign_in a.sign_on:hover{
+	text-decoration: none;
+	color:#fff;
+	background-color: #1cc9ba;
+}

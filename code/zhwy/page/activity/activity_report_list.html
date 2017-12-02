@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>活动管理</title>
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+</head>
+<body>
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>活动管理</span> > <span class="blueChange">活动举报列表</span>
+</header>
+<div class="container-fluid">
+    <div class="row">
+        <form class="form-inline">
+            <div class="form-group">
+                <input class="form-control key" type="text" placeholder="输入活动名称">
+            </div>
+            <div class="form-group">
+                <span>所属区域:</span>
+                <div class="input-group" onclick="addrToggle();">
+                    <input id="" class="form-control" size="8" type="text" readonly>
+                    <span class="input-group-addon"><i class="fa fa-caret-down"></i></span>
+                </div>
+
+            </div>
+            <div style="display: none;" class="select-addr-con">
+                <p class="btn-con text-right">
+                    <span onclick="addrToggle();" type="button" class="span btn_ok">确定</span>
+                    <span onclick="addrToggle();" type="button" class="span ">取消</span>
+                </p>
+                <div class="select-con">
+                    <select class="form-control" name="" id="" size="15">
+                        <option value="">中国中国中国中国</option>
+                        <option value="">中国</option>
+                        <option value="">中国</option>
+                        <option value="">中国</option>
+                    </select>
+                    <select class="form-control" name="" id="" size="15">
+                        <option value="">广东</option>
+                        <option value="">广东</option>
+                        <option value="">广东</option>
+                        <option value="">广东</option>
+                        <option value="">广东</option>
+                        <option value="">广东</option>
+                    </select>
+                    <select class="form-control" name="" id="" size="15">
+                        <option value="">深圳</option>
+                        <option value="">深圳</option>
+                        <option value="">深圳</option>
+                        <option value="">深圳</option>
+                        <option value="">深圳</option>
+                    </select>
+                    <select class="form-control" name="" id="" size="15">
+                        <option value="">深圳</option>
+                        <option value="">深圳</option>
+                        <option value="">深圳</option>
+                        <option value="">深圳深圳深圳深圳</option>
+                        <option value="">深圳</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="form-group">
+                <span>所属企业:</span>
+                <select id="" class="form-control">
+                    <option value="0">全部</option>
+                    <option value="1">企业动态</option>
+                    <option value="2">园区动态</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <span>活动状态:</span>
+                <select id="" class="form-control">
+                    <option value="0">报名中</option>
+                    <option value="1">已报名</option>
+                    <option value="2">报名结束</option>
+                    <option value="3">活动结束</option>
+                    <option value="4">已取消</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <span>活动类型:</span>
+                <select id="" class="form-control">
+                    <option value="0">全部</option>
+                    <option value="1">体育活动</option>
+                    <option value="2">交友活动</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input class="form-control key" type="text" placeholder="输入举报人">
+            </div>
+            <div class="form-group"><button type="button" class="btn btn_search" id="search">搜索</button></div>
+        </form>
+    </div>
+    <div class="buttons">
+        <button type="button" class="btn btn_yellow" onclick="cancel();">活动取消</button>
+        <button type="button" class="btn btn_green" onclick="">举报无效</button>
+        <button type="button" class="btn btn_red" onclick="">禁止发布活动</button>
+    </div>
+    <section class="row">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered table-condensed" id="list">
+                <thead>
+                <tr>
+                    <th class="text-center"><input type="checkbox" onclick="checkAll('#list',this)"></th>
+                    <th class="text-center">序号</th>
+                    <th class="text-center">活动名称</th>
+                    <th class="text-center">活动类别</th>
+                    <th class="text-center">活动主办方</th>
+                    <th class="text-center">活动发起人</th>
+                    <th class="text-center">所属区域</th>
+                    <th class="text-center">举报人</th>
+                    <th class="text-center">举报类型</th>
+                    <th class="text-center">举报原因描述</th>
+                    <th class="text-center">活动详细</th>
+                    <th class="text-center">活动状态</th>
+                    <th class="text-center">操作</th>
+                </tr>
+                </thead>
+                <tbody class="tbody">
+                <tr class="text-center">
+                    <td><input type="checkbox"></td>
+                    <td>1</td>
+                    <td>weteyeryey</td>
+                    <td>体育活动</td>
+                    <td>ewtyrey</td>
+                    <td>张三</td>
+                    <td>科技园</td>
+                    <td>李四</td>
+                    <td>其他</td>
+                    <td><button class="btn btn-link btn-xs" onclick="showReportDetails();">查看</button></td>
+                    <td><button class="btn btn-link btn-xs" onclick="goPage('page/activity/activity_details.html');">查看</button></td>
+                    <td>未审核</td>
+                    <td>
+                        <button type="button" class="btn btn_yellow btn-xs" onclick="cancel();">活动取消</button>
+                        <button type="button" class="btn btn_green btn-xs" onclick=";">举报无效</button>
+                        <button type="button" class="btn btn_red btn-xs" onclick="prohibit();">禁止发布活动</button>
+                    </td>
+                </tr>
+
+
+                </tbody>
+                <tfoot>
+                <tr class="text-center hidden">
+                    <td colspan="9">未查到结果</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+    <footer class="row">
+        <div class="page-con hidden">
+            <ul class="pagination" id="pagination"></ul>
+            <div class="page-go">
+                <span>跳转到</span>
+                <input class="form-control" type="number" min="1">
+                <input class="btn btn-primary btn-sm" type="button" value="GO" onclick="/*pageTo(this)*/">
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../js/common.js"></script>
+<script src="../../js/activity/activity_report_list.js"></script>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报修管理</title>
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+    <link rel="stylesheet" href="../../css/repairs/repairs_list.css">
+</head>
+<body>
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>报修管理</span> > <span class="blueChange">报修列表</span>
+</header>
+<div class="container-fluid">
+    <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#repairsListCon" aria-controls="home" role="tab" data-toggle="tab">报修列表</a></li>
+            <li role="presentation"><a href="#cartogram" aria-controls="profile" role="tab" data-toggle="tab">报修统计图表</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="repairsListCon">
+                <div class="row text-center" style="margin-top: 15px;">
+                    <div class="col-md-2" style="line-height: 40px;">特别关注:</div>
+                    <div class="col-md-1 circle-con">
+                        <span class="blue">@</span>
+                        <p>待受理(5)</p>
+                    </div>
+                    <div class="col-md-1 line"></div>
+                    <div class="col-md-1 circle-con">
+                        <span class="orange">%</span>
+                        <p>已受理(2)</p>
+                    </div>
+                    <div class="col-md-1 line"></div>
+                    <div class="col-md-1 circle-con">
+                        <span class="pink">#</span>
+                        <p>待验收(7)</p>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input class="form-control key" type="text" placeholder="输入关键词">
+                        </div>
+
+                        <div class="form-group">
+                            <span>所属区域:</span>
+                            <div class="input-group" onclick="addrToggle();">
+                                <input id="" class="form-control" size="8" type="text" readonly>
+                                <span class="input-group-addon"><i class="fa fa-caret-down"></i></span>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="select-addr-con">
+                            <p class="btn-con text-right">
+                                <span onclick="addrToggle();" type="button" class="span btn_ok">确定</span>
+                                <span onclick="addrToggle();" type="button" class="span ">取消</span>
+                            </p>
+                            <div class="select-con">
+                                <select class="form-control" name="" id="" size="15">
+                                    <option value="">中国中国中国中国</option>
+                                    <option value="">中国</option>
+                                    <option value="">中国</option>
+                                    <option value="">中国</option>
+                                </select>
+                                <select class="form-control" name="" id="" size="15">
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                </select>
+                                <select class="form-control" name="" id="" size="15">
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                </select>
+                                <select class="form-control" name="" id="" size="15">
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳深圳深圳深圳</option>
+                                    <option value="">深圳</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group list-inner" style="margin-right: 0;">
+                            <span class="pr0">创建时间：</span>
+                            <div class="input-group" onclick="stateTimeInit()">
+                                <input id="dateStart" class="form-control date_control" size="8" type="text" readonly>
+                                <!--<span class="add-on"><i class="icon-th"></i></span>-->
+                                <span class="input-group-addon" style="padding: 6px;"><i class="fa fa-calendar fa-fw"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group" style="margin-left: 0;">
+                            <span>-</span>
+                            <div class="input-group form_datetime date form_datetime_input" onclick="endTimeInit()">
+                                <input id="dateEnd" class="form-control date_control" size="8" type="text" readonly>
+                                <span class="input-group-addon" style="padding: 6px;"><i class="fa fa-calendar fa-fw"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <span>维修人员:</span>
+                            <select id="" class="form-control">
+                                <option value="0">全部</option>
+                                <option value="1">张三</option>
+                                <option value="2">李四</option>
+                            </select>
+                        </div>
+                        <div style="margin: 10px"></div>
+                        <div class="form-group">
+                            <input class="form-control key" type="text" placeholder="输入报修人">
+                        </div>
+
+                        <div class="form-group">
+                            <span>报修类型:</span>
+                            <select id="" class="form-control">
+                                <option value="0">全部</option>
+                                <option value="1">办公区报修</option>
+                                <option value="2">公共区报修</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <span>报修项目:</span>
+                            <select id="" class="form-control">
+                                <option value="0">全部</option>
+                                <option value="1">房屋维修</option>
+                                <option value="2">管道疏通</option>
+                                <option value="2">水电维修</option>
+                                <option value="2">线路维修</option>
+                                <option value="2">开锁/换锁</option>
+                                <option value="2">其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <span>报修状态:</span>
+                            <select id="" class="form-control">
+                                <option value="0">全部</option>
+                                <option value="1">未派单</option>
+                                <option value="2">已派单</option>
+                                <option value="2">移交未派单</option>
+                                <option value="2">移交已派单</option>
+                                <option value="2">已受理</option>
+                                <option value="2">待验收</option>
+                                <option value="2">已确认</option>
+                                <option value="2">已撤销</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group"><button type="button" class="btn btn_search" id="search">搜索</button></div>
+                    </form>
+                </div>
+
+                <section class="row">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-condensed" id="list">
+                            <thead>
+                            <tr>
+                                <!--<th class="text-center"><input type="checkbox" onclick="checkAll('#list',this)"></th>-->
+                                <th class="text-center">序号</th>
+                                <th class="text-center">报修单号</th>
+                                <th class="text-center">报修描述</th>
+                                <th class="text-center">报修位置</th>
+                                <th class="text-center">报修项目</th>
+
+                                <th class="text-center">报修类型</th>
+                                <th class="text-center">报修时间</th>
+                                <th class="text-center">报修人</th>
+                                <th class="text-center">所属企业</th>
+                                <th class="text-center">所属区域</th>
+
+                                <th class="text-center">报修状态</th>
+                                <th class="text-center">移交维修员</th>
+                                <th class="text-center">接收维修员</th>
+                                <th class="text-center">报修详细</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="tbody">
+                            <tr class="text-center">
+                                <!--<td><input type="checkbox"></td>-->
+                                <td>1</td>
+                                <td>2423356</td>
+                                <td>weteyt</td>
+                                <td>东方科技大厦405</td>
+                                <td>346477</td>
+
+                                <td>公共区域</td>
+                                <td>2017-03-03 12:25:30</td>
+                                <td>wetey</td>
+                                <td>wetey</td>
+                                <td>wetey</td>
+
+                                <td>未派单</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>
+                                    <button class="btn btn-default btn-xs" onclick="goPage('page/repairs/repairs_details.html');">详情</button>
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-info btn-xs" onclick=""><i class="fa fa-edit fa-fw"></i>XXXX</button>
+                                </td>
+                            </tr>
+
+
+                            </tbody>
+                            <tfoot>
+                            <tr class="text-center hidden">
+                                <td colspan="9">未查到结果</td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+                <footer class="row">
+                    <div class="page-con hidden">
+                        <ul class="pagination" id="pagination"></ul>
+                        <div class="page-go">
+                            <span>跳转到</span>
+                            <input class="form-control" type="number" min="1">
+                            <input class="btn btn-primary btn-sm" type="button" value="GO" onclick="/*pageTo(this)*/">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            <div role="tabpanel" class="tab-pane " id="cartogram">
+                <div style="width: 800px;height: 580px;" id="first_echarts">
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../plugin/echarts/echarts.common.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/repairs/repairs_list.js"></script>
+</body>
+</html>

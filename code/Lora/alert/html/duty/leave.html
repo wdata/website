@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>请假列表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap-cerulean.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/jqPaginator/paging.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<link rel="stylesheet" type="text/css" href="../../css/duty_Or_inspection/duty_Or_inspection.css">
+</head>
+<body>
+	<div class="search-tab-box">
+		<form action="" class="list clearfix" id="searchForm">
+			<table class="max100">
+				<tbody>
+				<tr>
+					<td><input type="text" name="userName" class="form-control"  placeholder="请输入名字" onkeyup="searchKey(event);"></td>
+					<td>
+						<label class="label4">所属公司：</label>
+						<select id="company" name="companyId" class="status_select form-control">
+							<option value="">全部</option>
+						</select>
+					</td>
+
+					<td class="date_con">
+						<label class="label4">创建时间：</label>
+        				<span class="form_datetime_input">
+					    	<input name="paramStartTime" id="datetimeStart" class="form-control" size="16" type="text" value="" readonly>
+						</span>
+						<span>-</span>
+        				<span class="form_datetime_input">
+					    	<input name="paramEndTime" id="datetimeEnd" class="form-control" size="16" type="text" value="" readonly>
+						</span>
+					</td>
+					<td>
+						<label class="label4">状态：</label>
+						<select name="auditStatus"  class="status_select form-control">
+							<option value="">全部</option>
+							<option value="yes">已同意</option>
+							<option value="no">不同意</option>
+							<option value="wait">待审批</option>
+						</select>
+					</td>
+					<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="search()"></td>
+				</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<!--<div class="hr-10"></div>-->
+	<div class="main-content">
+		<div class="con-oper">
+			<form >
+				<!--<span class="delete">删除</span>-->
+				<!--<span class="import">导入</span>-->
+				<!--<span class="export">导出</span>-->
+				<span class="open"  onclick="batch('yes')" >同意</span>
+				<span class="closed"  onclick="batch('no')">不同意</span>
+				<!--<a class="btn bg-danger">删除</a>-->
+			</form>
+		</div>
+		<div class="con-table">
+			<table class="table table-hover" id="main_table">
+				<thead>
+				<tr>
+					<th><input type="checkbox" name="" onclick="checkAll('main_table',this)"><i></i></th>
+					<th>序号</th>
+					<th>姓名</th>
+					<th>请假事由说明</th>
+					<th>创建时间</th>
+					<th>请假开始时间</th>
+					<th>请假结束时间</th>
+					<th>请假天数（天）</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+				</thead>
+				<tbody class="listTable">
+				<!--<tr>-->
+					<!--<td><input type="checkbox"></td>-->
+					<!--<td>序号</td>-->
+					<!--<td>姓名</td>-->
+					<!--<td>请假是由说明</td>-->
+					<!--<td>创建时间</td>-->
+					<!--<td>请假开始时间</td>-->
+					<!--<td>请假结束时间</td>-->
+					<!--<td>请假天数（天）</td>-->
+					<!--<td>状态</td>-->
+					<!--<td class="coazhuo">-->
+						<!--<a>同意</a>-->
+						<!--<a>不同意</a>-->
+					<!--</td>-->
+				<!--</tr>-->
+				</tbody>
+			</table>
+			<div class="pageing mt20 undis">
+				<ul class="pagin" id="pagination"></ul><span class="total">(共<span>0</span>页)</span>
+			</div>
+		</div>
+	</div>
+	<div class="opering-mask">
+		<div class="main">
+			<div class="tit">提示信息<span>&times;</span></div>
+			<div class="con"></div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../../plugin/jQuery/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+	<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+	<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/duty/leave.js"></script>
+</body>
+</html>

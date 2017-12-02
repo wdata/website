@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>活动参与主页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="flexible" content="initial-dpr=2" />
+		<link rel="stylesheet" href="../../plugin/flexible/flexible.css">
+		<script src="../../plugin/flexible/flexible.js"></script>
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" type="text/css" href="../../css/general/general-header.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/party_serve/relief/money.css"/>
+	</head>
+		
+	<body>
+		<div class="page">
+			<header class ="head">
+				<div class="header"><span>扶贫捐款</span><a onclick="history.go(-1);"><span></span></a></div>
+			</header>
+		</div>
+		<div class="money">
+			<div class="heart">
+				<header class="zhibu"><span>吉大支部</span>扶贫捐款</header>
+				<div class="main">
+					<header>支付方式</header>
+					<div class="payment">
+						<div class="weChat">
+							<img src="../../images/party_serve/weChat.png"/><span>微信支付</span>
+							<div class="conf"><i class="back"><img class="confirm hide" src="../../images/activity/check.png" /><img class="fff" src="../../images/notes/hong.png"/></i></div>
+						</div>
+					</div>
+					<div class="amount-of-money">
+						<header>捐款金额</header>
+						<ul>
+							<!--class="kek" 表示选中状态-->
+							<li><span>10</span>元</li>
+							<li><span>50</span>元</li>
+							<li><span>100</span>元</li>
+							<li><span>500</span>元</li>
+						</ul>
+						<input type="text" id="money" placeholder="输入捐款金额" />
+					</div>
+				</div>
+				<footer>
+					<header>跟他说句话</header>
+					<div class="text" contenteditable="true">默认：加油</div>
+					<button id="help">帮助他</button>
+				</footer>
+			</div>
+		</div>
+		<script src="../../plugin/zepto/zepto.js"></script>
+		<script src="../../plugin/zepto/event.js"></script>
+		<script src="../../plugin/zepto/touch.js"></script>
+		<script src="../../js/party_serve/relief/money.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

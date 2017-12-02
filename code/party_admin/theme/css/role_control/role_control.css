@@ -1,0 +1,23 @@
+/*imnput标签*/
+input[type="text"].txt{
+    width:150px;
+    height:30px;
+}
+
+
+/*查询图标*/
+a.btn-search { color: #555; line-height:28px; background: transparent url(../../images/bg_position.gif) no-repeat scroll -130px -450px; vertical-align:middle; display: inline-block; width: 28px; height: 28px; cursor: pointer;}
+a.btn-search:hover { background-position: -160px -450px;}
+a.btn-search:active { background-position: -190px -450px;}
+.control_btn .btn{
+    margin:15px;
+}
+/*状态图标*/
+.yes-onoff a, .no-onoff a, .power-onoff a { line-height:999%; background: url(../../images/bg_position.gif) no-repeat scroll; display: inline-block; width:34px; height:34px; overflow:hidden;}
+.yes-onoff img, .no-onoff img, .power-onoff img {}
+.yes-onoff a.enabled { background-position: 0px -500px;}
+.yes-onoff a:hover.enabled {background-position: -40px -500px; }
+.yes-onoff a:active.enabled {background-position: -80px -500px;}
+.yes-onoff a.disabled { background-position: -120px -500px;}
+.yes-onoff a:hover.disabled {background-position: -160px -500px;}
+.yes-onoff a:active.disabled {background-position: -200px -500px;}

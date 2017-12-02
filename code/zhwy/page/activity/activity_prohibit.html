@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻管理</title>
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+    <link rel="stylesheet" href="../../css/news/news_add.css">
+</head>
+<body>
+<!--
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>活动管理</span> > <span class="blueChange">禁止发布活动</span>
+</header>
+-->
+<div class="container-fluid">
+    <form class="form">
+
+        <div class="row form-group">
+            <div class="col-xs-5 text-right form-title">活动主办方:<font color="red">*</font></div>
+            <div class="col-xs-7">
+                XX科技
+            </div>
+        </div>
+
+
+        <div class="row form-group" style="position: relative">
+            <div class="col-xs-5 text-right form-title">禁止发布活动开始时间:<font color="red">*</font></div>
+            <div class="col-xs-6 data-con">
+                <div class="input-group" onclick="stateTimeInit()">
+                    <input id="startTime" class="form-control" size="8" type="text" readonly placeholder="禁止发布活动开始时间">
+                    <span class="input-group-addon" style="padding: 6px;"><i class="fa fa-calendar fa-fw"></i></span>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group" style="position: relative">
+            <div class="col-xs-5 text-right form-title">禁止发布活动结束时间:<font color="red">*</font></div>
+            <div class="col-xs-6 data-con">
+                <div class="input-group" onclick="endTimeInit()">
+                    <input id="endTime" class="form-control" size="8" type="text" readonly placeholder="禁止发布活动结束时间">
+                    <span class="input-group-addon" style="padding: 6px;"><i class="fa fa-calendar fa-fw"></i></span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row form-group text-left" style="padding-top: 220px;">
+            <div class="col-xs-offset-5 col-md-6">
+                <button class="btn btn_blue" type="button" onclick="">确定</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../plugin/kindeditor-4.1.11-zh-CN/kindeditor/kindeditor-all.js"></script>
+<script src="../../plugin/kindeditor/lang/zh-CN.js"></script>
+<script src="../../js/common.js"></script>
+<script>
+    function stateTimeInit(){//初始化开始时间
+        WdatePicker({el:'startTime',dateFmt:'yyyy-MM-dd HH:mm:ss',onpicked:function(dp){timeIsChange(dp.cal.getDateStr());},skin:'twoer',minDate:'2017-01-01',maxDate:'#F{$dp.$D(\'endTime\')||\'%y-%M-%d\'}'});
+    }
+    function endTimeInit(){//初始化结束时间
+        WdatePicker({el:'endTime',dateFmt:'yyyy-MM-dd HH:mm:ss',onpicked:function(dp){timeIsChange(dp.cal.getDateStr());},skin:'twoer',minDate:'#F{$dp.$D(\'startTime\')||\'2017-01-01\'}',maxDate:'%y-%M-%d'});
+    }
+</script>
+</body>
+</html>

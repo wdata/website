@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增活动</title>
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+     <link rel="stylesheet" href="../../../theme/plugin/wangEditor-3.0.2/dist/css/wangEditor.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/page.css">
+</head>
+<body>
+<div class="page">
+    <div class="main-content">
+        <div class="add-content" style="margin:0 15px;">
+            <form  class="form-horizontal" id="newForm">
+                <div class="form-group">
+                    <label class="col-sm-2 col-md-2 control-label">活动名称：<span class="cred">*</span></label>
+                    <div class="col-sm-3  col-md-3">
+                        <input required  type="text" class="form-control" name="title">
+                    </div>
+                </div>
+                <!--<div class="form-group">-->
+                    <!--<label class="col-md-2 control-label">姓名：<span class="cred">*</span></label>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<input type="text" onclick="userList()" placeholder="点击弹出人员搜索" id="name"  class="form-control" >-->
+                        <!--<input type="hidden"   id="userName"  class="form-control" name="user" required>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="form-group">-->
+                    <!--<label class="col-md-2 control-label">所属公司：</label>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<select id="firmId" class="form-control"  name="firmId">-->
+                            <!--&lt;!&ndash;<option value="100">小道科技</option>&ndash;&gt;-->
+                        <!--</select>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="form-group">
+                    <label class="col-sm-2 col-md-2 control-label">报名起止时间：<span class="cred">*</span></label>
+                    <div class="col-sm-3 col-md-3" >
+                        <div class="date form_datetime start-time form_datetime_input">
+                            <input id="entryBeginTime" name="entryBeginTime" class="form-control" size="16" type="text" value="" readonly placeholder="报名开始时间" required>
+                            <!--<input type="hidden" name='entryBeginTime' id="entryBeginTime">-->
+                            <span class="add-on"><i class="icon-th"></i></span>
+                            <i class="fa fa-tasks"></i>
+                        </div>
+                    </div>
+                    <span class="fl">-</span>
+                    <div class="col-sm-3 col-md-3">
+                        <div class="date form_datetime end-time form_datetime_input">
+                            <input id="entryEndTime" name='entryEndTime' class="form-control" size="16" type="text" value="" readonly placeholder="报名结束时间" required>
+                            <!--<input type="hidden" name='entryEndTime' id="entryEndTime">-->
+                            <span class="add-on"><i class="icon-th"></i></span>
+                            <i class="fa fa-tasks"></i>
+                        </div>    
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 col-md-2 control-label">活动起止时间：<span class="cred">*</span></label>
+                    <div class="col-sm-3 col-md-3" >
+                        <div class="date form_datetime start-time form_datetime_input">
+                            <input id="beginTime" name="beginTime" class="form-control" size="16" type="text" value="" readonly  placeholder="活动开始时间" required>
+                            <!--<input type="hidden" name='beginTime' id="beginTime">-->
+                            <span class="add-on"><i class="icon-th"></i></span>
+                            <i class="fa fa-tasks"></i>
+                        </div>
+                    </div>
+                    <span class="fl">-</span>
+                    <div class="col-sm-3 col-md-3">
+                        <div class="date form_datetime end-time form_datetime_input">
+                            <input id="endTime" name="endTime" class="form-control" size="16" type="text"  value="" readonly placeholder="活动结束时间" required>
+                            <!--<input type="hidden" name='endTime' id="endTime">-->
+                            <span class="add-on"><i class="icon-th"></i></span>
+                            <i class="fa fa-tasks"></i>
+                        </div>    
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label sign-label">活动内容：<span class="cred">*</span></label>、
+                    <div class="col-md-8" style="line-height:34px;padding-left:0px;">
+                        （活动地点，活动内容，活动要求等都在活动编辑框内填写）
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-1 control-label sign-label"></label>
+                    <div class="col-md-10">
+                        <div id="editor_id"  style="width:100%;height:335px"></div>
+                        <input type="hidden" id="content" name="content">
+                        <label for="editor_id" class="error" style="display:none">必填字段</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label mt20">图片：<span class="cred">*</span></label>
+                    <div class="col-md-4 up-file">
+                        <div class="img-wrap"><img src="" alt="" class="abs"></div>
+                        <div class="file-wrap">
+                            <input id="userImage" type="file" name="file" onchange="imgSizeCheck(this)" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label sign-label">发布人/发布机构：<span class="cred">*</span></label>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" name="publisher" required>
+                    </div>
+                </div>
+                <!--<input type="hidden" value="100" name="firmId">-->
+                <!--<input type="hidden" value="703" name="user">-->
+                <div class="form-group">
+                    <label class="col-md-2 control-label">&nbsp;</label>
+                    <div class="col-md-3">
+                        <input type="button" value="保存" class="btn btn-primary" onclick="save()">
+                        <input type="button" value="取消" class="btn btn-close-dialog-tab" style="color:#fff">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- 账号查询列表 -->
+    <div class="modal box-shadow fade showDetail_modal pic-review-edit">
+        <div class="modal-dialog" style="width: 80%;">
+            <div class="modal-content">
+                <div class="add-content" style="margin:0 15px;">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <td><label class="label4">关键字：</label></td>
+                            <td><input type="text" maxlength="11" id="keyword" class="form-control" name="keyword"></td>
+                            <td><input onclick="search(pageNum)" type="button" class="btn btn-primary" value="搜索"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-hover" id="userlist_tab">
+                        <thead>
+                        <tr>
+                            <th></th>
+                            <th>账号</th>
+                            <th>姓名</th>
+                            <th>手机号码</th>
+                            <th>发展阶段</th>
+                            <th>所在支部</th>
+                        </tr>
+                        </thead>
+                        <tbody class="list">
+                        <tr>
+                            <td><input type="radio"></td>
+                            <td>test</td>
+                            <td>侯亮平</td>
+                            <td>18200525555</td>
+                            <td>预备党员</td>
+                            <td>汉东省反贪局</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="pages ml20 undis">
+                        <div class="pagination" id="pagination"></div>
+                        <div class="pageGo">
+                            <span>跳转到</span>
+                            <input type="number" min="1">
+                            <input type="button" value="GO" onclick="pageTo(this)">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <input type="button" value="确定" class="btn btn-primary" onclick="confirm()">
+                        <input type="button" value="取消" class="btn btn-close-dialog-tab" style="color:#fff">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="opering-mask">
+        <div class="main">
+            <div class="tit">提示信息<span>&times;</span></div>
+            <div class="con"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../theme/plugin/jQuery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jqPaginator/jqPaginator.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-validate/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-validate/js/messages_cn.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-form/jquery.form.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/wangEditor-3.0.2/dist/js/wangEditor.min.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/common.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/VaExtend.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/contabs.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/activity/activity_add.js"></script>
+</body>
+</html>

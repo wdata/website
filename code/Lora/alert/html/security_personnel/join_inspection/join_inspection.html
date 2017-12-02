@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>添加安全巡检员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../../css/reset.css">
+	<link rel="stylesheet" href="../../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+
+	<link rel="stylesheet" type="text/css" href="../../../css/list.css">
+</head>
+<body>
+<div class="main-content clearfix">
+	<div class="add-content">
+		<form  class="form-horizontal" id="main_form" enctype="multipart/form-data" >
+			<div class="div_top">
+				<div class="div_item">
+					<div class="form-group">
+						<label class="col-md-4 control-label">账号：<span class="cred">*</span></label>
+						<div class="col-md-6">
+							<input type="text" maxlength="25" name="security_number1" class="form-control security_number1" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label">姓名：<span class="cred">*</span></label>
+						<div class="col-md-6">
+							<input id="contact" maxlength="15" name="security_name1" type="text" class="form-control security_name1" required placeholder="输入姓名">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label">联系电话：<span class="cred">*</span></label>
+						<div class="col-md-6">
+							<input type="number" maxlength="11" name="security_contact1" class=" isPhone form-control security_contact1" required placeholder="输入手机号码">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-md-4 control-label">邮箱：<span class="cred">*</span></label>
+						<div class="col-md-6">
+							<input id="email" maxlength="25" name="security_mail1" type="email" class="email form-control security_mail1" placeholder="输入邮箱" required>
+						</div>
+					</div>
+				</div>
+				<div class="div_item">
+					<div class="form-group">
+						<label class="col-md-4 control-label">安全巡检员地址：<span class="cred">*</span></label>
+						<div class="col-md-7">
+							<a class="citySelect">
+								<select class="form-control" id="province" onchange="getCitySel()" name="provinceId" required><option value="">请选择省份</option></select>
+								<select class="form-control" id="city" onchange="getCountrySel()" name="cityId" required><option value="">请选择城市</option></select>
+								<select class="form-control" id="country" name="areaId" required><option value="">请选择地区</option></select>
+							</a>
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-md-4 control-label">安全巡检员详细地址：<span class="cred">*</span></label>
+						<div class="col-md-6">
+							<input type="text" maxlength="50" name="security_address1" class="form-control security_address1" placeholder="输入详细地址" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label  class="col-md-4 control-label">安全管理员：<span class="cred">*</span></label>
+						<div class="col-md-6">
+							<input name="supervise_people" maxlength="50" type="text" class="form-control supervise_people" disabled="disabled" placeholder="管理员" required>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="form-group btn-wrap">
+				<label class="col-md-4 control-label">&nbsp;</label>
+				<div class="col-md-4">
+					<input type="button" value="保存" id="inspect_plus" class="btn btn-primary hide">
+					<input type="button" value="保存" id="inspect_plus1" class="btn btn-primary">
+					<input type="button" class="btn btn-red btn-close-tab" href="html/security_personnel/inspection_biao/inspection_biao.html" onclick="closeTab(this)" value = "取消">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="opering-mask">
+	<div class="main">
+		<div class="tit">提示信息<span onclick="closeMask()">&times;</span></div>
+		<div class="con">正在处理中，处理结束后该弹窗消失！</div>
+	</div>
+</div>
+<script type="text/javascript" src="../../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../../plugin/jquery-validate/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../../plugin/jquery-validate/js/messages_cn.js"></script>
+<script type="text/javascript" src="../../../plugin/jquery-validate/js/VaExtend.js"></script>
+<script type="text/javascript" src="../../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../../plugin/bootstrap/distpicker.data.js"></script>
+<script type="text/javascript" src="../../../plugin/bootstrap/distpicker.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/join_inspection/join_inspection.js"></script>
+</body>
+</html>

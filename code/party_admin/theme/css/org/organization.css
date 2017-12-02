@@ -1,0 +1,40 @@
+/*组织管理*/
+.web-tips{height: 45px;line-height: 45px;padding-left: 5%;}
+.web-tips span{color: #333;font-size: 16px;}
+
+.organSearch-content{}
+.organSearch-content .form-wrap,.organSearch-content .table-wrap{width: 90%;margin:0 auto;}
+
+.organSearch-content table  tr{border-bottom: 1px solid #eee; }
+.organSearch-content table  thead tr th{padding: 12px 8px;}
+.organSearch-content table  thead tr th,.organSearch-content table  tbody tr td{border-bottom: 0px none;border-top: 0px none;text-align: center;}
+.organSearch-content table  thead{background-color: #f1f1f1}
+.organSearch-content table .td-checkbox{width: 28px;}
+
+.out-role-search{width: 60%;padding-right: 45px;position: relative;}
+.out-role-search button{position: absolute;width: 38px;height: 34px;right: 0;top: 0;background-color: #eee;border-color: #eee;}
+.out-role-search button:hover{background-color: #3ca5f6;color: #fff;border-color: #3ca5f6;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

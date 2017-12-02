@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>登录</title>
+	<meta content="webkit" name="renderer" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+     <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<link rel="stylesheet" type="text/css" href="../../css/sign_in/sign_in.css">
+</head>
+<body>
+<header>
+	<div class="img"><img id="logo" src="" alt=""></div><!--../../images/logo_01.png-->
+	<div class="content" id="title_con">
+		<div class="title">智安城</div>
+		<div class="item">消防网络管理平台</div>
+	</div>
+</header>
+<img class="sign_in" id="sign_in_bg" src="../../images/sign_in.jpg" alt="">
+	<div class="L_sign_in">
+		<img class="title_img" id="title_img" src=""><!--/../../images/logo_login.png-->
+		<p class="slogan1" id="main_title">智安城</p>
+		<form id="login" enctype="multipart/form-data">
+			<div class="L_yong_name">
+				<input class="name_user" type="text" maxlength="25" name="name_user" onkeyup="EnterUp(event)" required placeholder = "请输入账号">
+			</div>
+			<div class="L_yong_prd">
+				<input class="L_yong_prd44"  type="password" maxlength="20" minlength="6" name="password" onkeyup="EnterUp(event)" required placeholder = "请输入密码">
+			</div>
+			<div class="L_yan_zheng">
+				<input required class="L_yan_zheng44" maxlength="4" type="text" name="" onkeyup="EnterUp(event)" placeholder = "请输入验证码" style="width: 230px;"><div style="" class="L_verification_number">
+				<img id="imgCode" src="/vercode" alt="" onclick="changeVercode(this)">
+			</div></div>
+			<a class="sign_on" onclick="login()">登录</a>
+		</form>
+	</div>
+
+<script type="text/javascript" src = "../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script>
+	//该区域为优先执行的代码：
+	$.post('/web/systemSetting/getSystemSetting','',function(res){
+		if(res.code==200){
+			$('#logo').attr('src',res.data.logoDomain);
+			$('#title_img').attr('src',res.data.logoDomain);
+			$('#sign_in_bg').attr('src',res.data.backgroundDomain);
+			$('#title_con .title').text(res.data.maintitle);
+			$('#main_title').text(res.data.maintitle);
+			$('#title_con .item').text(res.data.subtitle);
+			//保存信息：
+			sessionStorage.setItem('logo',res.data.logoDomain);
+			sessionStorage.setItem('maintitle',res.data.maintitle);
+			sessionStorage.setItem('subtitle',res.data.subtitle);
+		}
+	});
+</script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/messages_cn.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/VaExtend.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/sign_in/sign_in.js"></script>
+</body>
+</html>

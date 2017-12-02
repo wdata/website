@@ -1,0 +1,53 @@
+html,body{font-family:Helvetica,STHeiti STXihei,Microsoft JhengHei,Microsoft YaHei,Arial;}
+
+.index-body-layout,html{height: 100%;overflow: hidden;}
+.index-body-layout #wrapper{height: 100%;position: relative;}
+
+.navbar-fixed{width: 180px;height: 100%;position: fixed;left: 0;background-color: #2f4050;z-index: 199;}
+.navbar-fixed .sidebar{font-size: 12px;}
+.navbar-fixed .sidebar .nav-top{color: #fff;height: 40px;font-size: 14px;text-align: center;cursor: pointer;line-height: 40px;}
+.navbar-fixed .sidebar .nav{display: block;}
+.navbar-fixed .sidebar .nav>li{display: block;position: relative;}
+.navbar-fixed .sidebar .nav>li a{padding: 14px 20px 14px 14px;color: #a7b1c2;font-weight: 600;}
+.navbar-fixed .sidebar .nav .nav-parent-a{background-color: #6a7885}
+.navbar-fixed .sidebar .nav-second-level li a{padding: 5px 0 5px 20px;display: block;}
+.navbar-fixed .sidebar .nav-second-level ul{padding-top: 5px;}
+.navbar-fixed .sidebar .nav-second-level ul li{padding-left: 5px;}
+.navbar-fixed .sidebar .nav-second-level ul li li{height: 27px;padding-left: 5px;}
+.navbar-fixed .sidebar .nav-second-level ul li li a{color: #337ab7}
+
+.navbar-fixed .sidebar .nav>li>a:hover,.navbar-fixed .sidebar .nav-second-level li a:hover,.navbar-fixed .sidebar .nav>li>a:focus,.navbar-fixed .sidebar .nav-second-level li a:focus,.navbar-fixed .sidebar .nav>li>a.acitve{background-color: #579fe9;color: #fff}
+
+#page-wrapper{margin:0 0 0 180px;height: 100%;overflow-y: hidden;overflow-x:auto; }
+.content-tabs{position: fixed;height: 50px;background-color: #579fe9;line-height: 40px;width: 100%;left:15px;top:0;}
+.content-tabs .J_tabLeft{width: 40px;height: 50px;position: absolute;left: 15px;border:0px none;background-color: transparent;font-size: 13px;z-index: 200;color: #fff;}
+.J_menuTabs{margin-left: 195px;border-left: solid 1px #3a7fc6;float: left;}
+.J_menuTabs .J_menuTab{height: 50px;line-height: 50px;border-right: solid 1px #3a7fc6;display:inline-block;padding: 0 14px;color: #fff;float: left;}
+.J_menuTabs .J_menuTab:active,.J_menuTabs .J_menuTab.active{background-color: #3b8cde}
+.J_menuTabs .J_menuTab:hover{background-color: #293846}
+.page-tabs-content{margin-left: 0px !important;}
+
+.contextmenuDropDown{width: 180px;}
+
+.right-control{float: right;text-align: center;line-height: 48px;}
+.right-control button{border:0px none;background-color: transparent;color: #fff;width: 120px;border-right: solid 1px #3a7fc6;}
+.right-control button i{font-size: 12px;margin-right:4px; }
+.right-control a{color: #fff;width: 120px;display: inline-block;}
+a:hover{text-decoration: none !important}
+
+#location-nav{background-color: #ccc;font-size: 12px;margin-bottom: 0px;height: 35px;position: fixed;width: 100%;}
+#location-nav > li + li:before{content: " ";}
+#location-nav a{color: #333;}
+
+.full-height-layout,#wrapper,#page-wrapper,#page-wrapper .J_mainContent{height: 100%;}
+#page-wrapper .J_mainContent{margin:0;min-width: 1400px}
+.min-nav{display: none}
+
+.min-sidebar .min-nav{height: 50px;font-size: 16px;text-align: center;line-height: 50px;background-color: #6a7885;color: #fff;display: block;}
+.min-sidebar #page-wrapper{margin-left: 70px;}
+.min-sidebar nav.side-menu{width: 70px;}
+.min-sidebar .navbar-fixed{width: 70px;}
+.min-sidebar nav .nav{display: none !important;}
+.min-sidebar .content-tabs{margin-left: 90px;}
+
+

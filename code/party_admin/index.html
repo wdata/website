@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link rel="stylesheet" type="text/css" href="theme/css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="theme/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="theme/plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="theme/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="theme/plugin/jquery-ztree/css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="theme/css/common/index.css">
+    <link rel="stylesheet" type="text/css" href="theme/css/page.css">
+</head>
+<body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden" id="layoutBody">
+    <div id="wrapper">
+        <!--左侧导航开始-->
+        <nav class="navbar-fixed navbar-default"  role="navigation">
+            <div class="logo">
+                <a href=""><img src="theme/images/logo.png"></a>
+            </div>
+            <div class="sidebar">
+                <div class="nav-top"><<</div>
+                <ul class="nav" id="side-menu">
+                </ul>
+                <div class="min-nav"><i class="fa fa-user-md"></i></div>
+            </div>
+        </nav>
+        <!--右侧部分开始-->
+        <div id="page-wrapper">
+            <div class="row content-tabs" id="xgdTab">
+                <button class="roll-nav roll-left J_tabLeft">
+                    <i class="fa fa-backward"></i>
+                </button>
+                <nav class="page-tabs J_menuTabs">
+                    <div class="page-tabs-content clearfix">
+                        <a href="javascript:;" class="active J_menuTab" data-id="">首页</a>
+                    </div>
+                </nav>
+                <div class="right-control">
+                    <!--<button type="button" btn-title="修改密码" btn-url="" data-target="#pwd_modal" data-toggle="modal" btn-size="size-normal" btn-type="type-primary" btn-submit-text="确认提交" btn-act-type="add">&lt;!&ndash;<i class="fa fa-forward" ></i>修改密码&ndash;&gt;</button>-->
+                    <button class="name"></button>
+                    <a class="dropOut" style="cursor: pointer;"><i class="fa fa fa-sign-out"></i> 退出系统</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="hr-20"></div><div class="hr-20"></div><div class="hr-10"></div>
+            <div class="row" id="xgd-location-bar">
+                <ol class="breadcrumb" id="location-nav">
+                    <li>&nbsp;&nbsp;<i class="fa fa-home"></i>&nbsp;&nbsp;欢迎您，<!-- ${currentUser.name}！ --><span class="user_u"></span></li>
+                    <li><a href="#">当前位置：</a></li>
+                    <li class="curentLocationName">我的工作台</li>
+                </ol>
+            </div>
+            <div class="hr-30"></div><div class="hr-5"></div>
+            <div class="row J_mainContent" id="content-main">
+              <!--  <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="crm/home.jsp" frameborder="0" data-id="crm/home.jsp" data-text="我的工作台" seamless></iframe>  -->
+                <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="party/picture/pic_show.html" frameborder="0" data-id="crm/home.jsp" data-text="我的工作台" seamless></iframe>
+            </div>
+        </div>
+        <!--右侧部分结束-->
+    </div>
+    <ul role="menu" class="dropdown-menu dropdown-menu-right contextmenuDropDown">
+        <li class="J_tabShowActive"><a>定位当前选项卡</a></li>
+        <li class="J_tabCloseActive"><a>关闭当前选项卡</a></li>
+        <li class="divider"></li>
+        <li class="J_tabCloseAll"><a>关闭全部选项卡</a></li>
+        <li class="J_tabCloseOther"><a>关闭其他选项卡</a></li>
+    </ul>
+<!--密码弹出窗-->
+<!--<div class="modal fade" id="pwd_modal">-->
+    <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+            <!--<div class="modal-header">-->
+                <!--<h4 class="tc">修改密码</h4>-->
+            <!--</div>-->
+            <!--<div class="modal-body">-->
+                <!--<div class="add-content alert-content">-->
+                    <!--<form action="" class="form-horizontal" id="pwd_form">-->
+                        <!--<div class="form-group">-->
+                            <!--<label for="old_pwd" class="col-md-3 control-label">旧密码</label>-->
+                            <!--<div class="col-md-5">-->
+                                <!--<input type="password" class="form-control" name="old_pwd" id="old_pwd">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label for="new_pwd" class="col-md-3 control-label">新密码</label>-->
+                            <!--<div class="col-md-5">-->
+                                <!--<input type="password" class="form-control" name="new_pwd" id="new_pwd">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="form-group">-->
+                            <!--<label for="confirm_pwd" class="col-md-3 control-label">新密码</label>-->
+                            <!--<div class="col-md-5">-->
+                                <!--<input type="password" class="form-control" name="confirm_pwd" id="confirm_pwd">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</form>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="modal-footer">-->
+                <!--<input type="button" value="确认" class="btn btn-primary" onclick="changePwd()">-->
+                <!--<input type="button" value="取消" class="btn btn-danger" data-dismiss="modal">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<script type="text/javascript" src="theme/plugin/jQuery/jquery.min.js"></script> 
+<script type="text/javascript" src="theme/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="theme/plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="theme/plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="theme/plugin/jqPaginator/jqPaginator.js"></script> 
+<script type="text/javascript" src="theme/plugin/jquery-validate/js/jquery.validate.js"></script>  
+<script type="text/javascript" src="theme/plugin/jquery-validate/js/messages_cn.js"></script>  
+<script type="text/javascript" src="theme/js/common/common.js"></script>
+<script type="text/javascript" src="theme/js/common/contabs.min.js"></script>
+<script type="text/javascript" src="party/js/common.js"></script>
+<script type="text/javascript" src="theme/js/common/index.js"></script>
+
+</body>
+</html>

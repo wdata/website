@@ -1,0 +1,13 @@
+#identity_img{
+    border:none;
+    width:100px;
+    float: left;
+}
+#identity_img+span{
+float: right;
+    padding-right:40%;
+}
+.identity_image{
+    width:200px;
+    height:200px;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>楼栋管理</title>
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+    <link rel="stylesheet" href="../../css/news/news_add.css">
+    <style>
+        .location_input{display:inline-block;width:44%;}
+    </style>
+</head>
+<body>
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>楼栋管理</span> > <span class="blueChange">添加楼宇/单元</span>
+</header>
+<div class="container-fluid">
+    <form class="form">
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">所属上层级名称: <font color="red">*</font></div>
+            <div class="col-md-6 data-con">
+                <div class="input-group" onclick="addrToggleAdd();">
+                    <input id="" class="form-control" size="8" type="text" readonly placeholder="所属区域">
+                    <span class="input-group-addon"><i class="fa fa-caret-down"></i></span>
+                </div>
+            </div>
+            <div class="col-md-offset-2 col-md-8">
+                <div style="display: none;" class="select-addr-con-add">
+                    <p class="btn-con text-right">
+                        <span onclick="addrToggleAdd();" type="button" class="span btn_ok">确定</span>
+                        <span onclick="addrToggleAdd();" type="button" class="span ">取消</span>
+                    </p>
+                    <div class="select-con">
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">中国中国中国中国</option>
+                            <option value="">中国</option>
+                            <option value="">中国</option>
+                            <option value="">中国</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                            <option value="">广东</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                        </select>
+                        <select class="form-control" name="" id="" size="15">
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳</option>
+                            <option value="">深圳深圳深圳深圳</option>
+                            <option value="">深圳</option>
+                        </select>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">所属上层级编号:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input disabled readonly class="form-control" type="text" placeholder="所属上层级编号">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">楼宇/单元编号:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="楼宇/单元编号">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">楼宇/单元名称:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="楼宇/单元名称">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">经/纬度:<font color="red">*</font></div>
+            <div class="col-md-6 location">
+                <input type="button" class="btn btn-info" value="选取位置" onclick="getMapMarker();">
+                <input disabled readonly class="form-control location_input lng" type="text" placeholder="经度">
+                <input disabled readonly class="form-control location_input lat" type="text" placeholder="纬度">
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">总楼层数:</div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="总楼层数">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">地上层数:</div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="地上层数">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">地下层数:</div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="地下层数">
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">总建筑面积:</div>
+            <div class="col-md-6">
+                <input class="form-control" type="text" placeholder="总建筑面积">
+            </div>
+        </div>
+        <div class="row form-group text-con">
+            <div class="col-md-2 text-right form-title">楼栋/单元详细描述:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <textarea id="editor" name="content" style="width:100%;height:200px;"></textarea>
+            </div>
+        </div>
+
+
+
+        <div class="row form-group">
+            <div class="col-md-2 text-right form-title">楼栋/单元图片:<font color="red">*</font></div>
+            <div class="col-md-6">
+                <label class="btn btn-default" for="file">选择图片</label>
+                <input id="file" class="file" type="file" onchange="checkImgType(this,$('.imgCanvas_con'),false);" style="display: none;">
+                <span class="file-text" style="color: #9ea6b4;">支持.jpg, .jpeg, .bmp, .gif, .png类型文件，5M以内</span>
+            </div>
+            <div class="col-md-offset-2 col-md-6 text-left">
+                <label class="file_name"></label>
+                <div class="imgCanvas_con">
+                    <canvas id="imgCanvas" width="0" height="0"></canvas>
+                    <span class="imgCanvas_remove" onclick="imgCanvas_remove(this)"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row form-group text-left">
+            <div class="col-md-offset-2 col-md-6">
+                <button class="btn btn_blue" type="button" onclick="newsActivity()">确定</button>
+                <button class="btn btn_gray" type="button" onclick="goPage('page/building/building_list.html');">取消</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/layer/layer.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../plugin/kindeditor-4.1.11-zh-CN/kindeditor/kindeditor-all.js"></script>
+<script src="../../plugin/kindeditor/lang/zh-CN.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/building/building_add.js"></script>
+</body>
+</html>

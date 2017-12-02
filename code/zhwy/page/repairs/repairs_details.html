@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报修管理</title>
+<link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+<link rel="stylesheet" href="../../css/reset.css">
+<link rel="stylesheet" href="../../css/common.css">
+<link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+<style>
+    .back .btn{margin-left: 20px;}
+    .details_list .row{margin: 5px 0;}
+    .details_list .row .col-md-3{padding-right: 0;text-align: right;}
+    /*.repeal{margin: 15px 0 0 0;}  已撤销*/
+</style>
+</head>
+<body>
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>报修管理</span> > <span class="blueChange">报修详情</span>
+</header>
+<div class="buttons back">
+    <button type="button" class="btn btn-default" onclick="goPage('page/repairs/repairs_list.html');">返回</button>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-5 details_list">
+            <div class="row"><div class="col-md-3">保修单号:</div><div class="col-md-8">32535346</div></div>
+            <div class="row"><div class="col-md-3">报修类型:</div><div class="col-md-8">办公区报修</div></div>
+            <div class="row"><div class="col-md-3">报修人:</div><div class="col-md-8">张三 1359416188</div></div>
+            <div class="row"><div class="col-md-3">订单状态:</div><div class="col-md-8 text-danger">未派单</div></div>
+            <div class="row"><div class="col-md-3">报修时间:</div><div class="col-md-8">2017-07-18 12:58</div></div>
+            <div class="row"><div class="col-md-3">报修位置:</div><div class="col-md-8">东方科技大厦405</div></div>
+            <div class="row"><div class="col-md-3">预约上门时间:</div><div class="col-md-8">2017-07-21 13:00</div></div>
+            <div class="row"><div class="col-md-3">期待完成时间:</div><div class="col-md-8">2017-07-22 12:00</div></div>
+            <div class="row"><div class="col-md-3">报修项目:</div><div class="col-md-8">门窗维修</div></div>
+            <div class="row"><div class="col-md-3">报修内容:</div><div class="col-md-8">昨晚台风把吊顶吹落了下来，请尽快处理！</div></div>
+            <div class="repeal hidden">
+                <!--已撤销-->
+                <div class="row"><div class="col-md-3">撤销时间:</div><div class="col-md-8">2017-07-18 12:58</div></div>
+                <div class="row"><div class="col-md-3">撤销说明:</div><div class="col-md-8">自己修好了！</div></div>
+            </div>
+        </div>
+
+
+        <div class="col-md-5 details_list hidden">
+            <!--已派单-->
+            <div class="row"><div class="col-md-3">派单时间:</div><div class="col-md-8">2017-07-18 12:58</div></div>
+            <div class="row"><div class="col-md-3">维修人员:</div><div class="col-md-8">李四 1359416188</div></div>
+        </div>
+
+        <div class="col-md-5 details_list hidden">
+            <!--移交未派单-->
+            <div class="row"><div class="col-md-3">派单时间:</div><div class="col-md-8">2017-07-18 12:58</div></div>
+            <div class="row"><div class="col-md-3">接单时间:</div><div class="col-md-8">2017-07-18 13:11</div></div>
+            <div class="row"><div class="col-md-3">移交人:</div><div class="col-md-8">李四 1359416188</div></div>
+            <div class="row"><div class="col-md-3">移交原因:</div><div class="col-md-8">请假三天</div></div>
+            <div class="row"><div class="col-md-3">移交说明:</div><div class="col-md-8">已处理完成大部分</div></div>
+            <div class="row"><div class="col-md-3">移交时间:</div><div class="col-md-8">2017-07-19 13:11</div></div>
+
+            <div class="transfer hidden">
+                <!--移交已派单-->
+                <div class="row"><div class="col-md-3">移交派单时间:</div><div class="col-md-8">2017-07-19 13:11</div></div>
+                <div class="row"><div class="col-md-3">接收人:</div><div class="col-md-8">王五 1359416188</div></div>
+            </div>
+        </div>
+
+        <div class="col-md-5 details_list ">
+            <!--已受理-->
+            <div class="row"><div class="col-md-3">派单时间:</div><div class="col-md-8">2017-07-18 12:58</div></div>
+            <div class="row"><div class="col-md-3">接单时间:</div><div class="col-md-8">2017-07-18 13:11</div></div>
+            <div class="row"><div class="col-md-3">维修人员:</div><div class="col-md-8">李四 1359416188</div></div>
+        </div>
+
+    </div>
+</div>
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../js/common.js"></script>
+<script src="../../js/repairs/repairs_details.js"></script>
+</body>
+</html>

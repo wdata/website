@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人信息</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta name="flexible" content="initial-dpr=2" />
+		<link rel="stylesheet" href="../../plugin/flexible/flexible.css">
+		<script src="../../plugin/flexible/flexible.js"></script>
+		<link rel="stylesheet" href="../../plugin/swiper/css/swiper-3.3.1.min.css">
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="../../css/grassroots/personal/edit_index.css">
+	</head>
+		
+	<body>
+		
+		<div class="page">
+			<header class="head">
+				<a onclick="history.go(-1);">
+					<div class="head_return"><i></i></div>
+				</a>
+				<div class="xinnav">信息完整度<span>13</span>%</div>
+			</header>
+		</div>
+		<div class="personal-edit">
+			<div class="heart">
+				<div class="shell">
+					<section>添加头像</section>
+					<div class="avatar">
+						<a href="#">
+							<div class="img_con">
+								<img src="../../images/grassroots/personal/add_img.png"/><span>点击上传</span>
+							</div>
+			               <input required type="file" name="file" id="img_file" accept="image/*;capture=camera"
+			                      class="upload fl pr" onchange="imgChange(this)">
+						</a>
+					</div>
+				</div>
+				<div class="shell">
+					<section>基本信息</section>
+					<div class="basic">
+						<ul>
+							<li>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 名：<span></span></li>
+							<li>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 别：<span></span></li>
+							<li>出生年月：<span></span></li>
+							<li>入党时间：<span></span></li>
+							<li>联系手机号：<span></span></li>
+						</ul>
+						<a href="basic.html"><img src="../../images/grassroots/personal/edit_red.png"/>编辑</a>
+					</div>
+				</div>
+				<div class="shell">
+					<section>政治面貌</section>
+					<div class="face">
+						<ul>
+							<li>所属单位：<span></span></li>
+							<li>所属支部：<span></span></li>
+							<li>是否为市局党委委员纪委委员：<span></span></li>
+							<li>当前行政职务和职级：<span></span></li>
+							<li>是否党务管理人员：<span></span></li>
+							<li>政治身份：<span></span></li>
+						</ul>
+						<a href="polity.html"><img src="../../images/grassroots/personal/edit_red.png"/>编辑</a>
+					</div>
+				</div>
+				<div class="shell">
+					<section>荣誉奖励</section>
+					<div class="honor">
+						<div class="hei">荣誉奖励情况：<span></span></div>
+						<a href="../honor/honor_edit.html"><img src="../../images/grassroots/personal/edit_red.png"/>编辑</a>
+					</div>
+				</div>
+				<div class="shell">
+					<section>学历情况</section>
+					<div class="education">
+						<div class="hei">学历情况：<span></span></div>
+						<a href="education_edit.html"><img src="../../images/grassroots/personal/edit_red.png"/>编辑</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../plugin/swiper/js/swiper-3.3.1.min.js"></script>
+		<script src="../../plugin/zepto/zepto.js"></script>
+		<script src="../../plugin/zepto/event.js"></script>
+		<script src="../../plugin/zepto/touch.js"></script>
+		<script src="../../js/grassroots/personal/party.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

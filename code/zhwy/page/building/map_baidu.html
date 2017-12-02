@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>地图</title>
+    <style>
+        #map{width: 998px;height: 600px;}
+        .clearfix{padding: 10px;}
+        .btn{margin: 0 30px;}
+    </style>
+</head>
+<body>
+<div class="clearfix">
+    <span class="pull-left">当前选取点的坐标为：经度:<span class="lng"></span> , 纬度:<span class="lat"></span></span>
+    <button class="btn btn-info pull-right" onclick="getAttr();">保存坐标</button>
+</div>
+<div id="map"></div>
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/layer/layer.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="http://api.map.baidu.com/api?v=2.0&ak=qUfrUF9VG691T5eEBEr7jCDgAQKciAbr&s=1"></script>
+<script>
+    var marker;
+    var map = new BMap.Map("map");//初始化地图
+    map.centerAndZoom(new BMap.Point(116.417854,39.921988), 13);//初始化地图默认中心点
+    map.enableScrollWheelZoom(true);//开启鼠标滚轮缩放
+
+    //根据IP定位：
+    var myCity = new BMap.LocalCity();
+    myCity.get(function(result){
+        map.setCenter(result.name);
+    });
+    map.addEventListener("click", function(e){//地图的点击事件
+        map.clearOverlays();//删除所有的覆盖物
+        marker = new BMap.Marker(new BMap.Point(e.point.lng,e.point.lat));//初始化覆盖物
+        marker.enableDragging();//覆盖物开启拖拽
+        map.addOverlay(marker);//把覆盖物添加到地图中
+
+        var p = marker.getPosition();       //获取marker的位置
+        $('.lng').text(p.lng);  $('.lat').text(p.lat);
+
+        marker.addEventListener("dragend", function (e) {//监听拖拽
+            var x = e.point.lng; //经度
+            var y = e.point.lat; //纬度
+            $('.lng').text(x);   $('.lat').text(y);
+        });
+    });
+    function getAttr(){//点击保存按钮时
+        if(marker==undefined){
+            layer.msg('您未点击地图选定坐标点！',{time:1500});
+            return false;
+        }
+        var p = marker.getPosition();       //获取marker的位置
+        $('.lng').text(p.lng);  $('.lat').text(p.lat);
+        //在父级页面中进行赋值操作：
+        parent.setMapMarker(p.lng,p.lat);
+        parent.layer.close(parent.mylayer);
+    }
+</script>
+</body>
+</html>

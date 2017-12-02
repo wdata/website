@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="css/page.css">
+</head>
+<body>
+
+    <div class="index">
+        <header class="index-header">
+            <!--<div class="pull-right">-->
+                <!--<div>-->
+                    <!--欢迎您：admin-->
+                <!--</div>-->
+                <!--<div>-->
+                    <!--角色：admin-->
+                <!--</div>-->
+                <!--<div class="login_out">-->
+                    <!--<a href="login.html"><i class="fa fa-sign-out"></i>退出</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </header>
+        <ul id="accordion" class="accordion">
+            <li>
+                <div class="link"><i class="fa fa-pie-chart"></i>数据统计<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#">经营概况</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-gears"></i>设备管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#">设备列表</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="link"><i class="fa fa-users"></i>代理商管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#">代理商列表</a></li>
+                </ul>
+            </li>
+            <li><div class="link"><i class="fa fa-globe"></i>业务分成管理<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#">业务分成列表</a></li>
+                    <li><a href="#">待审核业务分成</a></li>
+                </ul>
+            </li>
+            <li><div class="link"><i class="fa fa-window-maximize"></i>系统配置设置<i class="fa fa-chevron-down"></i></div>
+                <ul class="submenu">
+                    <li><a href="#">账号管理</a></li>
+                    <li><a href="#">添加账号</a></li>
+                    <li><a href="#">角色管理</a></li>
+                    <li><a href="#">添加角色</a></li>
+                    <!--<li><a href="#">角色权限修改</a></li>-->
+                    <!--<li><a href="#">操作日志管理</a></li>-->
+                    <li><a href="#">修改密码</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="index-con">
+            <iframe id="iframe" src="html/statistics/overview.html"></iframe>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="plugin/jQuery/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="plugin/jqPaginator/jqPaginator.min.js"></script>
+    <script type="text/javascript" src="plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="plugin/layer-v3.1.0/layer/layer.js"></script>
+    <script type="text/javascript" src="common/common.js"></script>
+    <!--<script type="text/javascript" src="common/login.js"></script>-->
+    <script type="text/javascript" src="common/index.js"></script>
+</body>
+</html>

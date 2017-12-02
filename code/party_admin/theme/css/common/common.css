@@ -1,0 +1,54 @@
+  /* table
+------------------------------------------------------------------- */
+.table { clear:both; width:100%; margin-top: 8px}
+.table th, .table td{ padding:6px !important; height:26px; }
+table.search { margin: 12px 0 6px 4px;}
+
+.tb-type1 th{ padding:5px 5px 3px 0; line-height:21px; color: #333;}
+.tb-type1 td{ padding:5px 5px 3px 0;}
+.tb-type1 td input[type="text"], .tb-type1 td select{ margin-right:4px; _margin-right:2px; margin-left:4px; _margin-left:2px; }
+.tb-type1 td select { width:auto;}
+.tb-type1 .txt { width:140px;}
+/* tb */
+.tb-type2 td{ padding:5px 5px 3px 0; border-top: 1px dotted #CBE9F3; }
+.tb-type2 th{ padding:5px 5px 3px 0; line-height:21px; font-size: 12px; }
+/*分页样式*/
+.pagination {margin: 10px 100px; padding: 2px; float:right; +float:none; +position: absolute; +right:6px;}
+.pagination li { line-height: 22px; color: #AAA; display: inline !important; list-style-type: none; width: auto !important; height: auto !important; float: left; padding: 0px; margin: 0 1px !important;}
+
+/*表单元素样式*/
+input[type="text"], input[type="password"], textarea, select, .type-file-text , .editable, .editable-tarea { color: #333333; background:#FAFAFA none repeat scroll 0 0 ;  border-style: solid; border-width: 1px; border-color: #ABADB3 #E2E3EA #E2E3EA #ABADB3;}
+input[type="text"], input[type="password"], textarea, select, .type-file-text , .editable, .editable2, .editable-tarea, .editable-tarea2 { padding: 2px 4px; -moz-border-radius: 4px; -webkit-border-radius: 4px; border-radius: 4px;/*Firefox\Chrome\Safari\IE9\元素圆角效果*/ resize: none;/*禁止调节元素的尺寸*/}
+input[type="text"]:focus, input[type="text"]:hover, input[type="text"]:active, input[type="password"]:focus, input[type="password"]:hover, input[type="password"]:active, textarea:hover, textarea:focus, textarea:active { color: #33464F; background-color: #fff; border: 1px solid ; border-color:#71CBEF /*#CBE9F3 #CBE9F3 #71CBEF*/;-moz-box-shadow:0 0 5px rgba(82, 168, 236, 0.5); -webkit-box-shadow: 0 0 5px rgba(82, 168, 236, 0.5); box-shadow: 0 0 5px rgba(82, 168, 236, 0.5);}
+textarea{ resize: vertical !important;/*Textarea支持调节元素的高度*/}
+input[type="text"], input[type="password"] { line-height:20px; white-space: nowrap; display:inline-block; height:20px; overflow: hidden; cursor:text;}
+/*搜索*/
+a.btn-search { color: #555; line-height:28px; background: transparent url(../../images/bg_position.gif) no-repeat scroll -130px -450px; vertical-align:middle; display: inline-block; width: 28px; height: 28px; cursor: pointer;}
+a.btn-search:hover { background-position: -160px -450px;}
+a.btn-search:active { background-position: -190px -450px;}
+
+html,body{font-family:Helvetica,STHeiti STXihei,Microsoft JhengHei,Microsoft YaHei,Arial;}
+
+
+.datetimepicker .clear{content: '清空' !important;font-size: 12px !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

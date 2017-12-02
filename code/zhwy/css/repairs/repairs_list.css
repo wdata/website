@@ -1,0 +1,28 @@
+.circle-con {
+  padding-left: 0;
+  padding-right: 0;
+  width: 6%;
+}
+.circle-con span {
+  display: inline-block;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+}
+.circle-con p {
+  margin: 0;
+}
+.circle-con .blue {
+  background-color: dodgerblue;
+}
+.circle-con .orange {
+  background-color: orange;
+}
+.circle-con .pink {
+  background-color: hotpink;
+}
+.line {
+  border-top: 1px solid #555;
+  margin: 20px -20px;
+}

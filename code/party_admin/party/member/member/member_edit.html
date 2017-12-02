@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改用户信息</title>
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/jquery-ztree/css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../theme/css/page.css">
+    <link rel="stylesheet" type="text/css" href="../../css/label/label.css">
+</head>
+<body>
+<div class="page">
+    <div class="main-content">
+        <div class="add-content" style="margin:0 15px;">
+            <form  class="form-horizontal" id="newForm">
+                <input type="hidden" id="id" name="id">
+                <div class="form-group">
+                    <label class="col-md-2 control-label">用户名称：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input type="text" id="name" class="form-control"  maxlength="10" name="name" required>
+                        <span>（32个字以内）</span>
+                    </div>
+                </div>
+                <div class="form-group modify_hide">
+                    <label for="name" class="col-md-2 control-label">电话：<span class="cred">*</span></label>
+                    <div class="col-md-3"><input type="number" id="phone" class="form-control" name="phone" required></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">性别：<span class="cred">*</span></label>
+                    <div class="col-md-3 check-group">
+                        <input type="radio"  name="sex" id="unknown" value="1"><label for="unknown">未知</label>
+                        <input type="radio" name="sex" id="male" value="1"><label for="male">男</label>
+                        <input type="radio"  name="sex" id="Female" value="0"><label for="Female">女</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="birthday" class="col-md-2 control-label">出生日期(：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input id="birthday" class="form-control" size="16" type="text" value="" name="birthday" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">学历：</label>
+                    <div class="col-md-3">
+                        <select id="degree" class="form-control"  name="degree">
+                            <option value="小学">小学</option>
+                            <option value="初中">初中</option>
+                            <option value="中专">中专</option>
+                            <option value="高中">高中</option>
+                            <option value="专科">专科</option>
+                            <option value="本科">本科</option>
+                            <option value="硕士">硕士</option>
+                            <option value="博士">博士</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">组织：</label>
+                    <div class="col-md-3">
+                        <select id="organization" class="form-control"  name="organization"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="joinPartyDate" class="col-md-2 control-label">入党时间：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input id="joinPartyDate" class="form-control" size="16" type="text" value="" name="joinPartyDate" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="changeDate" class="col-md-2 control-label">迁入组织时间：<span class="cred">*</span></label>
+                    <div class="col-md-3">
+                        <input id="changeDate" class="form-control" size="16" type="text" required value="" name="changeDate" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">身份类型：</label>
+                    <div class="col-md-3">
+                        <select id="type" class="form-control"  name="type">
+                            <option value="0">群众</option>
+                            <option value="10">积极分子</option>
+                            <option value="20">重点对象</option>
+                            <option value="30">预备党员</option>
+                            <option value="100">党员</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">职位：</label>
+                    <div class="col-md-6" id="jobs">
+                        <!--<label class="checkbox-inline">-->
+                            <!--<input type="checkbox" checked value="option1"> 1-->
+                        <!--</label>-->
+                    </div>
+                    <input type="hidden" name="jobIds" id="jobIds">
+                </div>
+                <div class="form-group">
+                    <label class="col-md-2 control-label">&nbsp;</label>
+                    <div class="col-md-3">
+                        <input type="button" value="确定" class="btn btn-primary" onclick="determine()">
+                        <input type="button" value="取消" class="btn btn-close-dialog-tab" style="color:#fff">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="opering-mask">
+        <div class="main">
+            <div class="tit">提示信息</div>
+            <div class="con"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../../../theme/plugin/jQuery/jquery.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jqPaginator/jqPaginator.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-validate/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-validate/js/messages_cn.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+    <script type="text/javascript" src="../../../theme/plugin/jquery-form/jquery.form.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/common.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/VaExtend.js"></script>
+    <script type="text/javascript" src="../../../theme/js/common/contabs.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script type="text/javascript" src="../../js/member/member_edit.js"></script>
+</body>
+</html>

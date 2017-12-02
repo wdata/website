@@ -1,0 +1,72 @@
+{
+  "code": 0,
+  "message": "SUCCESS",
+  "data": {
+    "dim": {
+      "dimX": {
+        "titles": ["省份", "城市"],
+        "valueTree": [
+          {
+            "value": "广东",
+            "children": [
+              {"value": "广州", "children": null},
+              {"value": "深圳", "children": null},
+              {"value": "珠海", "children": null}
+            ]
+          },
+          {
+            "value": "福建",
+            "children": [
+              {"value": "泉州", "children": null},
+              {"value": "厦门", "children": null}
+            ]
+          }
+        ]
+      },
+      "dimY": {
+        "titles": ["行业", "年龄段"],
+        "valueTree": [
+          {
+            "value": "IT",
+            "children": [
+              {"value": "80后", "children": null},
+              {"value": "70后", "children": null}
+            ]
+          },
+          {
+            "value": "汽车",
+            "children": [
+              {"value": "80后", "children": null},
+              {"value": "70后", "children": null},
+              {"value": "60后", "children": null}
+            ]
+          }
+        ]
+      }
+    },
+    "charts": {
+      "meaAxis": "x",
+      "dimTitle": "区/县",
+      "dimValues": [
+        ["天河区","海珠区","白云区"],
+        ["南山区","福田区"],
+        ["香洲区"],
+        ["丰泽区","晋江市"],
+        ["思明区"]
+      ],
+      "meaList": [
+        {
+          "meaTitle": "人均消费金额",
+          "maxValue": 3000.36,
+          "meaValues": [
+            [[1000,2000,3000],[1000,2000,3000],[1000,2000,3000],[1000,2000,3000],[1000,2000,3000]],
+            [[1000,2000],[1000,2000],[1000,2000],[1000,2000],[1000,2000]],
+            [[1000],[1000],[1000],[1000],[1000]],
+            [[1000,2000],[1000,2000],[1000,2000],[1000,2000],[1000,2000]],
+            [[1000],[1000],[1000],[1000],[1000]]
+          ]
+        }
+      ]
+    }
+  }
+}

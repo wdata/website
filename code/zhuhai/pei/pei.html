@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>积分轨迹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../plugin/flexible/flexible.css">
+    <script src="../plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/pei/pei.css"/>
+</head>
+<body>
+<div class="page">
+    <div class="head">积分轨迹</div>
+    <div class="canvas">
+        <canvas id="doughnut" width="150%" height="150%">
+            你的浏览器不支持canvas
+        </canvas>
+        <div class="images">
+            <img class="y1" src="../images/pei/y.png" alt="">
+            <img class="y2" src="../images/pei/y-1.png" alt="">
+            <img class="y3" src="../images/pei/y-2.png" alt="">
+            <img class="y4" src="../images/pei/y-3.png" alt="">
+            <img class="y5" src="../images/pei/y-4.png" alt="">
+            <img class="y6" src="../images/pei/4.png" alt="">
+            <img class="y7" src="../images/pei/3.png" alt="">
+            <img class="y8" src="../images/pei/2.png" alt="">
+            <img class="y9" src="../images/pei/1.png" alt="">
+        </div>
+    </div>
+    <ul class="list">
+        <li><img class="y6" src="../images/pei/4.png"><span class="num">32%</span></li>
+        <li><img class="y7" src="../images/pei/3.png"><span class="num">32%</span></li>
+        <li><img class="y8" src="../images/pei/2.png"><span class="num">32%</span></li>
+        <li><img class="y9" src="../images/pei/1.png"><span class="num">32%</span></li>
+    </ul>
+    <ul class="list left">
+        <li><span class="num">32%</span><img class="y1" src="../images/pei/y.png"></li>
+        <li><span class="num">32%</span><img class="y2" src="../images/pei/y-1.png"></li>
+        <li><span class="num">32%</span><img class="y3" src="../images/pei/y-2.png"></li>
+        <li><span class="num">32%</span><img class="y4" src="../images/pei/y-3.png"></li>
+        <li><span class="num">32%</span><img class="y5" src="../images/pei/y-4.png"></li>
+    </ul>
+    <div class="icon"></div>
+    <canvas id="canvas" width="400%" height="300%">            你的浏览器不支持canvas
+    </canvas>
+</div>
+<script src="../plugin/zepto/zepto.js"></script>
+<script src="../plugin/zepto/event.js"></script>
+<script src="../plugin/zepto/touch.js"></script>
+<!--绘制轨迹图上半部分-->
+<script src="../js/pei/chart.js"></script>
+<!--绘制轨迹图下半部分-->
+<script src="../js/pei/pei.js"></script>
+</body>
+</html>

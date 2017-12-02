@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>维保信息列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/jquery-ztree/css/zTreeStyle.css">
+    <link rel="stylesheet" type="text/css" href="../../plugin/jqPaginator/paging.css">
+    <link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<style>
+		.main-content .con-table{font-size: 12px;}
+		.add-content{padding-top: 0;}
+		.alert-content{max-height: 700px;}
+		#detail_modal .modal-body .add-content{padding: 20px;}
+		#detail_modal .modal-body .div_top{border-bottom: none;}
+		.search-tab-box{min-width:1400px;}
+	</style>
+</head>
+<body>
+<div class="search-tab-box">
+	<div class="list clearfix">
+		<table class="max100 fl ">
+        	<tbody>
+        		<tr>
+        			<td><input type="text" name="name" class="form-control"  placeholder="请输入设备名称" onkeyup="searchKey(event);"></td>
+        			<td><input type="text" name="desc" class="form-control"  placeholder="请输入维保描述" onkeyup="searchKey(event);"></td>
+					
+        			<td class="date_con">
+						<label>报警时间：</label>
+        				<span class="form_datetime_input">
+					    	<input id="datetimeStart" class="form-control" size="16" type="text" value="" name="startTime" readonly>
+						</span>
+        				<span>-</span>
+        				<span class="form_datetime_input">
+					    	<input id="datetimeEnd" class="form-control" size="16" type="text" value="" name="endTime" readonly>
+						</span>
+        			</td>
+        			<td>
+						<label class="label4">设备组：</label>
+        				<select class="form-control" id="deviceg_sel"></select>
+        			</td>
+					<td>
+						<label class="label4">在线状态：</label>
+						<select class="form-control" id="status_sel">
+							<option value="">全部</option>
+							<option value="normal">正常</option>
+							<option value="alarm">报警</option>
+							<option value="fault">故障</option>
+							<option value="offline">离线</option>
+						</select>
+					</td>
+					<td>
+						<label class="label4">处理状态：</label>
+						<select class="form-control" id="state_sel">
+							<option value="">全部</option>
+							<option value="alarm">报警中</option>
+							<option value="receive">已接警</option>
+							<option value="processing">处理中</option>
+							<option value="applyfor">申请维保</option>
+							<option value="complete">完成</option>
+						</select>
+					</td>
+					<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="searchList()"></td>
+        		</tr>
+        	</tbody>
+        </table>
+	</div>
+	<!--<div class="list clearfix mt10">
+        <table class="max100 fl ">
+        	<tbody>
+        		<tr>
+        			<td><label class="label4">在线状态：</label></td>
+        			<td>
+        				<select class="form-control" id="status_sel">
+							<option value="">全部</option>
+							<option value="normal">正常</option>
+							<option value="alarm">报警</option>
+							<option value="fault">故障</option>
+							<option value="offline">离线</option>
+						</select>
+        			</td>
+        			<td><label class="label4">处理状态：</label></td>
+        			<td>
+        				<select class="form-control" id="state_sel">
+							<option value="">全部</option>
+							<option value="alarm">报警中</option>
+							<option value="receive">已接警</option>
+							<option value="processing">处理中</option>
+							<option value="applyfor">申请维保</option>
+							<option value="complete">完成</option>
+						</select>
+        			</td>
+        			<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="searchList()"></td>
+        		</tr>
+        	</tbody>
+        </table>
+	</div>-->
+</div>
+
+<div class="main-content">
+	<div class="con-oper">
+		<a class="export" onclick="exportExcel(this)">导出Excel</a>
+	</div>
+	<div class="con-table">
+		<table class="table table-hover" id="main_table">
+			<thead>
+				<tr>
+					<th><input type="checkbox" name="" onclick="checkAll('main_table',this)"><i></i></th>
+					<th>序号</th>
+					<th>节点名称</th>
+					<th>节点编号</th>
+					<th>网关编号</th>
+					<th>设备组</th>
+					<th>在线状态</th>
+					<th>维保描述</th>
+					<th>首次报警时间</th>
+					<th>处理说明</th>
+					<th>所在位置</th>
+					<th>安全管理员</th>
+					<th>安全巡检员</th>
+					<th>所属企业</th>
+					<th>处理详细</th>
+					<th>处理状态</th>
+					<th>操作</th>
+				</tr>	
+			</thead>
+			<tbody class="list">
+			</tbody>
+		</table>
+		<div class="pageing mt20 undis">
+            <ul class="pagin" id="pagination"></ul><span class="total">(共<span>0</span>页)</span>
+        </div>
+	</div>
+</div>
+
+<!-- 处理弹窗 -->
+<div class="modal fade" id="deal_modal">
+	<div class="modal-dialog modal-lg" >
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4>维保处理</h4>
+			</div>
+			<div class="modal-body">
+				<div class="add-content alert-content">
+					<form id="main_form" class="form-horizontal" enctype="multipart/form-data" >
+						<div class="div_top">
+							<div class="div_item">
+								<div class="form-group">
+									<label class="col-md-3">报警信息描述：</label>
+									<div class="col-md-6 detail-01 mt5"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3">报警时间：</label>
+									<div class="col-md-6 detail-02 mt5"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3">报警设备位置：</label>
+									<div class="col-md-6 detail-03 mt5"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3">故障处理描述：<span class="cred">*</span></label>
+									<div class="col-md-8">
+										<div class="figture-wrap">
+											<textarea class="form-control" maxlength="100" id="solutionDesc" placeholder="故障处理描述" required></textarea>
+											<div class="fig-con">
+												<!-- <div class="img-w"><img src="" alt=""></div> -->
+												<div class="file-w">
+													+
+													<input type="file" name="file" class="img-file" onchange="_imgSizeCheck(this)">
+												</div>
+												<div class="clear"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3">处理人：<span class="cred">*</span></label>
+									<div class="col-md-6"><input type="text" class="form-control" id="trustees" readonly></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3">故障处理时间：<span class="cred">*</span></label>
+									<div class="col-md-6">
+										<div class="date form_datetime long_time form_datetime_input">
+											<input readonly class="form-control" size="16" type="text" value="" id="endTime"><span class="cred undis">必填字段</span>
+											<span class="add-on"><i class="icon-th"></i></span>
+											<i class="fa fa-tasks"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</form>
+					<div class="btn-wrap">
+						<button class="btn btn-primary" onclick="dealOper()">保存</button>
+						<button class="btn btn-red" data-dismiss="modal">关闭</button>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- 查看处理详细弹窗 -->
+<div class="modal fade" id="detail_modal">
+	<div class="modal-dialog modal-lg" >
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4>维保处理详细</h4>
+			</div>
+			<div class="modal-body">
+				<div class="add-content alert-content">
+					<form action="" class="form-horizontal" id="mains_form" enctype="multipart/form-data" >
+						<div class="div_top">
+							<div class="div_item">
+								<div class="form-group">
+									<label class="col-md-3 control-label">报警信息描述：<span class="cred">*</span></label>
+									<div class="col-md-6 detail-01 mt5"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">报警时间：<span class="cred">*</span></label>
+									<div class="col-md-6 detail-02 mt5"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">报警设备位置：<span class="cred">*</span></label>
+									<div class="col-md-6 detail-03 mt5"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">故障处理描述：<span class="cred">*</span></label>
+									<div class="col-md-8">
+										<div class="detail-04 mt5"></div>
+										<div class="fig-con">
+											<!-- <div class="img-w"><img src="" alt=""></div> -->
+											<div class="clear"></div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">处理人：<span class="cred">*</span></label>
+									<div class="col-md-6 detail-05 mt5"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-md-3 control-label">故障处理时间：<span class="cred">*</span></label>
+									<div class="col-md-6 detail-06 mt5"></div>
+								</div>
+							</div>
+						</div>
+
+					</form>
+				</div>
+			</div>
+			<!--<div class="btn-wrap">
+				<button class="btn btn-red" data-dismiss="modal">关闭</button>
+			</div>-->
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="../../plugin/jQuery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../plugin/jquery-validate/js/messages_cn.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/device/deviceCommon.js"></script>
+<script type="text/javascript" src="../../js/device/mainten_list.js"></script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>出租</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/plugin/swiper/css/swiper-3.3.1.min.css">
+    <link rel="stylesheet" href="../../theme/plugin/dropload-gh-pages/dist/dropload.css">
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <link rel="stylesheet" href="../../theme/css/common.css">
+    <link rel="stylesheet" href="../../theme/css/normal.css">
+    <link rel="stylesheet" href="../../theme/css/page.css">
+</head>
+<body>
+    <div class="fix-bg"></div>
+    <div class="sBox-wrapper tran500">
+        <div class="top-search">
+            <div class="back"><i class="icon icon-return"></i></div>
+            <div class="inpu-w bgfff">
+                <div class="p24">
+                    <input type="text" placeholder="搜索" id="search_btn">
+                </div>
+                <div class="icon-wrap"><i class="icon"></i></div>
+            </div>
+            <div class="cancel">取消</div>    
+        </div>
+        <div class="search-main tran500 fullh">
+            <div class="main-wrap fl">
+                <div class="search-key">
+                    <div class="tit">搜索指定范围</div>
+                    <div class="list-con">
+                        <div class="inner">
+                            <div class="list">标题</div>
+                            <div class="list">租金</div>
+                            <div class="list">发布人</div>
+                            <div class="list">距离</div>
+                        </div>
+                        <div class="inner undis">
+                            <div class="list">标题</div>
+                            <div class="list">发布人</div>
+                            <div class="list">租金</div>
+                            <div class="list">距离</div>
+                        </div>
+                        <div class="inner undis">
+                            <div class="list">标题</div>
+                            <div class="list">预约人</div>    
+                        </div>
+                        <div class="inner undis">
+                            <div class="list">标题</div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="tran-wrap fl bgfff">
+                <div class="rent-box serCon-wrap">
+                    <div class="rent-list-con"  id="searchCon">
+                        <!-- <div class="list">
+                                <a class="p24" href="orent_detail.html">
+                                    <div class="top">
+                                        <div class="t-l fl">
+                                            <span class="tx"><img src="../../images/upload/touxiang@2x.png" alt="" class="full"></span>
+                                            <div class="txt">
+                                                <div class="tit">二宫合页</div>
+                                                <div class="time">1小时前</div>
+                                            </div>
+                                        </div>
+                                        <div class="t-r fr">
+                                            距离240米
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="mid">
+                                        <div class="word overhide">
+                                            东方科技大厦整层出租，南北通透，高端写字楼
+                                        </div>
+                                        <div class="price">1700元</div>    
+                                    </div>
+                                    <div class="bot">
+                                        <div class="pic-w fl">
+                                                <img src="../../images/upload/tu1@2x.png" alt="" class="full">
+                                        </div>
+                                        <div class="pic-w fl">
+                                                <img src="../../images/upload/tu2@2x.png" alt="" class="full">
+                                        </div>
+                                        <div class="pic-w fl">
+                                                <img src="../../images/upload/tu3@2x.png" alt="" class="full">
+                                        </div>
+                                        <div class="pic-w fl">
+                                                <img src="../../images/upload/tu4@2x.png" alt="" class="full">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                        </div>
+                        <div class="list">
+                                <a class="p24" href="orent_detail.html">
+                                    <div class="top">
+                                        <div class="t-l fl">
+                                            <span class="tx"><img src="../../images/upload/touxiang@2x.png" alt="" class="full"></span>
+                                            <div class="txt">
+                                                <div class="tit">二宫合页</div>
+                                                <div class="time">1小时前</div>
+                                            </div>
+                                        </div>
+                                        <div class="t-r fr">
+                                            距离240米
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="mid">
+                                        <div class="word overhide">
+                                            东方科技大厦整层出租，南北通透，高端写字楼
+                                        </div>
+                                        <div class="price">1700元</div>    
+                                    </div>
+                                    <div class="bot">
+                                        <div class="pic-w fl">
+                                                <img src="../../images/upload/tu1@2x.png" alt="" class="full">
+                                        </div>
+                                        <div class="pic-w fl">
+                                                <img src="../../images/upload/tu2@2x.png" alt="" class="full">
+                                        </div>
+                                        <div class="pic-w fl">
+                                                <img src="../../images/upload/tu3@2x.png" alt="" class="full">
+                                        </div>
+                                        <div class="pic-w fl">
+                                                <img src="../../images/upload/tu4@2x.png" alt="" class="full">
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                </a>
+                        </div> -->
+                        <div class="clear"></div>
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sCon-wrapper rent-load hide">
+        <div class="p-layout tran500">
+            <div class="main-wrap fl mainCon-wrap">
+                <div class="hr-88"></div>
+                <div class="swiper-container rent-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><a href=""><img src="../../images/upload/banner@2x.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href=""><img src="../../images/upload/banner@2x.png" alt=""></a></div>
+                        <div class="swiper-slide"><a href=""><img src="../../images/upload/banner@2x.png" alt=""></a></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="rent-box transy">
+                    <div class="p24">
+                        <div class="rent-tab">
+                            <div class="top">
+                                <div class="top-r1">
+                                    <div class="list fl active">出租</div>
+                                    <div class="list fl">求租</div>
+                                    <div class="list fl">预约列表</div>
+                                    <div class="list fl">发布</div>
+                                    <div class="clear"></div> 
+                                </div>
+                                <div class="top-r2">
+                                    <div class="list fl half active">出租</div>
+                                    <div class="list fl half">求租</div>
+                                </div>
+                            </div>
+                            <div class="bot">
+                                <div class="inner">
+                                    <div class="list fl active">综合</div>
+                                    <div class="list fl">最新</div>
+                                    <div class="list fl">最近</div> 
+                                </div>
+                                <div class="inner undis">
+                                    <div class="list fl active">综合</div>
+                                    <div class="list fl">最新</div>
+                                    <div class="list fl">最近</div> 
+                                </div>
+                                <div class="inner undis">
+                                    <div class="inner-r1 undis">
+                                        <div class="list fl half active">未分配</div> 
+                                        <div class="list fl half">已分配</div>
+                                    </div>
+                                    <div class="inner-r2">
+                                        <div class="list fl half active">未处理</div> 
+                                        <div class="list fl half">已处理</div>
+                                    </div>
+                                </div>
+                                <div class="inner undis">
+                                   <div class="list fl active">发布</div>
+                                    <div class="list fl">我的出租</div>
+                                    <div class="list fl">我的求租</div> 
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="rent-list-con">
+                    </div>
+                    <div class="issue pr undis">
+                        <div class="p24">
+                            <div class="tit">选择类型</div>
+                            <div class="oper-btn">
+                                <button class="btn on">我要出租</button>
+                                <button class="btn">我要求租</button>
+                            </div>
+                        </div>
+                        <div class="issue-editbox pr bgfff">
+                            <div class="issue-inner fully">
+                                <div class="return-column bg000 undis">
+                                    <div class="return-column-heart">
+                                        <a class="header-return" href="javascript:;" onclick="returnList()"><i class="header-return-icon"></i></a>
+                                    </div>
+                                </div>
+                                <div class="photo">
+                                    <div class="icon-wrap abs">
+                                        <i class="icon icon-camera abs"></i>
+                                    </div>
+                                    <div class="img-wrap"><img src="../../images/upload/pic2@2x.png" alt="" class="full"></div>
+                                    <div class="mask"></div>
+                                </div>
+                                <div class="rent-input-con p24">
+                                    <form id="rent_form">
+                                        <ul>
+                                            <li>
+                                                <div class="t-l fl"><span>区&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;域</span></div>
+                                                <div class="t-r fl elem-01" onclick="tranShow(1)">
+                                                    <span class="txt"></span>
+                                                    <i class="icon icon-in fr"></i>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li class="diff-irent">
+                                                <div class="t-l fl"><span>楼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;盘</span></div>
+                                                <div class="t-r fl">
+                                                    <input type="text" class="elem-02" placeholder="2-30字" minlength="2" maxlength="30">
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li class="diff-irent">
+                                                <div class="t-l fl"><span>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;段</span></div>
+                                                <div class="t-r fl">
+                                                    <input type="text" class="elem-03" placeholder="2-12字"  minlength="2" maxlength="30">
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li class="diff-orent undis">
+                                                <div class="t-l fl"><span>面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积</span></div>
+                                                <div class="t-r fl t0r">
+                                                    <input type="number" class="elem-04">
+                                                    <div class="unit">
+                                                        <span class="c999">平米</span>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li class="diff-orent undis">
+                                                <div class="t-l fl"><span>租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金</span></div>
+                                                <div class="t-r fl">
+                                                    <input type="number" class="elem-05">
+                                                    <div class="unit" onclick="tranShow(3)">
+                                                        <span class="c333 unit-choosed">元/月</span>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <ul class="diff-irent">
+                                            <li>
+                                                <div class="t-l fl"><span>面&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;积</span></div>
+                                                <div class="t-r fl t0r">
+                                                    <input type="number" class="elem-04">
+                                                    <div class="unit">
+                                                        <span class="c999">平米</span>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <div class="t-l fl"><span>租&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;金</span></div>
+                                                <div class="t-r fl">
+                                                    <input type="number" class="elem-05">
+                                                    <div class="unit" onclick="tranShow(3)">
+                                                        <span class="c333 unit-choosed">元/月</span>
+                                                    </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <div class="t-l fl"><span>类&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;型</span></div>
+                                                <div class="t-r fl">
+                                                    <input type="text" class="elem-06">
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <div class="t-l fl"><span>标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题</span></div>
+                                                <div class="t-r fl">
+                                                    <input type="text" placeholder="8-28字" minLength="8" maxlength="28"  class="elem-07">
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <div class="t-l fl"><span>描&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;述</span></div>
+                                                <div class="t-r fl" onclick="tranShow(2)">
+                                                    <input type="text" placeHolder="10字以上" readonly  class="elem-08">
+                                                    <i class="icon icon-in fr"></i>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <div class="t-l fl"><span>联&nbsp;&nbsp;系&nbsp;&nbsp;人</span></div>
+                                                <div class="t-r fl">
+                                                    <input type="text" placeholder="至少2字" minLength="2" class="elem-09">
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <div class="t-l fl"><span>手&nbsp;&nbsp;机&nbsp;&nbsp;号</span></div>
+                                                <div class="t-r fl">
+                                                    <input type="number" class="elem-10">
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li>
+                                                <div class="t-l fl"><span>朝&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;向</span></div>
+                                                <div class="t-r fl">
+                                                   <div class="elem-11 fell">
+                                                        <div class="check-wrap">
+                                                            <input type="checkbox" id="dire01"><label for='dire01'>朝南</label>
+                                                        </div>
+                                                        <div class="check-wrap">
+                                                            <input type="checkbox" id="dire02"><label for='dire02'>朝北</label>
+                                                        </div>
+                                                        <div class="check-wrap">
+                                                            <input type="checkbox" id="dire03"><label for='dire03'>朝东</label>
+                                                        </div>
+                                                        <div class="check-wrap">
+                                                            <input type="checkbox" id="dire04"><label for='dire04'>朝西</label>
+                                                        </div>
+                                                   </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <div class="t-l fl"><span>交&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;通</span></div>
+                                                <div class="t-r fl">
+                                                    <div class="elem-12">
+                                                        <div class="check-wrap">
+                                                            <input type="checkbox" id="dire05"><label for='dire05'>地铁</label>
+                                                        </div>
+                                                        <div class="check-wrap">
+                                                            <input type="checkbox" id="dire06"><label for='dire06'>公交</label>
+                                                        </div>
+                                                   </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                            <li>
+                                                <div class="t-l fl"><span>配套设施</span></div>
+                                                <div class="t-r fl">
+                                                    <div class="elem-13">
+                                                        <div class="check-wrap">
+                                                            <input type="checkbox" id="dire07"><label for='dire07'>地铁</label>
+                                                        </div>
+                                                   </div>
+                                                </div>
+                                                <div class="clear"></div>
+                                            </li>
+                                        </ul>
+                                        <div class="submit-btn">发布</div>
+                                        <div class="hr-88"></div>
+                                        <div class="hr-100"></div> 
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-tips undis">已经没有更多数据了</div> 
+                </div>
+            </div> 
+            <div class="tran-wrap fl">
+                <div class="tran-inner">
+                    <header>
+                        <a class="return" href="javascipt:;" onclick="returnTran()">
+                            <img src="../../images/icon/back.png" alt=""><span></span>
+                        </a>
+                        接待分配
+                    </header>
+                    <div class="search">
+                        <div class="search-heart">
+                            <input type="text" placeholder="请输入接收人"><i class="icon"></i>
+                        </div>
+                    </div> 
+                    <div class="distri-box">
+                        <div class="list" onclick="returnTran()">
+                            <div class="p24">
+                                <span class="tx"><img src="../../images/upload/touxiang@2x.png" alt="" class="full"></span>
+                                <div class="txt">
+                                    <div class="tit">
+                                       高原&nbsp;&nbsp;<span>物业运营</span>
+                                    </div>
+                                    <div class="time">上班时间：08：00~23：00</div>
+                                </div>    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tran-inner undis">
+                    <div class="switch overflow-y bgfff"  style="transform: translate(0px, 0px);">
+                        <div class="return-column">
+                            <div class="return-column-heart">
+                                <a class="header-return" href="javascript:" onclick="returnTran()"><i class="header-return-icon"></i><span>返回</span></a>
+                                <div class="header-title">切换楼栋单元</div>
+                                <a id="determine" class="header-operating" href="javascript:">确定</a>
+                            </div>
+                        </div>
+                        <div class="hr-88"></div>
+                        <!--顶部导航-->
+                        <div class="nav-layer">
+                            <ul class="nav">
+                                <li id="prompt" class="active">请选择</li>
+                            </ul>
+                        </div>
+                        <div class="hr-88"></div>
+                        <!--尾部列表显示-->
+                        <ul id="addressList" class="address">
+                            <!--<li><i></i>全部</li>-->
+                            <!--<li><i></i>科技园</li>-->
+                            <!--<li><i></i>软件产业基地</li>-->
+                        </ul>
+                    </div>
+                </div>
+                <div class="tran-inner bgececf1 undis">
+                    <header>
+                        <a class="return" href="javascipt:;" onclick="returnTran()">
+                            <img src="../../images/icon/back.png" alt=""><span></span>
+                        </a>
+                        描述
+                        <a id="desc_oper" class="right-oper" href="javascript:">确定</a>
+                    </header>
+                    <div class="desc-con p24">
+                       <textarea placeholder="10字以上"></textarea>
+                    </div>
+                </div>
+                <div class="tran-inner undis">
+                    <header>
+                        <a class="return" href="javascipt:;" onclick="returnTran()">
+                            <img src="../../images/icon/back.png" alt=""><span></span>
+                        </a>
+                        单位
+                    </header>
+                    <div class="unit-con p24">
+                        <ul>
+                            <li>元/m<sup>2</sup>/天</li>
+                            <li>元/月</li>
+                            <li>元/m<sup>2</sup>/月</li>
+                        </ul>
+                    </div>   
+                </div>
+                <div class="tran-inner undis bgfe">
+                    <header>
+                        <a class="return" href="javascipt:;" onclick="returnTran()">
+                            <img src="../../images/icon/back.png" alt=""><span></span>
+                        </a>
+                        接待
+                        <a class="right-oper recept-oper" href="javascript:">完成</a>
+                    </header>
+                    <div class="p24">
+                        <div class="reasult-box">
+                             <textarea name="" id="" cols="30" rows="10" maxLength="30" class="reasult-editer"></textarea>
+                            <div class="placeholder">请填写接待结果<span style="color:#999">(30个字以内)</span></div>
+                        </div>    
+                    </div>   
+                </div>
+            </div>
+            <div class="pic-wrap undis">
+                <header>
+                    <div class="return">
+                        <img src="../../images/icon/back.png" alt=""><span></span>
+                    </div>
+                    已选择<span id="pic_num">5</span>张照片
+                </header>
+                <div class="pic-con">
+                    <div id="list-con" class="list-con">
+                        <!-- <div class="img-list">
+                            <img src="../../images/upload/pic1@2x.png" alt="">
+                            <i class="icon icon-del"></i>
+                        </div> 
+                        <div class="img-list">
+                            <img src="../../images/upload/pic1@2x.png" alt="">
+                            <i class="icon icon-del"></i>
+                        </div>
+                        <div class="img-list">
+                            <img src="../../images/upload/pic1@2x.png" alt="">
+                            <i class="icon icon-del"></i>
+                        </div>
+                        <div class="img-list">
+                            <img src="../../images/upload/pic1@2x.png" alt="">
+                            <i class="icon icon-del"></i>
+                        </div>
+                         -->
+                    </div>
+                    <div class="img-list add-list">
+                        <img src="../../images/icon/photo-add.png" alt="">
+                    </div>   
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <footer class="tap-footer" style="position:fixed">
+        <a href="../../index.html"><i class="icon index-icon"></i><span>首页</span></a>
+        <a class="active" href="rent.html"><i class="icon rent-icon"></i><span>出租</span></a>
+        <a href="javascript:"><i class="icon circle-icon"></i><span>圈子</span></a>
+        <a href="javascript:"><i class="icon more-icon"></i><span>小信</span></a>
+    </footer>  
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/zepto.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/touch.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/swiper/js/swiper-3.3.1.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/wx/jweixin-1.2.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/dropload-gh-pages/dist/dropload.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/page.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/wxImage.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/dong.js"></script> 
+<script type="text/javascript" charset="utf-8" src="js/rent.js"></script> 
+<script>        
+    
+  </script>
+</body>
+</html>

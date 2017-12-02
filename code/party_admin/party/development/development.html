@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>党员发展列表</title>
+    <link rel="stylesheet" type="text/css" href="../../theme/css/common/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../../theme/css/page.css">
+    <link rel="stylesheet" href="../css/picture/pic.css">
+</head>
+<body>
+<div class="search-tab-box">
+    <form action="" class="form input-sm">
+        <table>
+            <tbody>
+            <tr>
+                <td><label for="keyword" class="label4">手机号码：</label></td>
+                <td><input type="text" id="keyword" class="form-control" name="keyword"></td>
+                <td><label class="label4">发展阶段：</label></td>
+                <td>
+                    <select id="stage" class="form-control" name="stage">
+                        <option value="">全部</option>
+                        <!--阶段 0:群众,10:积极份子,20:重点对象,30预备党员,100党员-->
+                        <option value="0">群众</option>
+                        <option value="10">积极分子</option>
+                        <option value="20">重点发展对象</option>
+                        <option value="30">预备党员</option>
+                    </select>
+                </td>
+                <!--<td><label class="label4">所属公司：</label></td>-->
+                <!--<td>-->
+                    <!--<select id="firmId" class="form-control" name="firmId">-->
+                        <!--<option value="">全部</option>-->
+                        <!--&lt;!&ndash;<option value="100">小道科技有限公司</option>&ndash;&gt;-->
+                    <!--</select>-->
+                <!--</td>-->
+                <td><input onclick="search(pageNum)" type="button" class="btn btn-primary" value="搜索"></td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<div class="hr-10"></div>
+<div class="main-content">
+    <div class="con-oper">
+        <button class="btn bg-info  btn-dialog btn-dialog-tab" href="party/development/development/development_add.html">新增</button>
+    </div>
+    <div class="con-table">
+        <table class="table table-hover" id="userlist_tab">
+            <thead>
+            <tr>
+                <th><input type="checkbox" onclick="checkAll('userlist_tab',this)"></th>
+                <th>序号</th>
+                <th>姓名</th>
+                <th>手机号码</th>
+                <th>性别</th>
+                <th>发展阶段</th>
+                <th>变更时间</th>
+                <th>所属机构</th>
+                <th>所属公司</th>
+                <th>查看个人详情</th>
+                <th>审核意见</th>
+            </tr>
+            </thead>
+            <tbody class="list">
+            <!--<tr>
+                  <td><input type="checkbox"></td>
+                  <td>1</td>
+                  <td>侯亮平</td>
+                 <td>18200525555</td>
+                 <td>男</td>
+                 <td>预备党员</td>
+                 <td>2014-1-15</td>
+                 <td>汉东省反贪局</td>
+                 <td>反贪总局</td>
+                 <td>查看</td>
+                 <td>查看</td>
+              </tr>-->
+            </tbody>
+        </table>
+        <div class="pages ml20 undis">
+            <div class="pagination" id="pagination"></div>
+            <div class="pageGo">
+                <span>跳转到</span>
+                <input type="number" min="1">
+                <input type="button" value="GO" onclick="pageTo(this)">
+            </div>
+        </div>
+    </div>
+</div>
+<!--查看审核详情-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" style="width: 80%;height:80%;overflow: auto" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="myModalLabel">审核详情</h4>
+            </div>
+            <div class="modal-body">
+                <form  class="form-horizontal" id="newForm">
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">账号：</label>
+                        <div class="col-sm-5  col-md-5">
+                            <label id="userName" class="control-label"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">姓名：</label>
+                        <div class="col-sm-5 col-md-5">
+                            <label id="name" class="control-label"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">当前发展阶段：</label>
+                        <div class="col-sm-5 col-md-5">
+                            <label id="type" class="control-label"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">填写审核意见：</label>
+                        <div class="col-sm-9 col-md-9">
+                            <label id="content" class="control-label"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">审核人：</label>
+                        <div class="col-sm-5 col-md-5">
+                            <label id="reviewer" class="control-label"></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-3 col-md-3 control-label">变更时间：</label>
+                        <div class="col-sm-5 col-md-5">
+                            <label id="reviewTime" class="control-label"></label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="../../theme/plugin/jQuery/jquery.min.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../theme/plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jquery-validate/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../../theme/plugin/jquery-validate/js/messages_cn.js"></script>
+<script type="text/javascript" src="../../theme/js/common/common.js"></script>
+<script type="text/javascript" src="../../theme/js/common/VaExtend.js"></script>
+<script type="text/javascript" src="../../theme/js/common/contabs.min.js"></script>
+<script type="text/javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/development/development.js"></script>
+</body>
+</html>

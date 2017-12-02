@@ -1,0 +1,274 @@
+.overview{
+    background-color: #f5f7fa;
+}
+.overview .main{
+    padding: 0 24px 24px 24px;
+}
+.header-title{
+    background-color: #fff;
+}
+/* 经营概况 */
+.overview .main>.title{
+    background:linear-gradient(to bottom,#01bffe,#038dff);
+    color: transparent;
+     -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 18px;
+    padding: 10px 0 2px;
+    font-weight: bold;
+}
+/* 选择代理商 */
+.agent{
+    width: 260px;
+    height: 36px;
+    border: 2px solid #d3d7e2;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+}
+.agent input{
+    border: 0;
+    height: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+    width: 226px;
+}
+.agent span{
+    width: 30px;
+    height: 100%;
+    display: inline-block;
+    text-align: center;
+    line-height: 32px;
+    background-color: #e6e9f1;
+}
+.agent span .icon{
+    background-image: url("../image/xiala.png");
+    width: 10px;
+    height: 5px;
+    display: inline-block;
+}
+/* 实时数据 */
+.realTime{
+    margin-bottom: 30px;
+}
+.realTime ul{
+    overflow: hidden;
+}
+.realTime li{
+    float: left;
+    width: 180px;
+    height: 120px;
+    color: #fff;
+    margin: 0 24px 20px 0;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 10px;
+    border-radius: 3px;
+}
+.realTime li:nth-child(1){
+    background:linear-gradient(to bottom left,#13c5ff,#6c81fe);
+}
+.realTime li:nth-child(2){
+    background:linear-gradient(to bottom left,#ff988b,#ff6c88);
+}
+.realTime li:nth-child(3){
+    background:linear-gradient(to bottom left,#747cfe,#ee79e5);
+}
+.realTime li:nth-child(4){
+    background:linear-gradient(to bottom left,#45ebba,#09afe8);
+}
+.realTime li:nth-child(5){
+    background:linear-gradient(to bottom left,#ff7d7d,#f35b95);
+}
+.realTime li p:nth-child(2){
+    font-size: 16px;
+}
+/* 数据总览 */
+.dataOverview .nav-one{
+    overflow: hidden;
+    color: #6b7489;
+    height: 54px;
+    padding-top: 10px;
+    margin-bottom: 14px;
+}
+.dataOverview .nav-one h4{
+    float: left;
+    font-weight: bold;
+}
+.dataOverview .nav-one ul{
+    float: right;
+    overflow: hidden;
+    border: 1px solid #d3d7e2;
+    background-color: #f4f7fa;
+    border-radius: 22px;
+}
+.dataOverview .nav-one ul li{
+    float: left;
+    height: 42px;
+    width: 74px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 44px;
+    border-right: 1px solid #d3d7e2;
+    cursor: pointer;
+}
+.dataOverview .nav-one ul li.active{
+    background-color: #459dff;
+    color: #fff;
+}
+.dataOverview .nav-one ul li:last-child{
+    border-right: 0;
+}
+.dataOverview section{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.dataOverview section ul{
+    overflow: hidden;
+    /*width: 100%;*/
+}
+.dataOverview section li{
+    width: 32.3%;
+    height: 210px;
+    background-color: #fff;
+    text-align: center;
+    color: #838da4;
+    float: left;
+    margin-right: 24px;
+    margin-bottom: 20px;
+    min-width: 500px;
+}
+.dataOverview section li:last-child{
+    margin-right: 0;
+}
+.dataOverview section li>.title{
+    height: 78px;
+    line-height: 78px;
+    border-bottom: 1px solid #d3d7e2;
+    font-size: 20px;
+}
+.dataOverview section li .detailed{
+    overflow: hidden;
+}
+.dataOverview section li .detailed>div{
+    /*width: 176px;*/
+    width: 33.333%;
+    height: 132px;
+    float: left;
+    border-right: 1px solid #d3d7e2;
+    padding-top: 30px;
+}
+.dataOverview section li .detailed>div:last-child{
+    border-right: 0;
+}
+.dataOverview section li .detailed>div .title{
+    color: #8c95ac;
+}
+.dataOverview section li .detailed>div .quantity{
+    font-size: 23px;
+}
+.dataOverview section li .detailed>div .quantity.plus{
+    color: #ff697c;
+}
+.dataOverview section li .detailed>div .quantity.less{
+    color: #19c471;
+}
+.dataOverview section li .detailed>div .quantity .icon{
+    width: 8px;
+    height: 16px;
+    display: inline-block;
+    background-size: cover;
+    margin-left: 5px;
+}
+.dataOverview section li .detailed>div .quantity.plus .icon{
+    background-image: url("../image/zhengjia.png");
+}
+.dataOverview section li .detailed>div .quantity.less .icon{
+    background-image: url("../image/xiajiang.png");
+}
+/* 主要数据分布图 */
+.chart .nav-one{
+    overflow: hidden;
+    color: #6b7489;
+    margin-bottom: 14px;
+}
+.chart .nav-one h4{
+    float: left;
+    font-weight: bold;
+}
+.chart .nav-one .time{
+    float: right;
+    overflow: hidden;
+}
+.chart .nav-one .time select{
+    float: left;
+    height: 36px;
+    width: 140px;
+    margin-right: 14px;
+}
+.chart .nav-one .time .customTime{
+    float: right;
+    height: 36px;
+    width: 220px;
+    overflow: hidden;
+    border:1px solid #d3d7e2;
+    background-color: #fff;
+}
+.chart .nav-one .time .customTime span{
+    line-height: 36px;
+    font-size: 24px;
+    float: left;
+    color: #999;
+}
+.chart .nav-one .time .customTime input{
+    width: 44%;
+    border: 0;
+    box-shadow: none;
+}
+.chart .nav-one .time .customTime input:nth-child(1){
+    float: left;
+}
+.chart .nav-one .time .customTime input:nth-child(2){
+    float: right;
+}
+.chart section{
+    background-color: #fff;
+    margin-bottom: 16px;
+}
+.chart section .chart-nav{
+    overflow: hidden;
+    text-align: center;
+    font-size: 14px;
+    color: #838da4;
+    padding: 24px 24px 2px;
+}
+.chart section .chart-nav li{
+    float: left;
+    width: 160px;
+    height: 42px;
+    line-height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 1px solid #d3d7e2;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin:0 20px 14px 0;
+    cursor: pointer;
+}
+.chart section .chart-nav li:last-child{
+    margin-right: 0;
+}
+.chart section .chart-nav li.active{
+    color: #fff;
+    background-color: #459dff;
+    border-color: #459dff;
+}
+.chart section #graph{
+    height: 800px;
+}
+.chart section #graph.black{
+    background-color: #000!important;
+}

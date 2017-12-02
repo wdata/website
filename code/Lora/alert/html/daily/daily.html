@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>日常巡检列表</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+	<meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../css/reset.css">
+	<link rel="stylesheet" type="text/css" href="../../css/bootstrap-cerulean.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/jqPaginator/paging.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="../../css/list.css">
+	<link rel="stylesheet" type="text/css" href="../../css/duty_Or_inspection/duty_Or_inspection.css">
+</head>
+<body>
+<div class="search-tab-box">
+	<form action="" class="form input-sm list clearfix" id="searchForm">
+		<table class="max100 fl">
+			<tbody>
+			<tr>
+				<td><input type="text" name="name" class="form-control"  placeholder="请输入巡检人姓名"></td>
+				<td>
+					<label class="label4">设备组：</label>
+					<select id="equipment" class="status_select form-control">
+						<option value="">全部</option>
+					</select>
+				</td>
+				<td>
+					<label class="label4">日常巡检类型：</label>
+					<select id="sureWarningType" name="sureWarningType"  class="status_select form-control">
+						<option value="">全部</option>
+					</select>
+				</td>
+				<td class="date_con">
+					<label class="label4">事件时间：</label>
+        				<span class="form_datetime_input">
+					    	<input name="paramStartTime" id="datetimeStart" class="form-control" size="16" type="text" value="" readonly>
+						</span>
+					<span>-</span>
+        				<span class="form_datetime_input">
+					    	<input name="paramEndTime" id="datetimeEnd" class="form-control" size="16" type="text" value="" readonly>
+						</span>
+				</td>
+				<td><input type="button" class="btn btn-primary search-btn" value="搜索" onclick="search()"></td>
+			</tr>
+			</tbody>
+		</table>
+	</form>
+</div>
+<div class="hr-10"></div>
+<div class="main-content">
+	<div class="con-table">
+		<table class="table table-hover" id="main_table">
+			<thead>
+			<tr>
+				<th><input type="checkbox" name="" onclick="checkAll('main_table',this)"><i></i></th>
+				<th>序号</th>
+				<th>节点编号</th>
+				<th>节点所在地址</th>
+				<th>所属设备组</th>
+				<th>所属企业</th>
+				<th>巡检人员</th>
+				<th>巡检类型</th>
+				<th>报警处理类型</th>
+				<th>巡检事件</th>
+				<th>详情</th>
+				<th>事件时间</th>
+			</tr>
+			</thead>
+			<tbody class="listTable"></tbody>
+		</table>
+		<div class="pageing mt20 undis">
+			<ul class="pagin" id="pagination"></ul><span class="total">(共<span>0</span>页)</span>
+		</div>
+	</div>
+</div>
+<!-- 查看详细弹窗 -->
+<div class="modal fade" id="detail_modal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal">&times;</button>
+				<h4>巡检事件详情</h4>
+			</div>
+			<div class="modal-body" style="min-height:550px;">
+				<div class="detail-box">
+					<div class="list clearfix">
+						<div class="list-l fl">巡检事件：</div>
+						<div class="list-r fl detail-01 currentStatus">-</div>
+					</div>
+					<div class="list clearfix">
+						<div class="list-l fl">设备所在地址：</div>
+						<div class="list-r fl detail-06 address">-</div>
+					</div>
+					<div class="list clearfix">
+						<div class="list-l fl ">巡检人员：</div>
+						<div class="list-r fl detail-07 name">-</div>
+					</div>
+					<div class="list clearfix">
+						<div class="list-l fl">时间：</div>
+						<div class="list-r fl detail-08 createTime">-</div>
+					</div>
+					<div class="list clearfix">
+						<div class="list-l fl">巡检事件描述：</div>
+						<div class="list-r fl detail-17 planxy">
+							<header class="content">-</header>
+							<div id="detailsImg" class="img-w">
+								<div class="img"></div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="opering-mask">
+	<div class="main">
+		<div class="tit">提示信息<span>&times;</span></div>
+		<div class="con"></div>
+	</div>
+</div>
+<script type="text/javascript" src="../../plugin/jQuery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../js/common.js"></script>
+<script type="text/javascript" src="../../js/daily/daily.js"></script>
+</body>
+</html>

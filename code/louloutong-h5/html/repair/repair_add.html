@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>物业报修</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <!--日期插件-->
+    <link rel="stylesheet" href="../../theme/plugin/mobiscroll/css/mobiscroll.css">
+    <link rel="stylesheet" href="../../theme/plugin/mobiscroll/css/mobiscroll_002.css">
+    <link rel="stylesheet" href="../../theme/plugin/mobiscroll/css/mobiscroll_003.css">
+    <!--共同样式-->
+    <link rel="stylesheet" href="../../theme/css/common.css">
+
+    <link rel="stylesheet" href="../../theme/css/exlse.css">
+</head>
+<body style="position: relative;">
+<div class="repair-add repair-add-A repair overflow-y">
+    <!--头部-->
+    <div class="return-column">
+        <div class="return-column-heart">
+            <a class="header-return" href="javascript:"  ><i class="header-return-icon"></i></a>
+            <div class="header-title">物业报修</div>
+        </div>
+    </div>
+    <div class="hr-88"></div>
+    <div class="main">
+        <!--物业报修第一个页面-->
+        <div id="newForm" class="first">
+            <div class="repair-type">
+                <header class="repair-head">请选择报修类型</header>
+                <ul class="addType">
+                    <li data-id="1" class="active office-area">办公区域</li>
+                    <li data-id="2" class="public-area">公共区域</li>
+                </ul>
+            </div>
+            <div class="repair-type officeArea">
+                <header class="repair-head">请选择报修项目</header>
+                <ul id="projectList">
+                    <li class="active">房屋维修</li>
+                    <li>水电维修</li>
+                    <li>管道疏通</li>
+                    <li>线路维修</li>
+                    <li>开锁/换锁</li>
+                    <li>其他</li>
+                </ul>
+            </div>
+            <div class="repair-type publicArea hide">
+                <header class="repair-head">服务地址</header>
+                <div id="service" class="service-address service">
+                    <i class="address-icon"></i>
+                    <div class="can-choose"><span id="service-address">请选择服务地址</span><i class="jump-icon"></i></div>
+                </div>
+                <div class="service-address">
+                    <input id="pA" type="text" placeholder="请输入报修项目详细地址">
+                </div>
+            </div>
+            <div class="content">
+                <header class="repair-head">报修内容</header>
+                <div id="box" class="box" contenteditable="true" placeholder="请输入您报修的详细描述"></div>
+                <ul class="upload">
+                    <!--<li><img src="../../images/anounce/typhoon.png" alt=""><i class="delete-icon"></i><input type="hidden" name="file"></li>-->
+                    <!--<li id="shoot" class="shoot"><input accept="image/*" onchange="uploadPicture(this)"  type="file"></li>-->
+                    <li id="shoot" class="shoot imgUploadWX"></li>
+                    <!--不支持：multiple="multiple"-->
+                </ul>
+            </div>
+            <div  class="next-step">下一步</div>
+            <div onclick="htmlAjax.releaseRpr();" class="submit publicSub hide">立即报修</div>
+        </div>
+        <!--物业报修选择时间和地址页面-->
+        <div class="second">
+            <header class="head"><div>报修类型：<span class="repair-type">办公区域</span>报修项目：<span class="project">水电维修</span></div><i class="modify-icon previousPage"></i></header>
+            <div class="title">联系信息</div>
+            <ul>
+                <li><p class="prompt">姓名</p><input readonly id="name" type="text" placeholder="请输入姓名" name="name"></li>
+                <li><p class="prompt">联系电话</p><input readonly id="phone" placeholder="请输入联系电话" type="number"></li>
+                <!--<li><p class="prompt">姓名</p><div id="name"></div></li>-->
+                <!--<li><p class="prompt">联系电话</p><div id="phone"></div></li>-->
+                <li><p class="prompt">服务地址</p><div id="address" class="features "><p id="ads">请选择服务地址</p><i class="jump-icon"></i></div></li>
+                <li><p class="prompt">预约上门时间</p><div class="features"><input placeholder="请选择时间" unselectable='on'  onfocus="this.blur();" readonly="readonly" id="reservation" type="text"><i class="jump-icon"></i></div></li>
+                <li><p class="prompt">期待完成时间</p><div class="features"><input placeholder="请选择时间" unselectable='on'  onfocus="this.blur();" readonly="readonly" id="expected" type="text"><i class="jump-icon"></i></div></li>
+            </ul>
+            <!--办公区域的立即报修-->
+            <div onclick="htmlAjax.releaseRpr();" class="submit">立即报修</div>
+        </div>
+    </div>
+</div>
+<div class="repair address-repair service overflow-y">
+    <!--头部-->
+    <div class="return-column">
+        <div class="return-column-heart">
+            <a id="addressReturn" class="header-return" href="javascript:"><i class="header-return-icon"></i></a>
+            <div class="header-title">服务地址</div>
+        </div>
+    </div>
+    <div class="hr-88"></div>
+    <ul class="addressList">
+        <li class="active">
+            <div class="address">广东省深圳市南山区科苑路10东方科技大厦505广东省深圳市南山区科苑路10东方科技大厦505</div>
+            <div class="select"><i class="select-icon"></i>设为默认</div>
+        </li>
+        <li>
+            <div class="address">广东省深圳市南山区科苑路10东方科技大厦505</div>
+            <div class="select"><i class="select-icon"></i>设为默认</div>
+        </li>
+    </ul>
+</div>
+<!--切换楼栋单元-->
+<div class="switch repair-switch repair-add-switch overflow-y">
+    <!--顶部导航-->
+    <div class="title">区域选择</div>
+    <div class="nav-layer">
+        <ul class="nav">
+            <li id="prompt" class="active">请选择</li>
+        </ul>
+    </div>
+    <!--<div class="hr-88"></div>-->
+    <!--尾部列表显示-->
+    <ul id="addressList" class="address">
+        <li><i></i>全部</li>
+        <li><i></i>科技园</li>
+        <li><i></i>软件产业基地</li>
+    </ul>
+    <footer class="operating">
+        <a class="features" id="reset" href="javascript:">重置</a>
+        <a class="features" id="determine" href="javascript:">确定</a>
+    </footer>
+</div>
+
+<!--日期插件-->
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/mobiscroll/js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/mobiscroll/js/mobiscroll_002.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/mobiscroll/js/mobiscroll_004.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/mobiscroll/js/mobiscroll.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/mobiscroll/js/mobiscroll_003.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/mobiscroll/js/mobiscroll_005.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/wx/jweixin-1.2.0.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/exlse.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/wxImage.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/repair_add.js"></script>
+</body>
+</html>

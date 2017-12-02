@@ -1,0 +1,243 @@
+html,body,.map_page{
+    width:100%;
+    height:100%;
+}
+/*地图*/
+.tab{
+    background-color: #fff;
+    width: 47%;
+}
+.map{
+    width:100%;
+    height:100%;
+    position: relative;
+}
+#allmap{
+    width:100%;
+    height:100%;
+}
+.map .tab,.node_list{
+    width:35%;
+    position: absolute;
+    right:10%;
+    top:10%;
+    font-size: 12px;
+}
+.map .tab a{
+    color:#337AB7;
+    text-decoration: none;
+}
+.map .tab a:hover{
+    color:#337AB7;
+}
+.map .tab tr.alarm{
+    background-color: #fd7646;
+    color:#fff;
+}
+.map .tab tr.offline{
+    background-color: #d1d1d1;
+    color:#fff;
+}
+.map .tab tr.fault{
+    background-color: #fcb95a;
+    color:#fff;
+}
+.map .tab tr.fault a,.map .tab tr.fault a:hover,.map .tab tr.alarm a,.map .tab tr.alarm a:hover{
+    color:#fff;
+}
+.node_list{
+    width:10%;
+    top:3%;
+    background-color: #06acea;
+    border: none;
+    border-radius: 3px;
+    padding:10px 0;
+    color:#fff;
+}
+
+/*楼层图样式*/
+.floor,.house{
+    /*display: flex;*/
+    /*display: -webkit-flex;*/
+    background: #fff;
+}
+.floor>div,.house>div{
+    /*flex:1;*/
+}
+.floor>.swiper{
+    width:50%;
+    margin-right:2%;
+    background: #f2f2f5;
+    min-height: 372px;
+}
+.floor>.swiper>.swiper_head>img,.swiper_foot>img,.house .swiper img{
+    width:90%;
+}
+.swiper .swiper-slide>img{
+    position: absolute;
+    top:0;
+    left:0;
+    width:90%;
+    height:100%;
+}
+.floor>.swiper .swiper-container{
+    width:95%;
+    /*height:500px;*/
+}
+.floor>.swiper .swiper-container .swiper-slide{
+    position: relative;
+}
+.floor>.swiper .swiper-container .img_btn{
+    width:90%;
+    height:100%;
+    display: flex;
+    display: -webkit-flex;
+    position: relative;
+
+}
+.floor>.swiper .swiper-container .img_btn>.img_total{
+    width:50px;
+    height:50px;
+    margin:0 auto;
+    position: relative;
+    top:43px;
+}
+.floor>.swiper .swiper-container .img_btn>.img_total>img{
+    width:100%;
+}
+.floor>.swiper .swiper-container .img_btn>.img_total>i{
+    position: absolute;
+    top:13px;
+    left:0;
+    color:#fff;
+}
+.floor>.swiper .swiper-container .img_btn>a{
+    display: block;
+    flex:1;
+}
+.floor>.swiper .swiper-container span{
+    display: inline-block;
+    width:100%;
+    height:50px;
+    color:#fff;
+    position: relative;
+    z-index:5;
+    top: 43px;
+}
+.floor>.swiper .swiper-container .swiper-slide{
+    position: relative;
+}
+.floor>.swiper .swiper-container i{
+    position: absolute;
+    top:55px;
+    right:0;
+    display: inline-block;
+    width:50px;
+    text-align: center;
+    z-index:15;
+    color:#1f517f;
+    font-size: 18px;
+}
+.floor>.swiper .swiper-container i.alarm{
+    color:#e80e0e;
+}
+.floor>.swiper .swiper-container  span>img{
+    position: absolute;
+    height: 100%;
+    z-index: 10;
+}
+#nade_modal .floor_list{
+    width:100%;
+    height:320px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#nade_modal .floor_list li{
+    display: flex;
+    display: -webkit-flex;
+    border-bottom: 1px solid #e2e2e2;
+    padding:10px 0;
+}
+#nade_modal .floor_list li>.status{
+    width:50px;
+    height:100%;
+    margin-right: 15px;
+}
+#nade_modal .floor_list li>.status>img{
+    width:100%;
+}
+#nade_modal .floor_list li>.node_mes>.node_name{
+    display: flex;
+    display: -webkit-flex;
+    padding-top:5px;
+}
+#nade_modal .floor_list li>.node_mes,#nade_modal .floor_list li>.node_mes>.node_name>span{
+    flex:1;
+}
+.house .swiper{
+    position: relative;
+    width:100%;
+    height:100%;
+    color:#333;
+}
+.house .swiper .head_title{
+    width:100%;
+    height:40px;
+    line-height: 40px;
+    display: flex;
+    display: -webkit-flex;
+}
+.house .swiper .head_title .item.active{
+    background-color: #06acea;
+    border-color: #06acea;
+    color: #fff;
+}
+.house .swiper .head_title>.item{
+    flex:1;
+    text-align: center;
+    cursor: pointer;
+}
+.house .swiper>.houseImg,.house .swiper>.effectImg{
+    width:100%;
+}
+.house .swiper>span{
+    display: inline-block;
+    width:20px;
+    height:20px;
+    line-height: 20px;
+    background-color: #0B8F0E;
+    color:#fff;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+}
+.house .swiper>span.alarm{
+    background-color: #E80E0E;
+}
+.house .swiper>span.fault{
+    background-color: #F7A913;
+}
+.house .swiper>span.offline{
+    background-color: #838483;
+}
+.tab td{
+    text-align: center;
+}
+._left td{
+    text-align: left;
+}
+.main-content>.history{
+    width:50%;
+    display: flex;
+    display: -webkit-flex;
+    min-height: 45px;
+    line-height: 45px;
+}
+.main-content>.history>.item{
+    flex:1;
+    text-align: center;
+    cursor: pointer;
+}
+.main-content>.history>.item.hover{
+    background-color: #06acea;border-color:#06acea;color: #fff
+}

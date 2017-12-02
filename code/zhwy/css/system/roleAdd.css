@@ -1,0 +1,15 @@
+.roleAdd_form {
+  padding-top: 30px;
+}
+.roleAdd_form .form-group {
+  text-align: right;
+}
+.roleAdd_form .form-group .form-control {
+  display: inline-block;
+  width: 75%;
+}
+.roleAdd_form .tree-con {
+  height: 500px;
+  overflow: auto;
+  border: 1px solid #000;
+}

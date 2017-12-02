@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布通知</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../../theme/plugin/flexible/flexible.css">
+    <script src="../../theme/plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../../theme/css/reset.css">
+    <link rel="stylesheet" href="../../theme/css/common.css">
+    <link rel="stylesheet" href="../../theme/css/normal.css">
+    <link rel="stylesheet" href="../../theme/css/page.css">
+</head>
+<body>
+    <div class="p-layout tran500">
+       <form id="newForm" class="publish-box fl">
+            <div class="return-column">
+                <div class="return-column-heart">
+                    <a class="header-return" href="notice_list.html" ><i class="header-return-icon"></i><span>返回</span></a>
+                    <div class="header-title">发布通知</div>
+                    <a onclick="release()" class="header-operating" href="javascript:">完成</a>
+                </div>
+            </div>
+            <div class="hr-88"></div>
+            <div class="publish-add-box">
+                <div class="tt">
+                    <div class="p32">
+                        <select id="type" >
+                            <option value="1">普通通知</option>
+                            <option value="2">缴费通知</option>
+                        </select>
+                    </div>
+                    <input type="text" id="title" placeHolder="添加标题（必填）">
+                    <div class="row" onclick="receiveShow()">
+                        <div class="fl overhide" id="recei_comp">全部企业</div>
+                        <div id="icon-wrap" class="icon-wrap fr">
+                            选择接收人
+                            <i class='icon icon-in'></i>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="main">
+                    <input  type="hidden" id="target">
+                    <div class="article-content" id="editor_box" contenteditable='true' placeholder="添加正文"></div>
+                    <div class="p48">
+                        <ul class="annex" id="up_attach">
+                            <!--文件类型有word，execl，pdf。获取数据时择其一-->
+                            <!-- <li>
+                                <a href="javascript:">
+                                    <i class="suffix-icon pdf-icon hide"></i>
+                                    <i class="suffix-icon excel-icon"></i>
+                                    <i class="suffix-icon word-icon hide"></i>
+                                    <p class=""><span>7月份缴费清单1111111111111111111111111111111</span>.execl</p>
+                                    <i class="delete-icon"></i>
+                                </a>
+                            </li> -->
+                        </ul>
+                        <div class="hr-40"></div>    
+                    </div>
+                </div>
+            </div>
+            <div class="add-bot">
+                <div class="pic inlist">
+                    <img src="../../images/icon/docu.png" alt="">
+                    <div>附件</div>
+                    <input class="input-file" type="file" onchange="getDocu(this)">
+                </div>
+            </div>
+        </form>
+        <div class="receive-box fl">
+            <header>
+                <a class="return" href="javascipt:;" onclick="rePublish()">
+                    <img src="../../images/icon/back.png" alt=""><span>返回</span>
+                </a>
+                选择接收人
+            </header>
+            <div class="search">
+                <div class="search-heart">
+                    <input type="text" id="search" onkeyup="dataFilter(this)"  placeholder="请输入接收人"><i onclick="processing($('#search').val())" class="icon"></i>
+                </div>
+            </div>
+           <div class="list-con">
+                <div class="list list-top">
+                    <div class="txt fl">全部</div> 
+                    <div class="check-box fr">
+                        <input type="checkbox" onclick="checkAll('.list-con',this)" />
+                        <label for=""></label>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <!--<div class="list">-->
+                    <!--<div class="tx fl"><img src="../../images/icon/photo.png" alt="" class="full"></div>-->
+                    <!--<div class="tit fl">小道科技有限公司</div>-->
+                    <!--<div class="check-box fr">-->
+                        <!--<input type="checkbox" />-->
+                        <!--<label for=""></label>-->
+                    <!--</div>-->
+                    <!--<div class="clear"></div>-->
+                <!--</div>-->
+            </div> 
+        </div> 
+    </div>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/zepto/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/plugin/editor/editor.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/common.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../theme/js/page.js"></script>
+<script type="text/javascript" charset="utf-8" src="js/notice_add.js"></script>
+</body>
+</html>

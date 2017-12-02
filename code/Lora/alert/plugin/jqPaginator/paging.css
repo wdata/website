@@ -1,0 +1,85 @@
+/*分页样式*/
+.pagin {
+    display: inline-block;
+    vertical-align: top;
+    border-radius: 4px;
+    padding:2px;
+    +float:none;
+    +position: absolute;
+    +right:6px;
+}
+.total{
+    display: inline-block;
+    vertical-align: top;
+    line-height: 29px;
+}
+.pagin > li {
+    display: inline;
+}
+.pagin > li > a,
+.pagin > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    text-decoration: none;
+}
+.pagin > li:first-child > a,
+.pagin > li:first-child > span {
+    margin-left: 0;
+}
+.pagin > .active > a,
+.pagin > .active > span,
+.pagin > .active > a:hover,
+.pagin > .active > span:hover,
+.pagin > .active > a:focus,
+.pagin > .active > span:focus {
+    color:#6C758A;
+    z-index: 2;
+}
+.pagin > .disabled > span,
+.pagin > .disabled > span:hover,
+.pagin > .disabled > span:focus,
+.pagin > .disabled > a,
+.pagin > .disabled > a:hover,
+.pagin > .disabled > a:focus {
+    cursor: not-allowed;
+}
+.fa-chevron-left {
+  background: url("../../../images/left.png") no-repeat;
+  background-size: 100% 100%;
+}
+ .fa-chevron-right {
+  background: url("../../../images/jq_right.png") no-repeat;
+  background-size: 100% 100%;
+}
+ .fa-chevron-first {
+  background: url("../../../images/first.png") no-repeat;
+  background-size: 100% 100%;
+}
+ .fa-chevron-last {
+  background: url("../../../images/last.png") no-repeat;
+  background-size: 100% 100%;
+}
+.pageing li{
+  float: left;
+  margin-left: 20px;
+}
+.pageing button.active {
+  display: inline-block;
+}
+.pageing a {
+  color: #4abd7b;
+}
+.pageing a:hover {
+  color: #339C60;
+}
+.pageing {
+  text-align: center;
+}
+.pageing i {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+}

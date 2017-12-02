@@ -1,0 +1,116 @@
+.btn-primary {
+    background-color: #22b6e8;
+    border-color: #22b6e8;
+}
+form{
+    width: 600px;
+}
+.form_con{
+    margin: 40px 0 0 40px;
+}
+.form-control{
+    display: inline-block;
+    width: 70%;
+}
+.undis{
+    display: none!important;
+}
+.no_border{
+    border:none;
+    box-shadow: none;
+}
+.inline{
+    display: inline-block;
+}
+.file_form .form-control{
+    height: 90px;
+    padding-left: 0;
+    background-color: transparent;
+}
+.label{
+    display: inline-block;
+    width: 28%;
+    margin-bottom: 0;
+    color: #000;
+    font-size: 100%;
+    text-align: right;
+}
+.label .star{
+    color: #f00;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+}
+.img_con{
+    height: 78px;
+    width: 78px;
+}
+.img_con img{
+    height: 100%;
+    width: 100%;
+}
+.visibility_hidden{
+    visibility: hidden;
+}
+
+.min_form{
+    padding-left: 4%;
+}
+.nameI_p{
+    padding-left: 28%;
+}
+.P12_l{
+    position: relative;
+    top: -36px;
+}
+.radio_label{
+    width: 20%;
+}
+
+
+.fileName{
+    margin: 0;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+    top:5px;
+}
+
+label.error{
+    color:red;
+    display: block;
+    padding-left: 29%;
+}
+.applogo label.error,.label_err label.error,.applogo label.error{
+    padding: 0;
+}
+
+.pr{
+    position: relative;
+}
+#add_app_form{
+    top:-60px;
+}
+#logoFile{
+    z-index: 2;
+}
+#file{
+    position: relative;
+    top:-88px;
+}
+.fileSize{
+    visibility: hidden;position: absolute;z-index: -1;
+}
+.block{
+    display: block;!important;
+}
+
+
+.opering-mask{position: fixed;height: 100%;width: 100%;z-index: 200;top: 0;background-color: rgba(0,0,0,0.3);display: none}
+.opering-mask .main{height: 100px;width: 300px;position: absolute;top: 20%;left: 0;right: 0;margin:auto;background-color: #fff;z-index: 201;border-radius: 4px;}
+.opering-mask .main .tit{height: 40px;line-height: 40px;border-bottom: 1px solid #ddd;text-align: left;padding-left: 20px;position: relative;}
+.opering-mask .main .tit span{position: absolute;width: 30px;right: 0;text-align: center;cursor: pointer;}
+.opering-mask .main .tit span:hover{background: #eee;}
+.opering-mask .main .con{padding: 10px;line-height: 30px;}

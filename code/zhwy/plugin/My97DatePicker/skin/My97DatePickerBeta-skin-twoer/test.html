@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript" src="My97DatePicker/WdatePicker.js" ></script>
+</head>
+<body>
+
+
+	<p>1.内嵌式</p>
+	<div>
+		<div id="dateInline"></div>
+		<script>
+			WdatePicker({eCont:'dateInline',dateFmt:'yyyy-MM-dd HH:mm:ss',skin:'twoer'})
+		</script>
+	</div>
+
+	<p>2.普通</p>
+	<div>
+		<input class="Wdate" type="text" onClick="WdatePicker({doubleCalendar:false,skin:'twoer',dateFmt:'yyyy-MM-dd'})">
+	</div>
+
+	<p>3.普通 双月 带时间</p>
+	<div>
+		<input class="Wdate" type="text" onClick="WdatePicker({doubleCalendar:true,skin:'twoer',dateFmt:'yyyy-MM-dd HH:mm:ss'})">
+	</div>
+
+</body>
+</html>

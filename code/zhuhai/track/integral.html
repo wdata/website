@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>积分轨迹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="flexible" content="initial-dpr=2" />
+    <link rel="stylesheet" href="../plugin/flexible/flexible.css">
+    <script src="../plugin/flexible/flexible.js"></script>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/track/integral.css"/>
+</head>
+<body>
+<div class="page">
+    <header>
+        <a onclick="history.go(-1);"><div class="head_return"><i></i></div></a>
+    </header>
+    <!--柱状图-->
+    <div class="columnar">
+        <div class="title">各阶段积分人数</div>
+        <div class="canvas">
+            <div class="y-axial">
+                <!--<p>(人)</p>-->
+                <!--<div><i>400</i><span></span></div>-->
+                <!--<div><i>300</i><span></span></div>-->
+                <!--<div><i>200</i><span></span></div>-->
+                <!--<div><i>100</i><span></span></div>-->
+                <!--<div><i>0</i><span></span></div>-->
+            </div>
+            <div class="x-axis">
+                <!-- <div>
+                     <p class="p1"><span>110</span></p>
+                 </div>
+                 <div>
+                     <p class="p2"><span>120</span></p>
+                 </div>
+                 <div>
+                     <p class="p3"><span>130</span>
+                     <span class="me"><span class="head">您处在的阶段</span><img src="../images/track/3.png"></span>
+                     </p>
+                 </div>
+                 <div>
+                     <p class="p4"><span>150</span></p>
+                 </div>-->
+            </div>
+        </div>
+        <div class="axis">
+            <!--<div>0~500</div>
+            <div>500~1000</div>
+            <div>1000~1500</div>
+            <div>1500~2000</div>
+            <p>(分)</p>-->
+        </div>
+    </div>
+    <div class="icon"></div>
+    <!--曲线图-->
+    <div class="curve">
+        <div class="title">与最高积分和最低积分的对比</div>
+        <canvas id="myChart" height="200%"></canvas><span class="date">(星期)</span>
+        <div class="foot">
+            <div class="max">最高分<span></span><i></i></div>
+            <div class="you">您本人<span></span><i></i></div>
+            <div class="min">最低分<span></span><i></i></div>
+        </div>
+    </div>
+    <div class="icon"></div>
+    <div class="ranking">
+        <div class="title">积分排名（前三）</div>
+        <div class="item">
+            <div class="head"><img src="../images/track/3.png" alt=""></div>
+            <div class="content">
+                <h1>侯亮平<span>副书记</span></h1>
+                <div><span>累计积分</span><span class="num">1245</span></div>
+            </div>
+        </div>
+
+        <div class="item two">
+            <div class="head"><img src="../images/track/3.png" alt=""></div>
+            <div class="content">
+                <h1>侯亮平<span>副书记</span></h1>
+                <div><span>累计积分</span><span class="num">1245</span></div>
+            </div>
+        </div>
+
+        <div class="item three">
+            <div class="head"><img src="../images/track/3.png" alt=""></div>
+            <div class="content">
+                <h1>侯亮平<span>副书记</span></h1>
+                <div><span>累计积分</span><span class="num">1245</span></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="../plugin/zepto/zepto.js"></script>
+<script src="../plugin/zepto/event.js"></script>
+<script src="../plugin/zepto/touch.js"></script>
+<script src="../plugin/awesomechart/Chart.js"></script>
+<script src="../js/track/integral.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

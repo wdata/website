@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>权限修改</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Charisma, a fully featured, responsive, HTML5, Bootstrap admin template.">
+    <meta name="author" content="Muhammad Usman">
+	<link rel="stylesheet" type="text/css" href="../../../css/reset.css">
+	<!--<link rel="stylesheet" type="text/css" href="../../../css/bootstrap-cerulean.min.css">-->
+	<link rel="stylesheet" type="text/css" href="../../../plugin/jqPaginator/paging.css">
+	<link rel="stylesheet" type="text/css" href="../../../plugin/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../plugin/bootstrap-dialog/css/bootstrap-dialog.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../plugin/jquery-ztree/css/zTreeStyle.css">
+	<link rel="stylesheet" type="text/css" href="../../../css/list.css">
+	<!--<link rel="stylesheet" type="text/css" href="../../../css/permission_modification/permission_modification.css">-->
+	<style>
+		/*点击角色底色修改*/
+		.active{background-color:#eee;}
+		#role .div_top .div_item{width: 50%;}
+		#role .div_top .div_item .div_title{display:block;padding-bottom: 10px;width:350px;margin: 0 auto;}
+		#role .div_top .role_l .permission{width: 350px;padding:10px 0;height: 450px;border: 1px solid #ddd;overflow: auto;margin:0 auto;}
+		#role .div_top .role_l .permission i{display: block;line-height: 40px;padding: 0 10px;cursor:pointer;user-select:none;}
+		#role .div_top .role_r .ztree_con{height: 450px;width: 350px;border: 1px solid #ddd;position:relative;overflow: auto;margin-left: 100px;}
+		#role .btn-wrap{margin: 10px auto;}
+	</style>
+</head>
+<body>
+	<div class="add-content" id="role">
+		<!--<p>角色选择</p>-->
+		<div class="div_top">
+			<div class="div_item role_l">
+				<span class="div_title">选择需要修改的角色</span>
+				<div class="permission"></div>
+			</div>
+			<div class="div_item role_r">
+				<span class="div_title">&nbsp;</span>
+				<div class="ztree_con">
+					<ul id = "treeDemo" class="ztree"></ul>
+				</div>
+			</div>
+		</div>
+		<div class="btn-wrap">
+			<input type="button" value="新增" class="btn btn-yellow hide add" onclick="added()">
+			<input type="button" value="确定" class="btn btn-primary hide yes" onclick="authority()">
+			<input type="button" value="删除角色" class="btn btn-red hide delete" onclick="deleteTheRole()">
+		</div>
+	</div>
+
+
+
+
+	<div class="opering-mask">
+		<div class="main">
+			<div class="tit">提示信息<span onclick="closeMask()">&times;</span></div>
+			<div class="con">正在处理中，处理结束后该弹窗消失！</div>
+		</div>
+	</div>
+<script type="text/javascript" src="../../../plugin/jQuery/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="../../../plugin/bootstrap/bootstrap.min.js"></script>
+<script type="text/javascript" src="../../../plugin/bootstrap-dialog/js/bootstrap-dialog.js"></script>
+<script type="text/javascript" src="../../../plugin/jqPaginator/jqPaginator.js"></script>
+<script type="text/javascript" src="../../../plugin/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="../../../plugin/bootstrap-datetimepicker/font/bootstrap-datetimepicker.zh-CN.js"></script>
+<script type="text/javascript" src="../../../plugin/jquery-ztree/js/jquery.ztree.all.js"></script>
+<script type="text/javascript" src="../../../js/common.js"></script>
+<script type="text/javascript" src="../../../js/permission_modification/permission_modification.js"></script>
+</body>
+</html>

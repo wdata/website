@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>办公室管理</title>
+    <link rel="stylesheet" href="../../plugin/bootstrap-3.3.7/less/bootstrap.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../plugin/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="../../plugin/zTree_v3/css/zTreeStyle/zTreeStyle.css">-->
+    <!--<link rel="stylesheet" href="../../css/office/office_list.css">-->
+    <style>
+        #cartogram{margin: 12px 0;}
+        .office_situation_bar,.office_situation_pie{width: 1100px;height: 614px;background-color: #fff;}
+        .office_situation_pie{width: 500px;margin-left: 24px;}
+        .office_situation_bar .office_title,.office_situation_pie .office_title{font-size: 18px;line-height: 64px;border-bottom: 1px solid #e6e9f1;}
+
+    </style>
+</head>
+<body>
+<header class="header-title">
+    <i></i><b>您的位置:</b> <span>办公室管理</span> > <span class="blueChange">办公室列表</span>
+</header>
+<div class="container-fluid">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs office_nav" role="tablist">
+            <li role="presentation" class="active"><a href="#officeListCon" aria-controls="home" role="tab" data-toggle="tab">办公室列表</a></li>
+            <li role="presentation"><a href="#cartogram" aria-controls="profile" role="tab" data-toggle="tab">办公室统计图表</a></li>
+        </ul>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="officeListCon">
+
+                <div class="row">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <input class="form-control key" type="text" placeholder="输入关键词">
+                        </div>
+
+                        <div class="form-group">
+                            <span>所属区域:</span>
+                            <div class="input-group" onclick="addrToggle();">
+                                <input id="" class="form-control" size="8" type="text" readonly>
+                                <span class="input-group-addon"><i class="fa fa-caret-down"></i></span>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="select-addr-con">
+                            <p class="btn-con text-right">
+                                <span onclick="addrToggle();" type="button" class="span btn_ok">确定</span>
+                                <span onclick="addrToggle();" type="button" class="span ">取消</span>
+                            </p>
+                            <div class="select-con">
+                                <select class="form-control" name="" id="" size="15">
+                                    <option value="">中国中国中国中国</option>
+                                    <option value="">中国</option>
+                                    <option value="">中国</option>
+                                    <option value="">中国</option>
+                                </select>
+                                <select class="form-control" name="" id="" size="15">
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                    <option value="">广东</option>
+                                </select>
+                                <select class="form-control" name="" id="" size="15">
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                </select>
+                                <select class="form-control" name="" id="" size="15">
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳</option>
+                                    <option value="">深圳深圳深圳深圳</option>
+                                    <option value="">深圳</option>
+                                </select>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span>状态:</span>
+                            <select id="status" class="form-control">
+                                <option value="0">全部</option>
+                                <option value="1">下架</option>
+                                <option value="2">未发布</option>
+                                <option value="3">空闲</option>
+                                <option value="4">已预订</option>
+                                <option value="5">已出租</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group"><button type="button" class="btn btn_search" id="search">搜索</button></div>
+                    </form>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="btn btn_green" onclick="goPage('page/office/office_add.html');">添加</button>
+                    <button type="button" class="btn btn_green" onclick="/*goPage('page/inform/inform_add.html');*/">发布</button>
+                    <button type="button" class="btn btn_yellow" onclick="/*goPage('page/inform/inform_add.html');*/">导入</button>
+                    <button type="button" class="btn btn_yellow" onclick="/*goPage('page/inform/inform_add.html');*/">导出</button>
+                    <button type="button" class="btn btn_blue" onclick="/*goPage('page/inform/inform_add.html');*/">出租</button>
+                    <button type="button" class="btn btn_blue" onclick="/*goPage('page/inform/inform_add.html');*/">预定</button>
+                    <button type="button" class="btn btn_green" onclick="/*goPage('page/inform/inform_add.html');*/">空闲</button>
+                    <button type="button" class="btn btn_red" onclick="">删除</button>
+                </div>
+                <section class="row">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered table-condensed" id="list">
+                            <thead>
+                            <tr>
+                                <th class="text-center"><input type="checkbox" onclick="checkAll('#list',this)"></th>
+                                <th class="text-center">序号</th>
+                                <th class="text-center">办公室名称</th>
+                                <th class="text-center">所在楼宇</th>
+                                <th class="text-center">面积(<span>m<sup>2</sup></span>)</th>
+                                <th class="text-center">企业名称</th>
+                                <th class="text-center">合同到期时间</th>
+                                <th class="text-center">办公室详情</th>
+                                <th class="text-center">状态</th>
+                                <th class="text-center">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="tbody">
+                            <!--<tr class="text-center">
+                                <td><input type="checkbox"></td>
+                                <td>1</td>
+                                <td>505-507</td>
+                                <td>东方科技大厦</td>
+                                <td>123</td>
+                                <td>东方科技</td>
+                                <td>2017-03-03</td>
+                                <td>
+                                    <button class="btn btn-link btn-xs" onclick="goPage('page/office/office_details.html');">查看</button>
+                                </td>
+                                <td>已出租</td>
+                                <td>
+                                    <button type="button" class="btn btn-info btn-xs" onclick=""><i class="fa fa-edit fa-fw"></i>修改</button>
+                                    <button type="button" class="btn btn_red btn-xs" onclick=""><i class="fa fa-edit fa-fw"></i>删除</button>
+                                </td>
+                            </tr>-->
+
+
+                            </tbody>
+                            <tfoot>
+                            <tr class="text-center hidden">
+                                <td colspan="9">未查到结果</td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </section>
+                <footer class="row">
+                    <div class="page-con hidden">
+                        <ul class="pagination" id="pagination"></ul>
+                        <div class="page-go">
+                            <span>跳转到</span>
+                            <input class="form-control" type="number" min="1">
+                            <input class="btn btn-primary btn-sm" type="button" value="GO" onclick="/*pageTo(this)*/">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+            <div role="tabpanel" class="tab-pane clearfix" id="cartogram">
+                <div class="office_situation_bar pull-left">
+                    <div class="office_title text-center blueChange">物业租赁情况</div>
+                    <div style="width: 1100px;height: 550px;" id="first_echarts"></div>
+                </div>
+                <div class="office_situation_pie pull-left">
+                    <div class="office_title text-center blueChange">物业出租情况</div>
+                    <div style="width: 500px;height: 550px;" id="second_echarts"></div>
+                </div>
+
+
+
+            </div>
+        </div>
+</div>
+
+
+
+
+
+<script src="../../plugin/jquery/jquery-3.1.1.min.js"></script>
+<script src="../../plugin/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="../../plugin/My97DatePicker/WdatePicker.js"></script>
+<script src="../../plugin/jqPaginator/jqPaginator.js"></script>
+<!--<script src="../../plugin/zTree_v3/js/jquery.ztree.all.min.js"></script>-->
+<script src="../../plugin/echarts/echarts.common.min.js"></script>
+<script src="../../js/common.js"></script>
+<script src="../../js/office/office_list.js"></script>
+</body>
+</html>
