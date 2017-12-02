@@ -89,14 +89,16 @@ var urlParams = function (key) {
 
 //  将数组转化为字符串，使用.join；并使用字符串判断是否有权限；
 function authMethod(data){
-    var auth = authority.join("");
-    var bur = null;
-    if(auth.indexOf(data) > 0){
-        bur = true;
-    }else{
-        bur = false;
+    if(authority){
+        var auth = authority.join("");
+        var bur = null;
+        if(auth.indexOf(data) > 0){
+            bur = true;
+        }else{
+            bur = false;
+        }
+        return bur;
     }
-    return bur;
 }
 
 //  为null或者没有参数时，显示为空；

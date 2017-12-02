@@ -11,16 +11,16 @@ var auth_0=authMethod("/llt/click/rent/showModel/rentorwanted");			//显示出�
 	auth_5=authMethod("/llt/click/rent/showModel/bespeak/remind");			//提醒
 	auth_6=authMethod("/llt/click/rent/showModel/bespeak/recept");			//接待
     //因权限而对页面显示控制
-    if(auth_1){
-    	$('.rent-tab .top .top-r1').show().siblings().hide();
-    }else{
-    	$('.rent-tab .top .top-r2').show().siblings().hide();
-    }
-    if(auth_2){
-    	$('.rent-tab .bot .inner-r1').show().siblings().hide();
-    }else if(auth_4){
-    	$('.rent-tab .bot .inner-r2').show().siblings().hide();
-    }
+    // if(auth_1){
+    // 	$('.rent-tab .top .top-r1').show().siblings().hide();
+    // }else{
+    // 	$('.rent-tab .top .top-r2').show().siblings().hide();
+    // }
+    // if(auth_2){
+    // 	$('.rent-tab .bot .inner-r1').show().siblings().hide();
+    // }else if(auth_4){
+    // 	$('.rent-tab .bot .inner-r2').show().siblings().hide();
+    // }
 
 
 $(document).ready(function(){
