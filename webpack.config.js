@@ -15,7 +15,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 /*
 *   写固定的路径以便
 * */
-var publicPath = "http://localhost:6368/dist/";
+var publicPath = "http://wanglj.com/dist/";
 
 module.exports = {
     entry: { //配置入口文件，有几个写几个
